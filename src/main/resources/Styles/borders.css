@@ -1,0 +1,15 @@
+.borders{
+    -fx-background-color:#931A1A;
+    -fx-border-color: transparent transparent -dw-gris-borde transparent;
+    -fx-border-width: 1;
+     -fx-border-radius: 25 25 0 25; 
+    -fx-background-radius: 25 25 0 25;
+}
+.borders_inicio{
+     /*-fx-background-color:#ad4343;*/    
+     -fx-border-color: transparent transparent -dw-gris-borde transparent;
+    -fx-border-width: 1;
+     -fx-border-radius: 25; 
+    -fx-background-radius: 25;
+}
+

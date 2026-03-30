@@ -3,6 +3,8 @@
 -- -----------------------------------------------------
 
 -- Tabla Ubicacion
+CREATE SCHEMA IF NOT EXISTS "public";
+SET SCHEMA "public";
 CREATE TABLE IF NOT EXISTS UBICACION (
     ID_UBICACION INT AUTO_INCREMENT PRIMARY KEY,
     REGION ENUM ('NORTE','SUROESTE','SURESTE'),

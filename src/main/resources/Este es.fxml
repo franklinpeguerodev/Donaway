@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="1078.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.donacion.DonanteController">
+   <top>
+      <FlowPane hgap="30.0" prefHeight="60.0" prefWidth="900.0" prefWrapLength="200.0" styleClass="borders" stylesheets="@Styles/borders.css" BorderPane.alignment="CENTER_LEFT">
+         <BorderPane.margin>
+            <Insets left="15.0" top="20.0" />
+         </BorderPane.margin>
+         <children>
+            <ImageView fitHeight="87.0" fitWidth="89.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/image-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Label id="titulo" stylesheets="@Styles/header.css" text="Gestión de Donaciones y Reservas Sanguíneas &quot;Donaway&quot;" wrapText="true">
+               <padding>
+                  <Insets left="5.0" top="10.0" />
+               </padding>
+            </Label>
+            <Button id="btn_notificacion" mnemonicParsing="false" prefHeight="45.0" prefWidth="49.0" styleClass="botones_general" stylesheets="@Styles/botones.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/campana%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <FlowPane.margin>
+                  <Insets left="55.0" top="10.0" />
+               </FlowPane.margin>
+               <padding>
+                  <Insets bottom="10.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="61.0" styleClass="botones_general" stylesheets="@Styles/botones.css">
+               <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true" styleClass="botones_general">
+                     <image>
+                        <Image url="@imagenes/usuario%20(2).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <FlowPane.margin>
+                  <Insets left="40.0" top="5.0" />
+               </FlowPane.margin>
+               <padding>
+                  <Insets bottom="10.0" left="5.0" top="15.0" />
+               </padding>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </FlowPane>
+   </top>
+   <right>
+      <VBox id="menu" minHeight="-Infinity" prefHeight="522.0" prefWidth="163.0" spacing="20.0" styleClass="menu_iconos" stylesheets="@Styles/menu.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label id="label_modulo" stylesheets="@Styles/header.css" text="Módulos">
+               <VBox.margin>
+                  <Insets left="8.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="7.0" right="7.0" />
+               </padding>
+            </Label>
+            <Button mnemonicParsing="false" styleClass="botones_general" stylesheets="@Styles/botones.css" text="Recepción y Triaje">
+               <graphic>
+                  <ImageView fitHeight="53.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/calendario.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="49.0" prefWidth="167.0" styleClass="botones_general" stylesheets="@Styles/botones.css" text="Laboratorio y Análisis">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/muestra-de-sangre.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="2.5" right="6.0" />
+               </padding>
+            </Button>
+            <Button mnemonicParsing="false" styleClass="botones_general" stylesheets="@Styles/botones.css" text=" Fraccionamiento">
+               <graphic>
+                  <ImageView fitHeight="45.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/tipo-de-sangre.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" styleClass="botones_general" stylesheets="@Styles/botones.css" text="Egreso y Certificación">
+               <VBox.margin>
+                  <Insets bottom="40.0" />
+               </VBox.margin>
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imagenes/carnet-de-donante-de-organos.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="30.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </VBox>
+   </right>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+                  <Pane prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <VBox prefHeight="286.0" prefWidth="1078.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField prefHeight="54.0" prefWidth="1078.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+            <TextField prefHeight="25.0" prefWidth="765.0" />
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

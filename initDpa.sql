@@ -1,13 +1,15 @@
 -- 1. Provincias (No depende de nadie)
-DROP TABLE IF EXISTS provincias CASCADE;
-CREATE TABLE provincias (
+CREATE SCHEMA IF NOT EXISTS "public";
+SET SCHEMA "public";
+
+CREATE TABLE IF NOT EXISTS provincias (
   id INT PRIMARY KEY,
   nombre VARCHAR(50) NOT NULL
 );
 
 -- 2. Municipios (Depende de Provincias)
-DROP TABLE IF EXISTS municipios CASCADE;
-CREATE TABLE municipios (
+
+CREATE TABLE IF NOT EXISTS municipios (
   id INT PRIMARY KEY,
   provinciaId INT,
   nombre VARCHAR(150) NOT NULL,
@@ -15,8 +17,8 @@ CREATE TABLE municipios (
 );
 
 -- 3. Distritos (Depende de Municipios)
-DROP TABLE IF EXISTS distritos CASCADE;
-CREATE TABLE distritos (
+
+CREATE TABLE IF NOT EXISTS distritos (
   id INT PRIMARY KEY,
   nombre VARCHAR(150),
   municipioId INT,
@@ -24,8 +26,8 @@ CREATE TABLE distritos (
 );
 
 -- 4. Secciones (Depende de Municipios y Distritos)
-DROP TABLE IF EXISTS secciones CASCADE;
-CREATE TABLE secciones (
+
+CREATE TABLE IF NOT EXISTS secciones (
   id INT PRIMARY KEY,
   nombre VARCHAR(150),
   municipioId INT,
@@ -35,8 +37,8 @@ CREATE TABLE secciones (
 );
 
 -- 5. Barrios (Depende de Secciones)
-DROP TABLE IF EXISTS barrios CASCADE;
-CREATE TABLE barrios (
+
+CREATE TABLE IF NOT EXISTS barrios (
   id INT PRIMARY KEY,
   nombre VARCHAR(150),
   seccionId INT,
@@ -44,8 +46,8 @@ CREATE TABLE barrios (
 );
 
 -- 6. Sub_barrios (Depende de Barrios)
-DROP TABLE IF EXISTS sub_barrios CASCADE;
-CREATE TABLE sub_barrios (
+
+CREATE TABLE IF NOT EXISTS sub_barrios (
   id INT PRIMARY KEY,
   nombre VARCHAR(150),
   barrioId INT,

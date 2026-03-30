@@ -1,15 +1,12 @@
-# ==========================================
 # Compilación y empaquetado de Java
-# ==========================================
 *.class
 *.log
 *.jar
 *.war
 *.ear
 
-# ==========================================
+
 # Maven (Gestor de dependencias)
-# ==========================================
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -19,30 +16,23 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 
-# ==========================================
 # Eclipse IDE
-# ==========================================
 .settings/
 .project
 .classpath
 bin/
 .metadata/
 
-# ==========================================
+
 # Variables de entorno y credenciales
-# ==========================================
 .env
 
-# ==========================================
 # Archivos de Base de Datos Local (H2 / Temporales)
-# ==========================================
 *.lock.db
 *.mv.db
 *.trace.db
 
-# ==========================================
 # Archivos del Sistema Operativo
-# ==========================================
 .DS_Store
 Thumbs.db
 ehthumbs.db

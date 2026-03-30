@@ -1,4 +1,5 @@
 package com.donaway.main;
+//importaciones para la creacion de la ventana javafx
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -6,13 +7,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.net.URL;
 
-import com.donaway.dev.db.ConexionBdNube;
-import com.donaway.dev.db.WebServerBD;
+import com.donaway.dev.db.ConexionBdNube;//conexion de la BD Donaway de la nube
+import com.donaway.dev.db.WebServerBD;// Servidor web de la BD para comodidad para el desorrollo  
 
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        URL fxmlLocation = getClass().getResource("/view/user/form.fxml");
+        URL fxmlLocation = getClass().getResource("/Este es.fxml");
         
         if (fxmlLocation == null) {
             System.out.println("Error: No se encontró el archivo FXML en la ruta especificada.");
@@ -27,7 +28,7 @@ public class Main extends Application {
 
     public static void main(String[] args) {
     	WebServerBD.inicializar();
-    	ConexionBdNube.getConnection();
+ 
         launch(args); 
     }
 }

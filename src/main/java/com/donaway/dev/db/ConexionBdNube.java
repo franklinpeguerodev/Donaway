@@ -2,12 +2,12 @@ package com.donaway.dev.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import io.github.cdimascio.dotenv.Dotenv;
+import io.github.cdimascio.dotenv.Dotenv;//importacion del dotenv para leer las variables de entorno .env
 public class ConexionBdNube {
 	private static Connection conn=null;
 	private static Dotenv dotenv=Dotenv.load();
 	public static Connection getConnection() {
-		String driver = dotenv.get("DB_NUBE_DONAWAY_DRIVER");
+		String driver = dotenv.get("DB_NUBE_DONAWAY_DRIVER");//DB_NUBE_DONAWAY_DRIVER es el nombre de la variable de entorno
 		String url= dotenv.get("DB_NUBE_DONAWAY_URL");
 		String user= dotenv.get("DB_NUBE_DONAWAY_USER");
 		String password= dotenv.get("DB_NUBE_DONAWAY_PASSWORD");
@@ -26,4 +26,5 @@ public class ConexionBdNube {
 		
 		return conn;
 	}
+	
 }

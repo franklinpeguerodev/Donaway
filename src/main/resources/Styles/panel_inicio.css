@@ -1,0 +1,67 @@
+/* Mantenemos tu fuente y color, pero con mejor legibilidad */
+.texto_encabezados {
+    -fx-font-family: "Shelten";
+    -fx-text-fill: #8E1B1B;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.text_busqueda {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 5;
+    -fx-border-color: #D1D1D1;
+    -fx-border-radius: 5;
+    -fx-padding: 8 12;
+    -fx-font-family: "Shelten";
+}
+
+.text_busqueda:focused {
+    -fx-background-color: #FFF5F5;
+    -fx-border-color: #8E1B1B;
+    -fx-border-width: 2;
+}
+
+/* La "Card" donde están los datos */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}
+
+.subtitulo {
+    -fx-font-family: "Shelten";
+    -fx-text-fill: #8E1B1B;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0 5 0;
+}
+
+.label- {
+    -fx-font-family: "Shelten";
+    -fx-text-fill: #444444; /* El nombre del campo en gris oscuro */
+    -fx-font-size: 14px;
+}
+
+/* Clase nueva para el dato que viene de la base de datos */
+.dato-valor {
+    -fx-font-family: "Shelten";
+    -fx-text-fill: #8E1B1B; /* El dato real en tu rojo */
+    -fx-font-weight: bold;
+}
+
+.boton_buscar{
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #931A1A;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.boton_buscar:hover{
+     -fx-background-color: #c56e71;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
