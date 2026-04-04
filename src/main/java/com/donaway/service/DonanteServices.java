@@ -7,15 +7,10 @@ public class DonanteServices {
 	private IDonanteDao donanteDao = new DonanteImpl();
 	
 	public boolean procesarNuevoDonante(Donante donante) {
-		if(donante.getPeso() <110) {
-			
-			return false;
-		}
 		if(donante.getNombre() ==null) {
-			
+		System.out.println("Se inserto vacio");
 		return false;
 		}
-		
 		donanteDao.registrarDonante(donante);
 		System.out.println("Se inserto");
 		return true;

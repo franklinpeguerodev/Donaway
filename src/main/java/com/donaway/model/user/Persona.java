@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 //clase abstracta responsble de todas las personas que usaran el software
 public abstract class Persona {
-	protected String documentoId;
+	protected String documentId;
 	protected String nombre;
 	protected String sexo;
 	protected LocalDate fechaNacimiento;
@@ -13,7 +13,7 @@ public abstract class Persona {
 	
 	public Persona (String documentoId,String nombre,String sexo,LocalDate fechaNacimiento,String telefono,
 			String email,LocalDateTime fechaRegistro){
-			this.documentoId =documentoId;
+			this.documentId =documentoId;
 			this.nombre =nombre;
 			this.sexo =sexo;
 			this.fechaNacimiento =fechaNacimiento;
@@ -26,7 +26,7 @@ public abstract class Persona {
 	
 	//get
 	public String getDocumentoId() {
-		return this.documentoId;
+		return this.documentId;
 	}
 	public String getNombre() {
 		return this.nombre;
@@ -48,7 +48,7 @@ public abstract class Persona {
 	}
 	//set
 	public void setDocumentoId (String documentoId) {
-		this.documentoId=documentoId;
+		this.documentId=documentoId;
 	}
 	
 	public void setNombre(String nombre) {

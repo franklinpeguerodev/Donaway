@@ -10,5 +10,5 @@ public interface IDonanteDao {
 	
 	List<Donante> obtenerTodo();
 	
-	Donante obtenerId (String documentoId);
+
 }
