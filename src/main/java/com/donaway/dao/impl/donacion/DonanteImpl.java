@@ -1,4 +1,4 @@
-package com.donaway.dao.impl.donante;
+package com.donaway.dao.impl.donacion;
 
 import com.donaway.dao.donacion.IDonanteDao;
 import com.donaway.model.donacion.Donante;
@@ -30,7 +30,7 @@ public class DonanteImpl implements IDonanteDao {
 			ps.setString(6, donante.getEmail());
 			ps.setObject(7, donante.getFechaRegistro());
 			ps.setString(8, donante.getTipoSangre());
-			ps.setString(9,donante.getFactorRh());
+			ps.setString(9,	donante.getFactorRh());
 			ps.setObject(10,donante.getUltimaDonacion());
 			ps.setString(11,donante.getEstadoDisponibilidad());
 			ps.setBoolean(12,donante.getAutorizacionContacto());;

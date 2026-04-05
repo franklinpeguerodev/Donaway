@@ -1,7 +1,7 @@
 package com.donaway.service;
 import com.donaway.dao.donacion.IDonanteDao;
+import com.donaway.dao.impl.donacion.DonanteImpl;
 import com.donaway.model.donacion.Donante;
-import com.donaway.dao.impl.donante.DonanteImpl;
 
 public class DonanteServices {
 	private IDonanteDao donanteDao = new DonanteImpl();

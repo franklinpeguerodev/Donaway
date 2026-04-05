@@ -132,8 +132,8 @@ CREATE TABLE IF NOT EXISTS unidad_hemoderivados (
 CREATE TABLE IF NOT EXISTS receptor(
 	document_id_receptor VARCHAR (20) PRIMARY KEY,
 	nombre VARCHAR (50),
-	fecha_nacimiento DATE,
 	sexo VARCHAR (10),
+	fecha_nacimiento DATE,
 	peso DECIMAL(5,2),
 	telefono VARCHAR (15),
 	fecha_registro DATETIME,

@@ -80,7 +80,7 @@ public class ProbandoDaoController {
 				  );
 		    DonanteServices services = new DonanteServices();
 		    boolean res =services.procesarNuevoDonante(donante);
-		  if (res == true) {
+		  if (res) {
 			  System.out.println("Ready");
 			  
 		  }
