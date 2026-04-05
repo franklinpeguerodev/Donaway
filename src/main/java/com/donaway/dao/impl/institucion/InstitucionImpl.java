@@ -1,4 +1,4 @@
-package com.donaway.dao.impl.inventario;
+package com.donaway.dao.impl.institucion;
 
 import com.donaway.dao.institucion.IInstitucionDao;
 import com.donaway.model.institucion.Institucion;
