@@ -11,9 +11,9 @@ public abstract class Persona {
 	protected String email;
 	protected LocalDateTime fechaRegistro;
 	
-	public Persona (String documentoId,String nombre,String sexo,LocalDate fechaNacimiento,String telefono,
+	public Persona (String documentId,String nombre,String sexo,LocalDate fechaNacimiento,String telefono,
 			String email,LocalDateTime fechaRegistro){
-			this.documentId =documentoId;
+			this.documentId =documentId;
 			this.nombre =nombre;
 			this.sexo =sexo;
 			this.fechaNacimiento =fechaNacimiento;
@@ -24,49 +24,58 @@ public abstract class Persona {
 	}
 	public Persona () {}
 	
-	//get
 	public String getDocumentoId() {
 		return this.documentId;
 	}
-	public String getNombre() {
-		return this.nombre;
-	}
-	public String getSexo() {
-		return this.sexo;
-	}
-	public LocalDate getFechaNacimiento() {
-		return this.fechaNacimiento;
-	}
-	public String getTelefono() {
-		return this.telefono;
-	}
-	public String getEmail() {
-		return this.email;
-	}
-	public LocalDateTime getFechaRegistro() {
-		return this.fechaRegistro;
-	}
-	//set
 	public void setDocumentoId (String documentoId) {
 		this.documentId=documentoId;
 	}
 	
+
+	public String getNombre() {
+		return this.nombre;
+	}
 	public void setNombre(String nombre) {
 		this.nombre =nombre;
+	}
+	
+	
+	public String getSexo() {
+		return this.sexo;
 	}
 	public void setSexo(String sexo) {
 		this.sexo =sexo;
 	}
+	
+	
+	public LocalDate getFechaNacimiento() {
+		return this.fechaNacimiento;
+	}
 	public void setFechaNacimiento (LocalDate fechaNacimiento) {
 		this.fechaNacimiento=fechaNacimiento;
+	}
+	
+	
+	public String getTelefono() {
+		return this.telefono;
 	}
 	public void setTelefono(String telefono) {
 		this.telefono=telefono;
 	}
+	
+	
+	public String getEmail() {
+		return this.email;
+	}
 	public void setEmail (String email) {
 		this.email= email;
+	}
+	
+	public LocalDateTime getFechaRegistro() {
+		return this.fechaRegistro;
 	}
 	public void setFechaRegistro (LocalDateTime fechaRegistro) {
 		this.fechaRegistro = fechaRegistro;
 	}
+
 }

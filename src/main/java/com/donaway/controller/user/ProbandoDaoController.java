@@ -46,7 +46,7 @@ public class ProbandoDaoController {
 	      String documentId = input1.getText();
 		  String nombre = input2.getText();
 		  String sexo = input3.getText();
-		  String fechaNacimientoTxt = input4.getText();
+		  String fechaNacimientoTxt = input4.getText().trim();
 		  LocalDate fechaNacimiento = LocalDate.parse(fechaNacimientoTxt,formato);
 		  String telefono = input5.getText();
 		  String email = input6.getText();

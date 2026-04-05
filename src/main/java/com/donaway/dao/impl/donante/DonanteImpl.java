@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class DonanteImpl implements IDonanteDao {
+	
 	@Override
 	public void registrarDonante(Donante donante) {
 		String sql = "INSERT INTO donante(document_id_donante,nombre,sexo,fecha_nacimiento,telefono,"
