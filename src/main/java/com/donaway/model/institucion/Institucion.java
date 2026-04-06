@@ -10,6 +10,36 @@ public class Institucion{
 		this.rnc=rnc;
 		this.nombre=nombre;
 		this.contactoEmergencia=contactoEmergencia;
+		this.fechaRegistro=fechaRegistro;
 	}
+	
+public String getRnc(){
+  return this.rnc;
+}
+public void setRnc(String rnc){
+  this.rnc=rnc;
+}
 
+
+public String getNombre(){
+  return this.nombre;
+}
+public void setNombre (String nombre){
+  this.nombre=nombre;
+}
+
+
+public String getContactoEmergencia(){
+  return this.contactoEmergencia;
+}
+public void setContactoEmergencia (String contactoEmergencia){
+  this.contactoEmergencia=contactoEmergencia;
+}
+
+public LocalDate getFechaRegistro (){
+  return this.fechaRegistro;
+}
+public void setFechaRegistro (LocalDate fechaRegistro){
+  this.fechaRegistro =fechaRegistro;
+}
 }
