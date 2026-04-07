@@ -1,0 +1,19 @@
+.botones_general{
+    -fx-background-radius: 40;           /* Esquinas totalmente rectas */
+    -fx-background-color: transparent transparent #dcdcdc transparent;     /* El color rojo oscuro de tu fuente */
+    -fx-text-fill: white;
+    -fx-font-family: "Shelten"
+}
+
+.botones_general:hover {
+    -fx-background-color: rgba(84, 10, 10, 0.7); 
+     -fx-scale-x: 1.1; /* Se agranda un 10% horizontalmente */
+    -fx-scale-y: 1.1; /* Se agranda un 10% verticalmente */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 25, 0, 0, 20);
+}
+
+.botones_general:armed {
+    -fx-background-color: rgba(84, 10, 10, 0.9);
+    -fx-background-radius: 40;  
+}

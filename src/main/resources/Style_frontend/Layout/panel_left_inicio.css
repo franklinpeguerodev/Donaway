@@ -1,0 +1,103 @@
+.labeles-informativo{
+      -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: rgb(223, 179, 179) !important;
+    -fx-font-size: 8px ;
+    -fx-font-style: italic;
+    -fx-padding:10 20 10 20
+}
+.fondo{
+     -fx-background-radius: 5;
+    -fx-border-color: #460606ca;
+     -fx-border-radius: 0 0 15 2;
+    -fx-background-radius: 0 0 15 2;
+     -fx-background-color: #931a1a;
+}
+.fondo_label{
+    -fx-background-color: #4606067d;
+    -fx-background-radius: 5;
+    -fx-border-color: #460606ca;
+    -fx-border-radius: 5;
+}
+.label-titulo{
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(241, 216, 216) !important;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 102, 102, 0.491), 5, 0, 0, 1) !important;
+    -fx-border-color: black transparent black transparent;
+    -fx-border-width: 3;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+#flecha_columna {
+    -fx-padding:20;
+    -fx-background-color: #931A1A;
+    -fx-background-radius: 50%;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+    -fx-min-height: 45px;
+    -fx-max-height: 45px;
+    /* Eliminamos el translate-x negativo para que esté centrado */
+    -fx-translate-x: 0; 
+    -fx-border-color: #D1D1D1;
+    -fx-border-radius: 50%;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 0);
+    -fx-transition-duration: 0.3s;
+    -fx-cursor: hand;
+}
+#flecha_columna ImageView {
+    -fx-rotate: 180;
+}
+
+#flecha_columna:hover {
+    -fx-background-color: #B01E23;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+/* --- ESTADO COLAPSADO COLUMNA INFORMATIVA --- */
+
+.columna-colapsada {
+    -fx-pref-width: 80px !important;
+    -fx-min-width: 80px !important;
+    -fx-max-width: 80px !important;
+    -fx-alignment: TOP_CENTER;
+}
+
+/* Ocultar todos los labels dentro de los HBox de la columna */
+.columna-colapsada .labeles-informativo, 
+.columna-colapsada .label-titulo {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+    -fx-opacity: 0;
+    -fx-padding: 0;
+    -fx-margin: 0;
+}
+
+/* Centrar los iconos de los HBox cuando el panel es pequeño */
+.columna-colapsada .fondo_label {
+    -fx-alignment: CENTER;
+    -fx-padding: 0;
+}
+
+.columna-colapsada .fondo_label ImageView {
+    -fx-margin: 0;
+    -fx-width: 40px;
+    -fx-min-height: 40px; /* Quitamos los márgenes que tenían para estar al lado del texto */
+}
+
+/* Botón flecha_columna colapsado */
+.columna-colapsada #flecha_columna {
+    -fx-min-width: 40px;
+    -fx-max-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+    -fx-padding: 0 !important;
+}
+
+/* Rotar la flecha de la columna al colapsar */
+.columna-colapsada #flecha_columna ImageView {
+    -fx-rotate: 360;
+}

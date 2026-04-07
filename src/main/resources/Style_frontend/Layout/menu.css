@@ -1,0 +1,97 @@
+#label_modulo {
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(196, 196, 196) !important;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 102, 102, 0.491), 5, 0, 0, 1) !important;
+    -fx-border-color: black transparent black transparent;
+    -fx-border-width: 3;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+#menu-principal {
+    -fx-background-color: #931A1A;
+    -fx-border-color: transparent transparent -dw-gris-borde transparent;
+    -fx-border-width: 1;
+    -fx-border-radius: 2 0 0 15;
+    -fx-background-radius: 2 0 0 15;
+}
+
+
+#flecha_menu {
+    -fx-background-color: #931A1A;
+    -fx-background-radius: 50%;
+    -fx-min-width: 45px;
+    -fx-max-width: 45px;
+    -fx-min-height: 45px;
+    -fx-max-height: 45px;
+    -fx-translate-x: 0; 
+    -fx-border-color: #D1D1D1;
+    -fx-border-radius: 50%;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 0);
+    -fx-transition-duration: 0.3s;
+    -fx-cursor: hand;
+}
+
+#flecha_menu:hover {
+    -fx-background-color: #B01E23;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+/* --- ESTADOS COLAPSADOS --- */
+
+.menu-colapsado {
+    -fx-pref-width: 80px !important;
+    -fx-min-width: 80px !important;
+    -fx-max-width: 80px !important;
+    -fx-alignment: TOP_CENTER; /* Centra todo verticalmente */
+}
+
+/* Botones de módulos colapsados */
+.menu-colapsado .botones_general {
+    -fx-content-display: GRAPHIC_ONLY !important;
+    -fx-alignment: CENTER !important; 
+    -fx-padding: 10 !important; 
+    -fx-min-width: 60px;
+    -fx-max-width: 60px;
+}
+
+/* Flecha colapsada: Ahora se queda justo debajo de los iconos */
+.menu-colapsado #flecha_menu {
+    -fx-translate-x: 0 !important; /* Aseguramos que no se mueva a la izquierda */
+    -fx-min-width: 40px;
+    -fx-max-width: 40px;
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+    -fx-padding: 0 !important;
+}
+
+/* Rotación para indicar que se puede volver a expandir */
+.menu-colapsado #flecha_menu ImageView {
+    -fx-rotate: 180;
+}
+
+/* Ocultar el label sin dejar espacio */
+.menu-colapsado #label_modulo {
+    -fx-max-height: 0;
+    -fx-pref-height: 0;
+    -fx-min-height: 0;
+    -fx-opacity: 0;
+    -fx-padding: 0;
+    -fx-margin: 0;
+}
+
+.botones_menu {
+    -fx-transition-duration: 0.3s;
+}
+
+.menu-colapsado .botones_menu {
+    -fx-opacity: 0.8; 
+}
+
+#flecha_menu ImageView {
+    -fx-transition-duration: 0.3s;
+}

@@ -1,0 +1,96 @@
+/* Contenedor del detalle a la derecha */
+.contenedor-detalle-blanco {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 0 1; /* Solo borde izquierdo para separar */
+}
+
+.titulo-notifi{
+     -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(102, 23, 23) !important;
+    -fx-font-size: 26px ;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 102, 102, 0.491), 2, 0, 0, 1);  
+    -fx-alignment: right;
+     -fx-padding:20 20 0 20;
+}
+
+.fecha-noti {
+    -fx-font-family: "Shelten";
+    -fx-text-fill: gray;
+    -fx-font-size: 12px;
+    -fx-font-style: italic; 
+    -fx-alignment: right;
+    -fx-padding: 0 0 0 20;
+}
+
+
+.badge-notificacion {
+    -fx-background-color: #D32F2F; 
+    -fx-background-radius: 50;
+    -fx-min-width: 16px;
+    -fx-min-height: 16px;
+    -fx-max-width: 16px;
+    -fx-max-height: 16px;
+    -fx-alignment: center;
+    -fx-content-display: center; 
+    -fx-text-fill: white;
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-translate-x: 5px;   
+    -fx-translate-y: 17px;  
+}
+.lista-notificaciones {
+    -fx-background-color: white;
+    -fx-border-color: #d1d1d1;
+}
+
+.lista-notificaciones .list-cell {
+    -fx-padding: 10;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #610a0a;
+    -fx-text-fill: #333333;
+}
+
+.lista-notificaciones .list-cell:hover {
+    -fx-background-color: #b96d6d;
+}
+.list-cell:selected {
+    -fx-background-color: #511d1d;
+}
+
+.lista-maestra-detalle {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D1D1D1;
+    -fx-border-width: 0 1 0 0; /* Borde sutil a la derecha para separar del detalle */
+}
+
+/* Estilo para los Botones/Items laterales */
+.lista-maestra-detalle .button {
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 15 12 15;
+    -fx-background-color:#610A0A;
+    -fx-border-color: #610A0A; 
+    -fx-border-width: 3; 
+    -fx-text-fill: rgb(145, 97, 97);
+    -fx-font-size: 14px;
+    -fx-font-family: "Shelten";
+    -fx-background-radius: 25;
+    -fx-border-radius: 25;
+}
+
+.lista-maestra-detalle .button:hover  {
+    -fx-background-color: #F5F5F5; 
+    -fx-text-fill: #610A0A; 
+    -fx-cursor: hand;
+}
+
+.lista-maestra-detalle .button:focused,
+.lista-maestra-detalle .button:armed {
+    -fx-background-color:  #b96d6d;
+    -fx-text-fill: white;
+}
+.popover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);
+}

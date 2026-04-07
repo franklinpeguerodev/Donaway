@@ -1,0 +1,123 @@
+.titulo-detalles{
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(145, 97, 97) !important;
+    -fx-font-size: 27px ;
+    -fx-font-weight: bold;
+    -fx-padding:10 20 0 20
+    
+}
+.borders_detalle-usuario{
+     -fx-background-color:#2e2323dc;    
+     -fx-border-color: transparent transparent #dcdcdc transparent;
+    -fx-border-width: 1;
+     -fx-border-radius: 25; 
+    -fx-background-radius: 25;
+}
+
+.detalles{
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(143, 134, 134) !important;
+    -fx-font-size: 16px ;
+    -fx-font-weight: bold;
+    
+}
+
+.detalles-respuestas{
+    -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: rgb(143, 134, 134) !important;
+    -fx-font-size: 14px ;
+    -fx-font-style: italic;
+    -fx-padding:0 0 10 0;
+    
+}
+
+.borders_detalles-acceso{    
+     -fx-border-color: #2e2323dc;
+    -fx-border-width: 3;
+     -fx-border-radius: 25; 
+    -fx-background-radius: 25;
+     -fx-padding:5;
+}
+.titulo-detalles-acceso{
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(145, 97, 97) !important;
+    -fx-font-size: 25px ;
+    -fx-font-weight: bold;
+    -fx-padding:10 20 0 20
+    
+}
+.detalles-acceso{
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgba(50, 45, 45, 0.831) !important;
+    -fx-font-size: 16px ;
+    -fx-font-weight: bold;
+     -fx-font-style: italic;
+
+    
+}
+
+.borders_informes-graficos{    
+     -fx-background-color: #361515a5;
+    -fx-border-width: 3;
+     -fx-border-radius: 25; 
+    -fx-background-radius: 25;
+     -fx-padding:5;
+}
+
+.titulo-informes-graficos{
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(180, 180, 180) !important;
+    -fx-font-size: 25px ;
+    -fx-font-weight: bold;
+    -fx-padding:10 20 20 20  
+}
+
+.link-graficos{
+    -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: rgb(143, 134, 134) !important;
+    -fx-font-size: 14px ;
+    -fx-font-style: italic;
+    -fx-padding:0 0 10 0;
+    
+}
+.botones_cerrar{
+    -fx-background-radius: 40;           /* Esquinas totalmente rectas */
+    -fx-background-color: transparent transparent #dcdcdc transparent;     /* El color rojo oscuro de tu fuente */
+    -fx-text-fill: rgba(81, 41, 41, 0.831) ;
+    -fx-font-family: "Shelten"
+}
+
+.botones_cerrar:hover {
+    /* Mismo color pero con 70% de opacidad (0.7) */
+    -fx-background-color: rgba(84, 10, 10, 0.7); 
+     -fx-scale-x: 1.1; /* Se agranda un 10% horizontalmente */
+    -fx-scale-y: 1.1; /* Se agranda un 10% verticalmente */
+    -fx-cursor: hand;
+    
+    /* Si quieres que se sienta que "sale" de la pantalla, aumenta la sombra */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 25, 0, 0, 20);
+}
+
+.botones_cerrar:armed {
+    -fx-background-color: rgba(84, 10, 10, 0.9);
+    -fx-background-radius: 40;  
+}
+
+.descripcion_breve{
+      -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(94, 1, 25) !important;
+    -fx-font-size: 15px ;
+    -fx-font-weight: bold;
+}
+
+.descripcion_breve_respuesta{
+     -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: rgb(143, 134, 134) !important;
+    -fx-font-size: 12px ;
+    -fx-font-style: italic;
+   
+}
+.fondo_descripcion{
+     -fx-background-color: #361515a5;
+      -fx-background-radius: 10;  
+}

@@ -1,0 +1,8 @@
+#titulo{
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(196, 196, 196) !important;
+    -fx-font-size: 27px ;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 102, 102, 0.491), 5, 0, 0, 1) !important;  
+    
+}
