@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 				+ "rnc_institucion,rol,credenciales_encriptadas,ultimoAcceso)"
 				+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
 		@Override
-		public void registrarPersonalMedico(PersonalMedico personalMedico){
+		public void registrarPersonalMedico(PersonalMedico personalMedico) throws SQLException{
 		try (Connection conn= ConexionDbDonaway.getConnection();
 			PreparedStatement ps = conn.prepareStatement(sql)){
 			ps.setString(1, personalMedico.getDocumentoId());
@@ -20,13 +20,12 @@ import java.sql.PreparedStatement;
 			ps.setString(5, personalMedico.getTelefono());
 			ps.setString(6,	personalMedico.getEmail());
 			ps.setString(7, personalMedico.getRnc());
-			ps.setString(8, personalMedico.getCredencialEncriptada());
-			ps.setObject(9, personalMedico.getUltimoAcceso());
+			ps.setString(8,personalMedico.getRol().name());
+			ps.setString(9, personalMedico.getCredencialEncriptada());
+			ps.setObject(10, personalMedico.getUltimoAcceso());
+			
 			ps.executeUpdate();
 			System.out.println("Se inserto los datos");
-		}catch(SQLException e){
-			System.out.println("Error de sql: " + e);
-			e.printStackTrace();
 		}
 				
 	}}

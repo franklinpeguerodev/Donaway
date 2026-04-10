@@ -1,7 +1,7 @@
 package com.donaway.dao.impl.donacion;
 
 import com.donaway.dao.donacion.IDonanteDao;
-import com.donaway.model.donacion.Donante;
+import com.donaway.model.persona.Donante;
 import com.donaway.utils.db.ConexionDbDonaway;
 import java.sql.Connection;
 
@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class DonanteImpl implements IDonanteDao {
-	
+
 	@Override
-	public void registrarDonante(Donante donante) {
+	public void registrarDonante(Donante donante) throws SQLException {
 		String sql = "INSERT INTO donante(document_id_donante,nombre,sexo,fecha_nacimiento,telefono,"
 				+ "email,fecha_registro,tipo_sangre,factor_rh,ultima_donacion,estado_disponibilidad,autorizacion_contacto)"
 				+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -36,9 +36,6 @@ public class DonanteImpl implements IDonanteDao {
 			ps.setBoolean(12,donante.getAutorizacionContacto());;
 			ps.executeUpdate();
 			System.out.print("se inserto un nuevo Donante");
-		}catch(SQLException e){
-			System.out.print("Error de sql" + e);
-			e.printStackTrace();
 		}
 		
 	}

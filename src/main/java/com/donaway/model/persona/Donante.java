@@ -1,4 +1,4 @@
-package com.donaway.model.donacion;
+package com.donaway.model.persona;
 import com.donaway.model.user.Persona;
 
 import java.time.LocalDateTime;

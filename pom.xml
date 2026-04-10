@@ -15,6 +15,21 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
   </properties>
   <dependencies>
   	<dependency>
+  		<groupId>com.fasterxml.uuid</groupId>
+  		<artifactId>java-uuid-generator</artifactId>
+  		<version>4.3.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.aventrix.jnanoid</groupId>
+  		<artifactId>jnanoid</artifactId>
+  		<version>1.0.1</version>
+  	</dependency>
+  	<dependency>
+  	<groupId>org.mindrot</groupId>
+  	<artifactId>jbcrypt</artifactId>
+  	<version>0.4</version>
+  	</dependency>
+  	<dependency>
   		<groupId>org.openjfx</groupId>
   		<artifactId>javafx-controls</artifactId>
   		<version>21</version>
@@ -28,6 +43,7 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
   		<groupId>org.controlsfx</groupId>
   		<artifactId>controlsfx</artifactId>
   		<version>11.1.2</version>
+  		
   	</dependency>
   	<dependency>
   	<groupId>com.mysql</groupId>
@@ -40,14 +56,14 @@ https://maven.apache.org/xsd/maven-4.0.0.xsd">
   		<version>3.0.0</version>
   	</dependency>
   	<dependency>
-  		<groupId>com.h2database</groupId>
-  		<artifactId>h2</artifactId>
-  		<version>2.2.224</version>
-  	</dependency>
-  	<dependency>
   	<groupId>com.zaxxer</groupId>
   	<artifactId>HikariCP</artifactId>
   	<version>5.1.0</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.mindrot</groupId>
+  		<artifactId>jbcrypt</artifactId>
+  		<version>0.4</version>
   	</dependency>
   </dependencies>
   <build>

@@ -1,7 +1,7 @@
 package com.donaway.dao.impl.donacion;
 
 import com.donaway.dao.donacion.IReceptorDao;
-import com.donaway.model.donacion.Receptor;
+import com.donaway.model.persona.Receptor;
 import com.donaway.utils.db.ConexionDbDonaway;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class ReceptorImpl implements IReceptorDao {
 	
 	@Override
-	public void registrarReceptorDonante(Receptor receptor){
+	public void registrarReceptorDonante(Receptor receptor) throws SQLException{
 		String sql="INSERT INTO receptor (document_id_receptor,nombre,sexo,fecha_nacimiento,telefono,email,fechaRegistro"
 				+ "peso,tipo_sangre,factor_rh) VALUES (?,?,?,?,?,?,?,?,?,?)";
 		try(Connection conn = ConexionDbDonaway.getConnection();
@@ -26,11 +26,7 @@ public class ReceptorImpl implements IReceptorDao {
 			ps.setString(10,receptor.getFactorRh());
 			ps.executeUpdate();
 			System.out.println("Se inserto");
-		}catch(SQLException e){
-			System.out.println("Error de sql: "+e );
-			e.printStackTrace();
 		}
-	
 	
 	
 	}

@@ -1,7 +1,15 @@
 package com.donaway.dao.donacion;
-import com.donaway.model.donacion.Receptor;
+
+
+
+import java.sql.SQLException;
+
+import com.donaway.model.persona.Receptor;
+
+
+
 public interface IReceptorDao {
-	void registrarReceptorDonante(Receptor receptor);
+	void registrarReceptorDonante(Receptor receptor) throws SQLException;
 		
 	
 }

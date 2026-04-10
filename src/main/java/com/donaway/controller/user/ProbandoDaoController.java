@@ -1,6 +1,7 @@
 package com.donaway.controller.user;
+import com.donaway.model.persona.Donante;
 import com.donaway.service.DonanteServices;
-import com.donaway.model.donacion.Donante;
+
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -79,9 +80,6 @@ public class ProbandoDaoController {
 				  autorizacionContacto
 				  );
 		    DonanteServices services = new DonanteServices();
-		    boolean res =services.procesarNuevoDonante(donante);
-		  if (res) {
-			  System.out.println("Ready");
-			  
-		  }
+		   services.procesarNuevoDonante(donante);
+
 		}}
