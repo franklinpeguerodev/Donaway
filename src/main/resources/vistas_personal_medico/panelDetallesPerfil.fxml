@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="720.0" prefWidth="904.0"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.donaway.controller.controllerpersonalmedico.ControllerGraficosIndependiente">
+
+   <children>
+
+      <VBox layoutX="70.0" layoutY="14.0" prefHeight="394.0" prefWidth="368.0" styleClass="borders_detalle-usuario">
+         <children>
+            <Label styleClass="titulo-detalles" text="Detalles del usuario"/>
+            <VBox>
+               <children>
+                  <Label styleClass="detalles" text="Nombre:"/>
+                  <Label fx:id="lbl_nombre_usuario" styleClass="detalles-respuestas" text="Label"/>
+                  <Label styleClass="detalles" text="Cargo:"/>
+                  <Label fx:id="lbl_cargo_usuario" styleClass="detalles-respuestas" text="Label"/>
+                  <Label styleClass="detalles" text="ID:"/>
+                  <Label fx:id="lbl_id_usuario" styleClass="detalles-respuestas" text="Label"/>
+                  <Label styleClass="detalles" text="Departamento:"/>
+                  <Label fx:id="lbl_departamento_usuario" styleClass="detalles-respuestas" text="Label"/>
+                  <Label styleClass="detalles" text="Region:"/>
+                  <Label fx:id="lbl_region_usuario" styleClass="detalles-respuestas" text="Label"/>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="10.0"/>
+         </padding>
+      </VBox>
+
+      <VBox layoutX="543.0" layoutY="50.0" prefHeight="238.0" prefWidth="284.0" styleClass="borders_detalles-acceso">
+         <children>
+            <Label styleClass="titulo-detalles-acceso" text="Actividad de acceso">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="32.0" preserveRatio="true">
+                     <image>
+                        <Image url="@/img_personal_medico/img_notificaciones/control-de-acceso.png"/>
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+
+            <VBox>
+               <children>
+                  <Label styleClass="detalles-respuestas" text="◆ Primer acceso:"/>
+                  <Label fx:id="lbl_primer_acesso" styleClass="detalles-acceso" text="Label"/>
+               </children>
+               <padding><Insets bottom="15.0"/></padding>
+            </VBox>
+
+            <VBox>
+               <children>
+                  <Label styleClass="detalles-respuestas" text="◆ Último acceso:"/>
+                  <Label fx:id="lbl_ultimo_acesso" styleClass="detalles-acceso" text="Label"/>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+
+      <VBox layoutX="482.0" layoutY="439.0" prefHeight="216.0" prefWidth="355.0" spacing="7.0" styleClass="borders_informes-graficos">
+         <children>
+            <Label styleClass="titulo-informes-graficos" text="Informes Graficos">
+               <graphic>
+                  <ImageView fitHeight="69.0" fitWidth="101.0" preserveRatio="true">
+                     <image>
+                        <Image url="@/img_personal_medico/img_notificaciones/grafico.png"/>
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+
+            <Button fx:id="btn_analisisEsperaCentral" styleClass="botones_general" text="Analisis en espera">
+               <graphic>
+                  <Circle fill="#b71e1e91" radius="4.0"/>
+               </graphic>
+            </Button>
+
+            <Button fx:id="btn_pacientesRecibidosCentral" styleClass="botones_general" text="Pacientes Recibidos">
+               <graphic>
+                  <Circle fill="#b1981bf2" radius="4.0"/>
+               </graphic>
+            </Button>
+
+            <Button fx:id="btn_sangreReservadaCentral" styleClass="botones_general" text="Sangre Reservada">
+               <graphic>
+                  <Circle fill="#1f93ffc0" radius="4.0"/>
+               </graphic>
+            </Button>
+         </children>
+      </VBox>
+
+      <HBox layoutX="29.0" layoutY="605.0">
+         <children>
+            <Button styleClass="botones_cerrar" text="Cerrar Sesión">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="96.0" preserveRatio="true">
+                     <image>
+                        <Image url="@/img_personal_medico/img_notificaciones/cerrar-con-llave.png"/>
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+
+   </children>
+
+   <stylesheets>
+      <URL value="@/style_personal_medico/layout/informacion-usuario.css"/>
+      <URL value="@/style_personal_medico/componentes_inicio/botones.css"/>
+   </stylesheets>
+
+</AnchorPane>

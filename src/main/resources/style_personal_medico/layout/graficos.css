@@ -1,0 +1,93 @@
+.titulo_grafica{
+-fx-font-family: "Shelten";
+    -fx-text-fill: rgba(148, 26, 26, 0.839) !important;
+    -fx-font-size: 17px ;
+    -fx-font-weight: bold;
+}
+
+.pie_chart_label{
+     -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: rgb(143, 134, 134) !important;
+    -fx-font-size: 12px ;
+    -fx-font-style: italic;
+   
+}
+
+.label-graficos{
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(117, 64, 64) !important;
+    -fx-font-size: 27px ;
+    -fx-font-weight: bold;
+}
+/* Sombras para el PieChart */
+.chart-pie {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 4, 4);
+}
+
+/* Sombras para las barras del BarChart */
+.chart-bar {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 8, 0, 3, 3);
+}
+
+/* Sombras para el área del AreaChart */
+.chart-series-area-line {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 5);
+}
+
+/* Opcional: Sombra para todo el contenedor de la gráfica */
+.chart {
+    -fx-padding: 15px;
+    -fx-background-color: white; /* Asegura un fondo para que la sombra resalte */
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0.2, 0, 0);
+}
+/* 1. Estilo para el título de la gráfica */
+.chart-title {
+    -fx-font-family: "Segoe UI Black";
+    -fx-font-size: 18px;
+    -fx-text-fill: #460606; /* Tu color institucional */
+    -fx-padding: 0 0 10 0;
+}
+
+/* 2. Estilo para los nombres en los ejes (X e Y) */
+.axis-label {
+    -fx-font-family: "Segoe UI";
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 14px;
+}
+
+/* 3. Estilo para los números y marcas de los ejes */
+.axis {
+    -fx-tick-label-font-family: "Segoe UI";
+    -fx-tick-label-font-size: 12px;
+    -fx-tick-label-fill: #555555;
+}
+
+/* 4. Estilo para la leyenda (los cuadritos de abajo/lados) */
+.chart-legend {
+    -fx-background-color: transparent;
+    -fx-padding: 15px;
+}
+
+.chart-legend-item {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-text-fill: #34495e;
+}
+
+/* 5. Etiquetas dentro del PieChart */
+.chart-pie-label {
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 12px;
+    -fx-fill: #2c3e50;
+}
+.menu_navegacion{
+    -fx-padding: 20; 
+    -fx-background-color: #361515a5; 
+    -fx-border-width: 0 1 0 0;
+    -fx-border-radius: 0 12 12 12; 
+    -fx-background-radius: 0 12 12 12;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+}

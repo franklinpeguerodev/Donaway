@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="801.0" prefWidth="655.0" stylesheets="@/style_personal_medico/layout/detalles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.controllerpersonalmedico.ControladorCentroNotificaciones">
+   <children>
+      <Label layoutX="84.0" layoutY="68.0" prefHeight="111.0" prefWidth="475.0" styleClass="titulo-detalles" text="Centro de notificaciones">
+         <graphic>
+            <ImageView fitHeight="104.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/img_personal_medico/img_notificaciones/notificaciones.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <Label fx:id="lbl_titulo_notificacion" layoutX="84.0" layoutY="189.0" prefHeight="95.0" prefWidth="377.0" styleClass="titulo-notifi" text="Aqui va el asunto de la notificacion" />
+      <Label fx:id="lbl_tiempo_notificacion" layoutX="368.0" layoutY="272.0" styleClass="fecha-noti" text="Hace, tiempo" />
+      <Separator layoutX="56.0" layoutY="303.0" prefHeight="6.0" prefWidth="533.0" style="-fx-background-color: rgb(102, 23, 23);" />
+      <Pane layoutX="43.0" layoutY="324.0" prefHeight="455.0" prefWidth="559.0">
+         <children>
+            <TextFlow fx:id="texto_notificaciones" layoutX="7.0" layoutY="8.0" prefHeight="438.0" prefWidth="544.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

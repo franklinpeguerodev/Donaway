@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="638.0" styleClass="fondo-total" stylesheets="@/style_personal_medico/formularios/registro_institucion.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="-5.0" prefHeight="155.0" prefWidth="644.0" styleClass="fondo">
+         <children>
+            <ImageView fitHeight="180.0" fitWidth="399.0" layoutX="12.0" layoutY="-33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/img_personal_medico/Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="244.0" layoutY="77.0" prefHeight="52.0" prefWidth="323.0" styleClass="header-subtitulo" text="Gestión de Donaciones y Reservas Sanguíneas" />
+            <Label layoutX="159.0" layoutY="43.0" styleClass="header" text="onaWay RD" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="66.0" layoutY="193.0" prefHeight="67.0" prefWidth="479.0" styleClass="titulo_registro-institucion" text="        Registro de institución">
+         <graphic>
+            <ImageView fitHeight="49.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/img_personal_medico/img_generales/banco.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <VBox layoutX="66.0" layoutY="315.0" prefHeight="306.0" prefWidth="501.0">
+         <children>
+            <HBox prefHeight="61.0" prefWidth="501.0" spacing="30.0">
+               <children>
+                  <Label styleClass="texto_form-institucion" text="Nombre de la institución">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="38.0" prefWidth="196.0" promptText="Clinica/Hospital" styleClass="text_busqueda" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="61.0" prefWidth="501.0" spacing="76.0">
+               <children>
+                  <Label styleClass="texto_form-institucion" text="RNC Institucional">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="38.0" prefWidth="203.0" promptText="123456789" styleClass="text_busqueda" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="71.0" prefHeight="61.0" prefWidth="501.0" spacing="31.0">
+               <children>
+                  <Label styleClass="texto_form-institucion" text="Contacto De Emergencia">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="38.0" prefWidth="198.0" promptText="987654321" styleClass="text_busqueda" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
