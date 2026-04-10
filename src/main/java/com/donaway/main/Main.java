@@ -6,16 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.net.URL;
+import java.sql.SQLException;
 
-import com.donaway.dev.db.WebServerBD;
-import com.donaway.model.donacion.Donante;
-import com.donaway.service.DonanteServices;
-// Servidor web de la BD para comodidad para el desorrollo  
-
+import com.donaway.utils.db.ConexionDbDonaway;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        URL fxmlLocation = getClass().getResource("/view/user/probandoDao.fxml");
+        URL fxmlLocation = getClass().getResource("/Vistas_FXML/Plantilla_inicio.fxml");
         
         if (fxmlLocation == null) {
             System.out.println("Error: No se encontró el archivo FXML en la ruta especificada.");
@@ -29,9 +26,12 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-   
-    	WebServerBD.inicializar();
-    	
+ 
+    	try {
+    		ConexionDbDonaway.getConnection();
+    	}catch (SQLException e) {
+    		System.out.println("no sirvio");
+    	}
         launch(args); 
     }
 }

@@ -1,3 +1,4 @@
+
 package com.donaway.model.ubicacion;
 
 public class Ubicacion {
