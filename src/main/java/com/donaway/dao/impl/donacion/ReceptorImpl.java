@@ -1,7 +1,7 @@
 package com.donaway.dao.impl.donacion;
 
 import com.donaway.dao.donacion.IReceptorDao;
-import com.donaway.model.donacion.Receptor;
+import com.donaway.model.persona.Receptor;
 import com.donaway.utils.db.ConexionDbDonaway;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

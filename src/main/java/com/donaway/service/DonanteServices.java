@@ -1,11 +1,15 @@
 package com.donaway.service;
 import com.donaway.dao.donacion.IDonanteDao;
 import com.donaway.dao.impl.donacion.DonanteImpl;
+
 import com.donaway.exception.ValidacionException;
-import com.donaway.model.donacion.Donante;
+
 import com.donaway.utils.mensaje.Mensaje;
 
 import	java.sql.SQLException;
+
+import com.donaway.model.persona.Donante;
+
 
 public class DonanteServices {
 	private IDonanteDao donanteDao = new DonanteImpl();

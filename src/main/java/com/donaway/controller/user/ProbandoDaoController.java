@@ -1,6 +1,7 @@
 package com.donaway.controller.user;
+import com.donaway.model.persona.Donante;
 import com.donaway.service.DonanteServices;
-import com.donaway.model.donacion.Donante;
+
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
