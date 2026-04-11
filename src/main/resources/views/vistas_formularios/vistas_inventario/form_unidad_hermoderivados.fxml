@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="867.0" prefWidth="846.0" styleClass="fondo" stylesheets="@../../../style/style_inventario/formulario_unidad_hermoderivados.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="86.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="             Registro de Ingreso de Unidades">
+         <graphic>
+            <ImageView fitHeight="51.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/img_inventario/unidad_sangre.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <VBox layoutX="66.0" layoutY="123.0" prefHeight="644.0" prefWidth="702.0" spacing="20.0" styleClass="border_registro">
+         <children>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="200.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="153.0" styleClass="texto_form" text="◇ ID Hermoderivados">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="Nombre...." styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="200.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="154.0" styleClass="texto_form" text="◇ Código De Barras">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="Cédula..." styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="171.0" prefHeight="60.0" prefWidth="308.0" spacing="200.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="154.0" styleClass="texto_form" text="◇ ID Donación">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="123456789" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="200.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="155.0" styleClass="texto_form" text="◇ RNC Institucional">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="123456789" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="251.0" prefHeight="60.0" prefWidth="308.0" spacing="200.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="151.0" styleClass="texto_form" text="◇ Volumen de Extracción">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="Volumen (ml)" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="200.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="155.0" styleClass="texto_form" text="◇ Tipo De Componente">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="411.0" prefHeight="60.0" prefWidth="308.0" spacing="200.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="153.0" styleClass="texto_form" text="◇ Estado De La Unidad">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="200.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="153.0" styleClass="texto_form" text="◇ Fecha De Caducidad">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker prefHeight="39.0" prefWidth="160.0" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="350.0" styleClass="fondo-total_ubicacion" stylesheets="@../../../style/style_general/formularios/form_ubicacion.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="27.0" layoutY="14.0" prefHeight="39.0" prefWidth="299.0" styleClass="titulo_registro" text="Ubicación">
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/img_registros_login/mapa.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <VBox layoutX="24.0" layoutY="82.0" prefHeight="580.0" prefWidth="301.0" spacing="20.0" styleClass="border_registro">
+         <children>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="ID Ubicación">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txt_ubicacion" prefHeight="34.0" prefWidth="155.0" promptText="98765432" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Región">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="combo_region" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Provincia">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="combo_provincia" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="157.0" prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Municipio">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="combo_municipio" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="250.0" prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Distrito">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="combo_distrito" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="303.0" prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Sección">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="combo_seccion" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="375.0" prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Barrio">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="combo_barrio" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="55.0" prefWidth="299.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Dirección">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txt_direccion" prefHeight="34.0" prefWidth="155.0" promptText="123456789" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

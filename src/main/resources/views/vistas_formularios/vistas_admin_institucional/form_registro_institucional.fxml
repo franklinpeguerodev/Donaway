@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="788.0" prefWidth="796.0" styleClass="fondo-total" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="-5.0" prefHeight="139.0" prefWidth="796.0" styleClass="fondo">
+         <children>
+            <ImageView fitHeight="180.0" fitWidth="399.0" layoutX="12.0" layoutY="-33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/Logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="244.0" layoutY="77.0" prefHeight="52.0" prefWidth="323.0" styleClass="header-subtitulo" text="Gestión de Donaciones y Reservas Sanguíneas" />
+            <Label layoutX="159.0" layoutY="43.0" styleClass="header" text="onaWay RD" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="158.0" layoutY="194.0" prefHeight="67.0" prefWidth="479.0" styleClass="titulo_registro-institucion" text="        Registro de institución">
+         <graphic>
+            <ImageView fitHeight="49.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/img_registros_login/banco.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <VBox layoutX="139.0" layoutY="318.0" prefHeight="344.0" prefWidth="518.0" spacing="25.0">
+         <children>
+            <HBox prefHeight="61.0" prefWidth="501.0" spacing="30.0">
+               <children>
+                  <Label styleClass="texto_form-institucion" text=" ✦Nombre de la institución">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="38.0" prefWidth="196.0" promptText="Clinica/Hospital" styleClass="text_busqueda" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="71.0" prefHeight="61.0" prefWidth="501.0" spacing="76.0">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="149.0" styleClass="texto_form-institucion" text="✦ RNC Institucional">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="38.0" prefWidth="203.0" promptText="123456789" styleClass="text_busqueda" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="61.0" prefWidth="501.0" spacing="76.0">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="186.0" styleClass="texto_form-institucion" text="✦   Ubicación">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button fx:id="btn_ubicacion" mnemonicParsing="false" styleClass="botones_general">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/img_registros_login/mapa.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="61.0" prefWidth="501.0" spacing="30.0">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="198.0" styleClass="texto_form-institucion" text="✦ Fecha De Registro">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker prefHeight="39.0" prefWidth="203.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="71.0" prefHeight="61.0" prefWidth="501.0" spacing="31.0">
+               <children>
+                  <Label styleClass="texto_form-institucion" text="✦Contacto De Emergencia">
+                     <HBox.margin>
+                        <Insets top="8.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="38.0" prefWidth="198.0" promptText="987654321" styleClass="text_busqueda" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../../../style/style_admin/registro_institucion.css" />
+      <URL value="@../../../style/style_general/componentes_inicio/botones.css" />
+   </stylesheets>
+</AnchorPane>

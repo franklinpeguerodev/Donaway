@@ -15,18 +15,18 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1509.0" prefWidth="846.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1509.0" prefWidth="846.0" styleClass="fondo" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="86.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="               Registro De Nuevo Donante">
          <graphic>
             <ImageView fitHeight="51.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@/img_personal_medico/img_inicio_bioanalista/lupa.png" />
+                  <Image url="@../../../img/img_personal_medico/img_registros/lupa.png" />
                </image>
             </ImageView>
          </graphic>
       </Label>
-      <VBox layoutX="66.0" layoutY="123.0" prefHeight="541.0" prefWidth="301.0" spacing="20.0" styleClass="border_registro">
+      <VBox layoutX="66.0" layoutY="123.0" prefHeight="540.0" prefWidth="301.0" spacing="20.0" styleClass="border_registro">
          <children>
             <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
                <children>
@@ -113,12 +113,23 @@
             </HBox>
             <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
                <children>
-                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Region">
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Ubicación">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+                  <Button mnemonicParsing="false" prefHeight="71.0" prefWidth="52.0" styleClass="botones_general">
+                     <graphic>
+                        <ImageView fitHeight="44.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" styleClass="botones_general">
+                           <image>
+                              <Image url="@../../../img/img_registros_login/mapa.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Button>
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -193,19 +204,6 @@
                   <Insets left="10.0" top="15.0" />
                </padding>
             </HBox>
-            <HBox layoutX="11.0" layoutY="251.0" prefHeight="60.0" prefWidth="308.0" spacing="8.0">
-               <children>
-                  <Label prefHeight="27.0" prefWidth="119.0" styleClass="texto_form" text="Última Donación">
-                     <HBox.margin>
-                        <Insets top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <DatePicker prefHeight="35.0" prefWidth="149.0" styleClass="text_busqueda" />
-               </children>
-               <padding>
-                  <Insets left="10.0" top="15.0" />
-               </padding>
-            </HBox>
             <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
                <children>
                   <Label prefHeight="27.0" prefWidth="153.0" styleClass="texto_form" text="Autorización de contacto">
@@ -225,7 +223,7 @@
          <graphic>
             <ImageView fitHeight="51.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@/img_personal_medico/img_inicio_bioanalista/graficos-en-movimiento.png" />
+                  <Image url="@../../../img/img_personal_medico/img_registros/graficos-en-movimiento.png" />
                </image>
             </ImageView>
          </graphic>
@@ -268,14 +266,14 @@
          <graphic>
             <ImageView fitHeight="51.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@/img_personal_medico/img_inicio_bioanalista/diagrama.png" />
+                  <Image url="@../../../img/img_personal_medico/img_registros/diagrama.png" />
                </image>
             </ImageView>
          </graphic>
       </Label>
    </children>
    <stylesheets>
-      <URL value="@/style_personal_medico/formularios/formulario_nuevoRegistro.css" />
-      <URL value="@/style_personal_medico/componentes_inicio/botones.css"/>
-</stylesheets>
+      <URL value="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" />
+      <URL value="@../../../style/style_general/componentes_inicio/botones.css" />
+   </stylesheets>
 </AnchorPane>

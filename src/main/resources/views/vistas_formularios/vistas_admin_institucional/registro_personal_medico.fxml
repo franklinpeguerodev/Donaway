@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="846.0" styleClass="fondo" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="86.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="               Registro De Personal Medico">
+         <graphic>
+            <ImageView fitHeight="51.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/img_registros_login/equipo-medico.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <VBox layoutX="66.0" layoutY="123.0" prefHeight="540.0" prefWidth="301.0" spacing="20.0" styleClass="border_registro">
+         <children>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Nombre Completo">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txt_nombre" prefHeight="34.0" prefWidth="155.0" promptText="Nombre...." styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Cédula">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txt_cedula" prefHeight="34.0" prefWidth="155.0" promptText="Cédula..." styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Sexo">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <VBox prefHeight="43.0" prefWidth="97.0" spacing="5.0" styleClass="radio-button_genero">
+                     <children>
+                        <RadioButton fx:id="btn_femenino" mnemonicParsing="false" prefHeight="16.0" prefWidth="87.0" styleClass="radio-button_genero" text="Femenino" />
+                        <RadioButton fx:id="btn_masculino" mnemonicParsing="false" styleClass="radio-button_genero" text="Masculino" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Teléfono ">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txt_telefono" prefHeight="34.0" prefWidth="155.0" promptText="123456789" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="121.0" styleClass="texto_form" text="Fecha de nacimiento">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="picker_fecha_nacimiento" prefHeight="39.0" prefWidth="137.0" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Email">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txt_correo" prefHeight="34.0" prefWidth="155.0" promptText="Su_nombre@gmail.com" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="453.0" layoutY="119.0" prefHeight="540.0" prefWidth="301.0" spacing="20.0" styleClass="border_registro">
+         <children>
+            <HBox prefHeight="67.0" prefWidth="299.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Ubicación">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button mnemonicParsing="false" styleClass="botones_general" stylesheets="@../../style/style_personal_medico/componentes_inicio/botones.css">
+                     <graphic>
+                        <ImageView fx:id="btn_ubicacion" fitHeight="47.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/img_registros_login/mapa.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="91.0" prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Rol">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="combo_rol" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="RNC Institucional">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txt_rnc_institucional" prefHeight="34.0" prefWidth="155.0" promptText="98765432" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="119.0" styleClass="texto_form" text="Fecha de Registro">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="picker_fecha_registro" prefHeight="39.0" prefWidth="149.0" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="171.0" prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="119.0" styleClass="texto_form" text="Último Acceso">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="picker_fecha_ultimo_acceso" prefHeight="35.0" prefWidth="149.0" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="Contraseña">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txt_password" prefHeight="34.0" prefWidth="155.0" promptText="123456789" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <stylesheets>
+      <URL value="@../../../style/style_admin/formulario_personalmedico.css" />
+      <URL value="@../../../style/style_general/componentes_inicio/botones.css" />
+   </stylesheets>
+</AnchorPane>
