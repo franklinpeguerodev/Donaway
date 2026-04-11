@@ -2,22 +2,24 @@ package com.donaway.model.donacion;
 
 public class DatosTriaje {
 
-	private int idTriaje;
-	private int idDonacion;
-	private float pesoLbs;
+	private String idTriaje;
+	private String idDonacion;
+	private String codigoReferencia;
+	private double pesoLbs;
 	private int presionSistolica;
 	private int presionDiastolica;
 	private int pulso;
-	private float temperatura;
-	private float hemoglobina;
+	private double temperatura;
+	private double hemoglobina;
 	
 	
 	//constructores
-	public DatosTriaje(int idTriaje, int idDonacion, float pesoLbs, int presionSistolica, int presionDiastolica,
-			int pulso, float temperatura, float hemoglobina) {
+	public DatosTriaje(String idTriaje, String idDonacion, String codigoReferencia, double pesoLbs, int presionSistolica, int presionDiastolica,
+			int pulso, double temperatura, double hemoglobina) {
 		super();
 		this.idTriaje = idTriaje;
 		this.idDonacion = idDonacion;
+		this.codigoReferencia = codigoReferencia;
 		this.pesoLbs = pesoLbs;
 		this.presionSistolica = presionSistolica;
 		this.presionDiastolica = presionDiastolica;
@@ -30,22 +32,22 @@ public class DatosTriaje {
 	}
 	
 	//getters and setters
-	public int getIdTriaje() {
+	public String getIdTriaje() {
 		return idTriaje;
 	}
-	public void setIdTriaje(int idTriaje) {
+	public void setIdTriaje(String idTriaje) {
 		this.idTriaje = idTriaje;
 	}
-	public int getIdDonacion() {
+	public String getIdDonacion() {
 		return idDonacion;
 	}
-	public void setIdDonacion(int idDonacion) {
+	public void setIdDonacion(String idDonacion) {
 		this.idDonacion = idDonacion;
 	}
-	public float getPesoLbs() {
+	public double getPesoLbs() {
 		return pesoLbs;
 	}
-	public void setPesoLbs(float pesoLbs) {
+	public void setPesoLbs(double pesoLbs) {
 		this.pesoLbs = pesoLbs;
 	}
 	public int getPresionSistolica() {
@@ -66,17 +68,23 @@ public class DatosTriaje {
 	public void setPulso(int pulso) {
 		this.pulso = pulso;
 	}
-	public float getTemperatura() {
+	public double getTemperatura() {
 		return temperatura;
 	}
-	public void setTemperatura(float temperatura) {
+	public void setTemperatura(double temperatura) {
 		this.temperatura = temperatura;
 	}
-	public float getHemoglobina() {
+	public double getHemoglobina() {
 		return hemoglobina;
 	}
-	public void setHemoglobina(float hemoglobina) {
+	public void setHemoglobina(double hemoglobina) {
 		this.hemoglobina = hemoglobina;
+	}
+	public String getCodigoReferencia() {
+		return codigoReferencia;
+	}
+	public void setCodigoReferencia(String codigoReferencia) {
+		this.codigoReferencia = codigoReferencia;
 	}
 	
 	

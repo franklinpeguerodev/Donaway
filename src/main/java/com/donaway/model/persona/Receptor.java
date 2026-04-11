@@ -1,16 +1,20 @@
 package com.donaway.model.persona;
 import com.donaway.model.user.Persona;
+import com.donaway.utils.constants.FactorRh;
+import com.donaway.utils.constants.Sexo;
+import com.donaway.utils.constants.TipoSangre;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 public class Receptor extends Persona {
 	private BigDecimal peso;
-	private String tipoSangre;
-	private String factorRh;
+	private TipoSangre tipoSangre;
+	private FactorRh factorRh;
 
-	public Receptor(String documentId,String nombre,String sexo,LocalDate fechaNacimientrto,String telefono,LocalDateTime fechaRegistro,
-			BigDecimal peso,String tipoSangre,String factorRh ) {
-		super();
+	public Receptor(String documentId,String nombre,Sexo sexo,LocalDate fechaNacimiento,String telefono,String email,LocalDateTime fechaRegistro,
+			BigDecimal peso,TipoSangre tipoSangre,FactorRh factorRh ) {
+		super(documentId,nombre,sexo,fechaNacimiento,telefono,email,fechaRegistro);
 		this.peso=peso;
 		this.tipoSangre=tipoSangre;
 		this.factorRh=factorRh;
@@ -24,18 +28,18 @@ public class Receptor extends Persona {
 	}
 		
 	
-	public String getTipoSangre() {
+	public TipoSangre getTipoSangre() {
 		return this.tipoSangre;
 	}
-	public void setTipoSangre(String tipoSangre) {
+	public void setTipoSangre(TipoSangre tipoSangre) {
 		this.tipoSangre=tipoSangre;
 	}
 	
 	
-	public String getFactorRh() {
+	public FactorRh getFactorRh() {
 		return this.factorRh;
 	}
-	public void setFactorRh (String factorRh) {
+	public void setFactorRh (FactorRh factorRh) {
 		this.factorRh=factorRh;
 	}
 }

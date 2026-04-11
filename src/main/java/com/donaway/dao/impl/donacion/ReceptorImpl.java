@@ -16,14 +16,14 @@ public class ReceptorImpl implements IReceptorDao {
 			PreparedStatement ps = conn.prepareStatement(sql)){
 			ps.setString(1,receptor.getDocumentoId());
 			ps.setString(2,receptor.getNombre());
-			ps.setString(3,receptor.getSexo());
+			ps.setString(3,receptor.getSexo().name());
 			ps.setObject(4,receptor.getFechaNacimiento());
 			ps.setString(5,receptor.getTelefono());
 			ps.setString(6,receptor.getEmail());
 			ps.setObject(7,receptor.getFechaRegistro());
 			ps.setBigDecimal(8,receptor.getPeso());
-			ps.setString(9,receptor.getTipoSangre());
-			ps.setString(10,receptor.getFactorRh());
+			ps.setString(9,receptor.getTipoSangre().name());
+			ps.setString(10,receptor.getFactorRh().name());
 			ps.executeUpdate();
 			System.out.println("Se inserto");
 		}

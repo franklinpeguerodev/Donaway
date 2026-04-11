@@ -2,6 +2,7 @@ package com.donaway.model.user;
 import java.time.LocalDateTime;
 import java.time.LocalDate;
 import com.donaway.utils.constants.RolConstant;
+import com.donaway.utils.constants.Sexo;
 public class PersonalMedico extends Persona{
 	
 	protected String rnc;
@@ -10,7 +11,7 @@ public class PersonalMedico extends Persona{
 	protected LocalDateTime ultimoAcceso;
 
 
-	public PersonalMedico (String documentId, String nombre, String sexo, LocalDate fechaNacimiento,String telefono,
+	public PersonalMedico (String documentId, String nombre, Sexo sexo, LocalDate fechaNacimiento,String telefono,
 		String email,LocalDateTime fechaRegistro,String rnc, RolConstant rol,String credencialEncriptada, LocalDateTime ultimoAcceso) {
 		super(documentId,nombre,sexo,fechaNacimiento,telefono,email,fechaRegistro);
 		this.rnc=rnc;
@@ -48,7 +49,7 @@ public class PersonalMedico extends Persona{
 		return this.ultimoAcceso;
 	}
 	public void setUltimoAcceso (LocalDateTime ultimoAcceso) {
-		
+		this.ultimoAcceso = ultimoAcceso;
 	}
 }
 

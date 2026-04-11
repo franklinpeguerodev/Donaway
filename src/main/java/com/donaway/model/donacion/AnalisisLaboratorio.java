@@ -2,8 +2,9 @@ package com.donaway.model.donacion;
 
 public class AnalisisLaboratorio {
 
-	private int idAnalisis;
-	private int idDonacion;
+	private String idAnalisis;
+	private String idDonacion;
+	private String codigoReferencia;
 	private boolean vih;
 	private boolean hepatitisB;
 	private boolean hepatitisC;
@@ -14,11 +15,12 @@ public class AnalisisLaboratorio {
 	
 	
 	// constructores
-	public AnalisisLaboratorio(int idAnalisis, int idDonacion, boolean vih, boolean hepatitisB, boolean hepatitisC,
+	public AnalisisLaboratorio(String idAnalisis, String idDonacion, String codigoReferencia, boolean vih, boolean hepatitisB, boolean hepatitisC,
 			boolean sifilis, boolean chagas, boolean nat, String otros) {
 		super();
 		this.idAnalisis = idAnalisis;
 		this.idDonacion = idDonacion;
+		this.codigoReferencia = codigoReferencia;
 		this.vih = vih;
 		this.hepatitisB = hepatitisB;
 		this.hepatitisC = hepatitisC;
@@ -36,22 +38,22 @@ public class AnalisisLaboratorio {
 
 	//getters and setters
 	
-	public int getIdAnalisis() {
+	public String getIdAnalisis() {
 		return idAnalisis;
 	}
 
 
-	public void setIdAnalisis(int idAnalisis) {
+	public void setIdAnalisis(String idAnalisis) {
 		this.idAnalisis = idAnalisis;
 	}
 
 
-	public int getIdDonacion() {
+	public String getIdDonacion() {
 		return idDonacion;
 	}
 
 
-	public void setIdDonacion(int idDonacion) {
+	public void setIdDonacion(String idDonacion) {
 		this.idDonacion = idDonacion;
 	}
 
@@ -123,6 +125,16 @@ public class AnalisisLaboratorio {
 
 	public void setOtros(String otros) {
 		this.otros = otros;
+	}
+
+
+	public String getCodigoReferencia() {
+		return codigoReferencia;
+	}
+
+
+	public void setCodigoReferencia(String codigoReferencia) {
+		this.codigoReferencia = codigoReferencia;
 	}
 	
 	

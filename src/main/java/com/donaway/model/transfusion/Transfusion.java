@@ -2,24 +2,27 @@ package com.donaway.model.transfusion;
 
 import java.time.LocalDateTime;
 
+import com.donaway.utils.constants.TipoTransfusion;
+
 public class Transfusion {
 
-	private int idTransfusion;
-	private int idSolicitud;
+	private String idTransfusion;
+	private String idSolicitud;
 	private String rnc;
 	private String codigoBarras;
-	private enum tipoTransfusion {DIRECTA, AUTOLOGA, ALOGENETICA}
+	private TipoTransfusion tipoTransfusionObj;
 	private LocalDateTime fechaTransfusion;
 	
 	//constructores
-	public Transfusion(int idTransfusion, int idSolicitud, String rnc, String codigoBarras,
-			LocalDateTime fechaTransfusion) {
+	public Transfusion(String idTransfusion, String idSolicitud, String rnc, String codigoBarras,
+			LocalDateTime fechaTransfusion, TipoTransfusion tipoTransfusionObj) {
 		super();
 		this.idTransfusion = idTransfusion;
 		this.idSolicitud = idSolicitud;
 		this.rnc = rnc;
 		this.codigoBarras = codigoBarras;
 		this.fechaTransfusion = fechaTransfusion;
+		this.tipoTransfusionObj = tipoTransfusionObj;
 	}
 
 	public Transfusion() {
@@ -28,19 +31,19 @@ public class Transfusion {
 	
 	//getters and setters
 
-	public int getIdTransfusion() {
+	public String getIdTransfusion() {
 		return idTransfusion;
 	}
 
-	public void setIdTransfusion(int idTransfusion) {
+	public void setIdTransfusion(String idTransfusion) {
 		this.idTransfusion = idTransfusion;
 	}
 
-	public int getIdSolicitud() {
+	public String getIdSolicitud() {
 		return idSolicitud;
 	}
 
-	public void setIdSolicitud(int idSolicitud) {
+	public void setIdSolicitud(String idSolicitud) {
 		this.idSolicitud = idSolicitud;
 	}
 
@@ -66,6 +69,14 @@ public class Transfusion {
 
 	public void setFechaTransfusion(LocalDateTime fechaTransfusion) {
 		this.fechaTransfusion = fechaTransfusion;
+	}
+
+	public TipoTransfusion getTipoTransfusionObj() {
+		return tipoTransfusionObj;
+	}
+
+	public void setTipoTransfusionObj(TipoTransfusion tipoTransfusionObj) {
+		this.tipoTransfusionObj = tipoTransfusionObj;
 	}
 	
 	

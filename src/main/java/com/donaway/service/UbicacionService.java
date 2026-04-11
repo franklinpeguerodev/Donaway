@@ -1,6 +1,7 @@
 package com.donaway.service;
 
 import com.donaway.dao.ubicacion.IUbicacionDao;
+import com.donaway.exception.ValidacionException;
 import com.donaway.model.ubicacion.Barrio;
 import com.donaway.model.ubicacion.Distrito;
 import com.donaway.model.ubicacion.Municipio;
@@ -9,7 +10,9 @@ import com.donaway.model.ubicacion.Region;
 import com.donaway.model.ubicacion.Seccion;
 import com.donaway.model.ubicacion.SubBarrio;
 import com.donaway.model.ubicacion.Ubicacion;
+import com.donaway.utils.mensaje.Mensaje;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +26,7 @@ public class UbicacionService {
 	
 	////////////////////////////////////////////////////////////////////////////
 	// metodo para validar un registro de ubicacicion 
-	public int registrarNuevaUbicacion (Ubicacion ubi) {
+	public String registrarNuevaUbicacion (Ubicacion ubi) {
 		
 		//verificacion de que no haya campos obligatorios vacios
 		if( ubi.getIdRegion() == 0 ||
@@ -34,40 +37,43 @@ public class UbicacionService {
 			ubi.getDireccion() == null 	||
 			ubi.getDireccion().trim().isEmpty()) {
 			
-			System.out.println("Error del service: No se han llenado campos de datos obligatorios");
-			return 0;
+			throw new ValidacionException(Mensaje.ERR_DATOS_INCOMPLETOS);
 			 
 		} 
-		////////////////////////////////////////////////////////////////////////////
 		
-		
-		
-		////////////////////////////////////////////////////////////////////////////
+		try {
 		//esto retonara la pk del ide para poder registrarlo
-		int devolverId = ubiDao.registrarUbicacion(ubi);
 		
-		if (devolverId > 0) {
-			
-			System.out.println("Se registro la ubicacion con exito. ID " + devolverId);
-
-		} else {
-			
-			System.out.println("Error del service: No se pudo completar el registro");
-			
-		}
+		String devolverId = ubiDao.registrarUbicacion(ubi);
+		
+			if (devolverId == null) {
 				
-		return devolverId;
+				throw new ValidacionException("No se pudo completar el registro de la ubicacion");
+			}
+				return devolverId;
+			
+		} catch (SQLException e) {
+			
+	        throw new ValidacionException(Mensaje.ERR_CONEXION);
+	    }
 	}
+				
 	////////////////////////////////////////////////////////////////////////////
 	
 
 	
 	////////////////////////////////////////////////////////////////////////////
+	
 	//metodo para acceder a las regiones 
 	public List<Region> obtenerTodasLasRegiones() {
 		
-		
+		try {
+			
 		return ubiDao.listaRegiones();
+		} catch (SQLException e) {
+			throw new ValidacionException(Mensaje.ERR_CONEXION);
+			
+		}
 	}
 	////////////////////////////////////////////////////////////////////////////
 	
@@ -77,14 +83,20 @@ public class UbicacionService {
 	//metodo para obtner la filtracion de las provincias por regiones
 	public List<Provincia> obtenerProvinciasPorRegion(int idRegion) {
 		
-		if (idRegion <= 0) {
+		try {
+			if (idRegion <= 0) {
+	
+				throw new ValidacionException(Mensaje.ERR_UBICACION_INCOMPLETA);
+				
+			}
 			
-			System.out.println("Error de service: id de region no valido, no se puede ingresar una provincia");
+			return ubiDao.listaProvinciasPorRegion(idRegion);
 			
-			return new ArrayList<>();
+		} catch (SQLException e) {
+			throw new ValidacionException(Mensaje.ERR_CONEXION);
+			
 		}
-		
-		return ubiDao.listaProvinciasPorRegion(idRegion);
+
 	}
 	////////////////////////////////////////////////////////////////////////////
 	
@@ -93,16 +105,19 @@ public class UbicacionService {
 	////////////////////////////////////////////////////////////////////////////
 	//metodo para obtner la filtracion de las municipios por provincias
 		public List<Municipio> obtenerMunicipioPorProvincia(int idProvincia) {
+			try {
+				if (idProvincia <= 0) {
+					
+					throw new ValidacionException(Mensaje.ERR_UBICACION_INCOMPLETA);
+				}
+				
+				return ubiDao.listaMunicipioPorProvincia(idProvincia);
 			
-			if (idProvincia <= 0) {
-				
-				System.out.println("Error de service: id de provincia no valido, no se puede ingresar un municipio");
-				
-				return new ArrayList<>();
+			} catch (SQLException e) {
+			throw new ValidacionException(Mensaje.ERR_CONEXION);
+		
 			}
-			
-			return ubiDao.listaMunicipioPorProvincia(idProvincia);
-		}
+		}	
 		////////////////////////////////////////////////////////////////////////////
 		
 		
@@ -112,14 +127,18 @@ public class UbicacionService {
 		//metodo para obtner la filtracion de los distritos por municipios
 		public List<Distrito> obtenerDistritoPorMunicipio(int idMunicipio) {
 			
-			if (idMunicipio <= 0) {
-				
-				System.out.println("Servise: No se estan opteniendo distritos");
-				
-				return new ArrayList<>();
-			}
 			
-			return ubiDao.listaDistritoPorMunicipio(idMunicipio);
+			try {
+				if (idMunicipio <= 0) {
+					
+					throw new ValidacionException(Mensaje.ERR_UBICACION_INCOMPLETA);
+				}
+				
+				return ubiDao.listaDistritoPorMunicipio(idMunicipio);
+				
+			} catch (SQLException e) {
+				throw new ValidacionException(Mensaje.ERR_CONEXION);
+			}
 		}	
 		////////////////////////////////////////////////////////////////////////////
 		
@@ -128,15 +147,16 @@ public class UbicacionService {
 		////////////////////////////////////////////////////////////////////////////
 		//metodo para obtner la filtracion de las secciones por municipios
 		public List<Seccion> obtenerSeccionPorMunicipio(int idMunicipio) {
+			try {		
+				if (idMunicipio <= 0) {
 					
-			if (idMunicipio <= 0) {
-				
-				System.out.println("Error de service: id de municipio no valido, no se puede ingresar una seccion");
-				
-				return new ArrayList<>();
+					throw new ValidacionException(Mensaje.ERR_UBICACION_INCOMPLETA);
+				}
+						
+				return ubiDao.listaSeccionPorMunicipio(idMunicipio);
+			} catch (SQLException e) {
+			throw new ValidacionException(Mensaje.ERR_CONEXION);
 			}
-					
-			return ubiDao.listaSeccionPorMunicipio(idMunicipio);
 		}	
 		////////////////////////////////////////////////////////////////////////////
 		
@@ -145,15 +165,15 @@ public class UbicacionService {
 		////////////////////////////////////////////////////////////////////////////
 		//metodo para obtner la filtracion de las secciones por distrito
 		public List<Seccion> obtenerSeccionPorDistrito(int idDistrito) {
-			
-			if (idDistrito <= 0) {
+			try {
+				if (idDistrito <= 0) {
+					return new ArrayList<>();
+				}
 				
-				System.out.println("Servise: No se estan opteniendo secciones por distritos");
-				
-				return new ArrayList<>();
+				return ubiDao.listaSeccionPorDistrito(idDistrito);
+			} catch (SQLException e) {
+				throw new ValidacionException(Mensaje.ERR_CONEXION);
 			}
-			
-			return ubiDao.listaSeccionPorDistrito(idDistrito);
 		}	
 		////////////////////////////////////////////////////////////////////////////
 		
@@ -162,15 +182,16 @@ public class UbicacionService {
 		////////////////////////////////////////////////////////////////////////////
 		//metodo para obtener la filtraccion de los barrios por las secciones
 		public List<Barrio> obtenerBarrioPorSeccion(int idSeccion) {
-			
-			if (idSeccion <= 0 ) {
+			try {
+				if (idSeccion <= 0 ) {
+					
+					throw new ValidacionException(Mensaje.ERR_UBICACION_INCOMPLETA);
+				}
 				
-				System.out.println("Error de service: id de seccion no valido, no se puede ingresar un barrio");
-				
-				return new ArrayList<>();
+				return ubiDao.listaBarrioPorSeccion(idSeccion);
+			} catch (SQLException e) {
+				throw new ValidacionException(Mensaje.ERR_CONEXION);
 			}
-			
-			return ubiDao.listaBarrioPorSeccion(idSeccion);
 		}		
 		////////////////////////////////////////////////////////////////////////////
 		
@@ -180,14 +201,16 @@ public class UbicacionService {
 		//metodo para obtener la filtraccion de los barrios por las secciones
 		public List<SubBarrio> obtenerSubBarrioPorBarrio(int idBarrio) {
 			
-			if (idBarrio <= 0 ) {
+			try {
+				if (idBarrio <= 0 ) {
+					return new ArrayList<>();
+				}
 				
-				System.out.println("Servise: No se estan opteniendo subBarrios");
+				return ubiDao.listaSubBarrioPorBarrio(idBarrio);
 				
-				return new ArrayList<>();
+			} catch (SQLException e) {
+				throw new ValidacionException(Mensaje.ERR_CONEXION);
 			}
-			
-			return ubiDao.listaSubBarrioPorBarrio(idBarrio);
 		}		
 		////////////////////////////////////////////////////////////////////////////
 }

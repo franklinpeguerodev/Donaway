@@ -2,25 +2,33 @@ package com.donaway.model.transfusion;
 
 import java.time.LocalDateTime;
 
+import com.donaway.utils.constants.EstadoSolicitud;
+import com.donaway.utils.constants.PrioridadSolicitud;
+
 public class SolicitudTransfusion {
 
-	private int idSolicitud;
+	private String idSolicitud;
 	private String documentIdReceptor;
 	private String rnc;
+	private String codigoReferencia;
 	private LocalDateTime fechaSolicitud;
+	private EstadoSolicitud estadoSolicitudObj;
+	private PrioridadSolicitud prioridadObj;
 	private LocalDateTime fechaEntrega;
-	private enum estadoSolicitud {PENDIENTE, EN_CAMINO, ENTREGADA}
-	private enum prioridad {EMERGENCIA, URGENTE, RUTINA}
+	
 
 	
 	//Contructores
-	public SolicitudTransfusion(int idSolicitud, String documentIdReceptor, String rnc, LocalDateTime fechaSolicitud,
-			LocalDateTime fechaEntrega) {
+	public SolicitudTransfusion(String idSolicitud, String documentIdReceptor, String rnc, String codigoReferencia, LocalDateTime fechaSolicitud,
+		EstadoSolicitud estadoSolicitud, PrioridadSolicitud prioridad, LocalDateTime fechaEntrega) {
 		super();
 		this.idSolicitud = idSolicitud;
 		this.documentIdReceptor = documentIdReceptor;
 		this.rnc = rnc;
+		this.codigoReferencia = codigoReferencia;
 		this.fechaSolicitud = fechaSolicitud;
+		this.estadoSolicitudObj = estadoSolicitud;
+		this.prioridadObj = prioridad;
 		this.fechaEntrega = fechaEntrega;
 	}
 
@@ -32,12 +40,12 @@ public class SolicitudTransfusion {
 
 	//getters and setters
 	
-	public int getIdSolicitud() {
+	public String getIdSolicitud() {
 		return idSolicitud;
 	}
 
 
-	public void setIdSolicitud(int idSolicitud) {
+	public void setIdSolicitud(String idSolicitud) {
 		this.idSolicitud = idSolicitud;
 	}
 
@@ -79,6 +87,36 @@ public class SolicitudTransfusion {
 
 	public void setFechaEntrega(LocalDateTime fechaEntrega) {
 		this.fechaEntrega = fechaEntrega;
+	}
+
+
+	public String getCodigoReferencia() {
+		return codigoReferencia;
+	}
+
+
+	public void setCodigoReferencia(String codigoReferencia) {
+		this.codigoReferencia = codigoReferencia;
+	}
+
+
+	public EstadoSolicitud getEstadoSolicitud() {
+		return estadoSolicitudObj;
+	}
+
+
+	public void setEstadoSolicitud(EstadoSolicitud estadoSolicitud) {
+		this.estadoSolicitudObj = estadoSolicitud;
+	}
+
+
+	public PrioridadSolicitud getPrioridad() {
+		return prioridadObj;
+	}
+
+
+	public void setPrioridad(PrioridadSolicitud prioridad) {
+		this.prioridadObj = prioridad;
 	}
 	
 	

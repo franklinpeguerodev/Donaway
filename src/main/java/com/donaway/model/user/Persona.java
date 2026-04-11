@@ -1,17 +1,19 @@
 package com.donaway.model.user;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+
+import com.donaway.utils.constants.Sexo;
 //clase abstracta responsble de todas las personas que usaran el software
 public abstract class Persona {
 	protected String documentId;
 	protected String nombre;
-	protected String sexo;
+	protected Sexo sexo;
 	protected LocalDate fechaNacimiento;
 	protected String telefono ;
 	protected String email;
 	protected LocalDateTime fechaRegistro;
 	
-	public Persona (String documentId,String nombre,String sexo,LocalDate fechaNacimiento,String telefono,
+	public Persona (String documentId,String nombre,Sexo sexo,LocalDate fechaNacimiento,String telefono,
 			String email,LocalDateTime fechaRegistro){
 			this.documentId =documentId;
 			this.nombre =nombre;
@@ -40,10 +42,10 @@ public abstract class Persona {
 	}
 	
 	
-	public String getSexo() {
+	public Sexo getSexo() {
 		return this.sexo;
 	}
-	public void setSexo(String sexo) {
+	public void setSexo(Sexo sexo) {
 		this.sexo =sexo;
 	}
 	

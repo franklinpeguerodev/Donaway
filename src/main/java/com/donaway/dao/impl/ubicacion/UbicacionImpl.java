@@ -18,6 +18,7 @@ import com.donaway.model.ubicacion.Seccion;
 import com.donaway.model.ubicacion.SubBarrio;
 import com.donaway.model.ubicacion.Ubicacion;
 import com.donaway.utils.db.ConexionDbDonaway;
+import com.donaway.utils.generador.IdGenerador;
 
 public class UbicacionImpl implements IUbicacionDao {
 
@@ -28,7 +29,7 @@ public class UbicacionImpl implements IUbicacionDao {
 	////////////////////////////////////////////////////////////////////////
 	
 	@Override
-	public List<Region> listaRegiones() {
+	public List<Region> listaRegiones() throws SQLException {
 		// TODO Auto-generated method stub
 		
 		
@@ -51,11 +52,6 @@ public class UbicacionImpl implements IUbicacionDao {
 			}
 			System.out.println("Se obtuvieron las regiones");
 			
-		} catch (SQLException e) {
-			
-			System.out.println("Error en el sql: " + e);
-			e.printStackTrace();
-			
 		}
 		
 		return listaRegion;
@@ -69,7 +65,7 @@ public class UbicacionImpl implements IUbicacionDao {
 	////////////////////////////////////////////////////////////////////////
 	
 	@Override
-	public List<Provincia> listaProvinciasPorRegion(int idRegion) {
+	public List<Provincia> listaProvinciasPorRegion(int idRegion) throws SQLException {
 		// TODO Auto-generated method stub
 		
 		List <Provincia> listaProvincias = new ArrayList<>();
@@ -95,12 +91,7 @@ public class UbicacionImpl implements IUbicacionDao {
 			}
 			System.out.println("Se obtuvieron las provincias");
 			
-		} catch (SQLException e) {
-			
-			System.out.println("Error en el sql: " + e);
-			e.printStackTrace();
-			
-		}
+		} 
 		
 		return listaProvincias;
 	}
@@ -113,7 +104,7 @@ public class UbicacionImpl implements IUbicacionDao {
 	
 
 	@Override
-	public List<Municipio> listaMunicipioPorProvincia(int idProvincia) {
+	public List<Municipio> listaMunicipioPorProvincia(int idProvincia) throws SQLException {
 		// TODO Auto-generated method stub
 		
 		List <Municipio> listaMunicipio = new ArrayList<>();
@@ -141,11 +132,6 @@ public class UbicacionImpl implements IUbicacionDao {
 			
 			System.out.println("Se obtuvieron los municipios");
 			
-		} catch (SQLException e) {
-			
-			System.out.println("Error en el sql: " + e);
-			e.printStackTrace();
-			
 		}
 		
 		return listaMunicipio;
@@ -158,7 +144,7 @@ public class UbicacionImpl implements IUbicacionDao {
 	////////////////////////////////////////////////////////////////////////
 	
 	@Override
-	public List<Distrito> listaDistritoPorMunicipio(int idMunicipio) {
+	public List<Distrito> listaDistritoPorMunicipio(int idMunicipio) throws SQLException {
 		// TODO Auto-generated method stub
 		
 		List <Distrito> listaDistrito = new ArrayList<>();
@@ -186,13 +172,7 @@ public class UbicacionImpl implements IUbicacionDao {
 			
 			System.out.println("Se obtuvieron los distritos");
 			
-		} catch (SQLException e) {
-			
-			System.out.println("Error en el sql: " + e);
-			e.printStackTrace();
-			
-		}
-		
+		} 		
 		return listaDistrito;
 		
 	}
@@ -204,7 +184,7 @@ public class UbicacionImpl implements IUbicacionDao {
 	////////////////////////////////////////////////////////////////////////
 	
 	@Override
-	public List<Seccion> listaSeccionPorMunicipio(int idMunicipio) {
+	public List<Seccion> listaSeccionPorMunicipio(int idMunicipio) throws SQLException {
 		// TODO Auto-generated method stub
 		
 		
@@ -233,13 +213,7 @@ public class UbicacionImpl implements IUbicacionDao {
 			
 			System.out.println("Se obtuvieron las secciones");
 			
-		} catch (SQLException e) {
-			
-			System.out.println("Error en el sql: " + e);
-			e.printStackTrace();
-			
-		}
-		
+		} 		
 		return listaSeccion;
 		
 	}
@@ -251,7 +225,7 @@ public class UbicacionImpl implements IUbicacionDao {
 	////////////////////////////////////////////////////////////////////////
 	
 	@Override
-	public List<Seccion> listaSeccionPorDistrito(int idDistrito) {
+	public List<Seccion> listaSeccionPorDistrito(int idDistrito) throws SQLException {
 		// TODO Auto-generated method stub
 		
 		List <Seccion> listaSeccion = new ArrayList<>();
@@ -279,12 +253,7 @@ public class UbicacionImpl implements IUbicacionDao {
 			
 			System.out.println("Se obtuvieron las secciones");
 			
-		} catch (SQLException e) {
-			
-			System.out.println("Error en el sql: " + e);
-			e.printStackTrace();
-			
-		}
+		} 
 		
 		return listaSeccion;
 
@@ -293,12 +262,12 @@ public class UbicacionImpl implements IUbicacionDao {
 
 	////////////////////////////////////////////////////////////////////////
 		
-	// metodo para buscar y filtrar los barrios 
+	// metodo para buscar y filtrar los barrios por seccion
 	
 	////////////////////////////////////////////////////////////////////////
 	
 	@Override
-	public List<Barrio> listaBarrioPorSeccion(int idSeccion) {
+	public List<Barrio> listaBarrioPorSeccion(int idSeccion) throws SQLException {
 		// TODO Auto-generated method stub
 		
 		List <Barrio> listaBarrio = new ArrayList<>();
@@ -326,11 +295,6 @@ public class UbicacionImpl implements IUbicacionDao {
 			
 			System.out.println("Se obtuvieron los barrios");
 			
-		} catch (SQLException e) {
-			
-			System.out.println("Error en el sql: " + e);
-			e.printStackTrace();
-			
 		}
 		
 		return listaBarrio;
@@ -339,12 +303,12 @@ public class UbicacionImpl implements IUbicacionDao {
 
 	////////////////////////////////////////////////////////////////////////
 	
-	// metodo para buscar y filtrar los sub barrios 
+	// metodo para buscar y filtrar los sub barrios por los barrios 
 	
 	////////////////////////////////////////////////////////////////////////
 	
 	@Override
-	public List<SubBarrio> listaSubBarrioPorBarrio(int idBarrio) {
+	public List<SubBarrio> listaSubBarrioPorBarrio(int idBarrio) throws SQLException {
 		// TODO Auto-generated method stub
 		
 		
@@ -373,17 +337,18 @@ public class UbicacionImpl implements IUbicacionDao {
 			
 			System.out.println("Se obtuvieron los barrios");
 			
-		} catch (SQLException e) {
-			
-			System.out.println("Error en el sql: " + e);
-			e.printStackTrace();
-			
-		}
+		} 
 		
 		return listaSubBarrio;
 		
 	}
 
+////////////////////////////////////////////////////////////////////////
+	
+// metodo para registrar una nueva ubicacion
+
+////////////////////////////////////////////////////////////////////////
+	
 	////////////////////////////////////////////////////////////////////////
 	
 	// metodo para registrar una ubicacion 
@@ -391,59 +356,51 @@ public class UbicacionImpl implements IUbicacionDao {
 	////////////////////////////////////////////////////////////////////////
 	
 	@Override
-	public int registrarUbicacion(Ubicacion ubicacion) {
+	public String registrarUbicacion(Ubicacion ubicacion) throws SQLException {
 		// TODO Auto-generated method stub
 		
-		String sql = "INSERT INTO ubicacion (id_region,id_provincia,id_municipio,id_distrito,id_seccion,id_barrio,id_sub_barrio,direccion)"
-				+ "VALUES (?,?,?,?,?,?,?,?)";
+		String uuId = IdGenerador.generadorUUID(); 
 		
-		int retornarPk = 0;
+		String sql = "INSERT INTO ubicacion (id_ubicacion,id_region,id_provincia,id_municipio,id_distrito,id_seccion,id_barrio,id_sub_barrio,direccion)"
+				+ "VALUES (UUID_TO_BIN(?,1),?,?,?,?,?,?,?,?)";
+		
+		String retornarPk = null;
 		
 		try (Connection conn = ConexionDbDonaway.getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+			PreparedStatement ps = conn.prepareStatement(sql)) {
 			
-			ps.setInt(1, ubicacion.getIdRegion());
-			ps.setInt(2, ubicacion.getIdProvincia());
-			ps.setInt(3, ubicacion.getIdMunicipio());
+			ps.setString(1, uuId);
+			ps.setInt(2, ubicacion.getIdRegion());
+			ps.setInt(3, ubicacion.getIdProvincia());
+			ps.setInt(4, ubicacion.getIdMunicipio());
 			
 			if (ubicacion.getIdDistrito() > 0) { 
-				ps.setInt(4, ubicacion.getIdDistrito());			
+				ps.setInt(5, ubicacion.getIdDistrito());			
 			} else {
-				ps.setNull(4, java.sql.Types.INTEGER);
+				ps.setNull(5, java.sql.Types.INTEGER);
 			}
 			
-			ps.setInt(5, ubicacion.getIdSeccion());
-			ps.setInt(6, ubicacion.getIdBarrio());
+			ps.setInt(6, ubicacion.getIdSeccion());
+			ps.setInt(7, ubicacion.getIdBarrio());
 			
 			if (ubicacion.getIdSubBarrio() > 0) {
-				ps.setInt(7, ubicacion.getIdSubBarrio());
+				ps.setInt(8, ubicacion.getIdSubBarrio());
 			} else {
-				ps.setNull(7,  java.sql.Types.INTEGER);
+				ps.setNull(8,  java.sql.Types.INTEGER);
 			}
 			
-			ps.setString(8, ubicacion.getDireccion());
+			ps.setString(9, ubicacion.getDireccion());
 			
 			
-			int optenerPk = ps.executeUpdate();
+			int verificacionRegistro = ps.executeUpdate();
 			
-			if (optenerPk > 0) {
+			if (verificacionRegistro > 0) {
 				
-				try (ResultSet rs = ps.getGeneratedKeys()) {
-					
-					if (rs.next()) {
-					
-						retornarPk = rs.getInt(1);
-					}
+				retornarPk = uuId;
+				
 				}
-			}
+		
 			
-			System.out.println("se registro una nueva ubicacion");
-			
-			
-		} catch (SQLException e){
-			
-			System.out.print("Error de sql" + e);
-			e.printStackTrace();
 		} 
 		
 		return retornarPk;

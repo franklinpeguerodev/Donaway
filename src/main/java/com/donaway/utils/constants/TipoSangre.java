@@ -1,5 +1,8 @@
 package com.donaway.utils.constants;
 
-public class TipoSangre {
-
+public enum TipoSangre {
+A,
+B,
+AB,
+O
 }

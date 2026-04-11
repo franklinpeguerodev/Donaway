@@ -2,29 +2,34 @@ package com.donaway.model.donacion;
 
 import java.time.LocalDateTime;
 
+import com.donaway.utils.constants.TipoComponente;
+import com.donaway.utils.constants.TipoDonancion;
+
 public class Donacion {
 
-	private int idDonacion;
+	private String idDonacion;
+	private String codigoReferencia;
 	private String documentIdDonante;
-	private String documentIdReceptor;
 	private String documentIdPersonal;
 	private String rnc;
 	private LocalDateTime fechaExtracion;
-	private enum tipoDonacion {SANGRE_TOTAL, AFERESIS}
-	private enum tipoComponente {GLOBULOS_ROJOS, PLAQUETAS, PLASMA}
+	private TipoDonancion tipoDonacionObj;
+	private TipoComponente tipoComponenteObj;
 	private float cantidadPinta;
 	
 	
 	//constructores 
-	public Donacion(int idDonacion, String cedulaDonante, String cedulaReceptor, String cedulaPersonal, String rnc,
-		LocalDateTime fechaExtracion, float cantidadPinta) {
+	public Donacion(String idDonacion, String codigoReferencia, String cedulaDonante, String cedulaReceptor, String cedulaPersonal, String rnc,
+		LocalDateTime fechaExtracion,TipoDonancion tipoDonacionObj, TipoComponente tipoComponenteObj, float cantidadPinta) {
 		
 		this.idDonacion = idDonacion;
+		this.codigoReferencia = codigoReferencia;
 		this.documentIdDonante = cedulaDonante;
-		this.documentIdReceptor = cedulaReceptor;
 		this.documentIdPersonal = cedulaPersonal;
 		this.rnc = rnc;
 		this.fechaExtracion = fechaExtracion;
+		this.tipoDonacionObj = tipoDonacionObj;
+		this.tipoComponenteObj = tipoComponenteObj;
 		this.cantidadPinta = cantidadPinta;
 	}
 
@@ -32,38 +37,39 @@ public class Donacion {
 		
 	}
 
+	
 	//getters and setters
 	
-	public int getIdDonacion() {
+	public String getCodigoReferencia() {
+		return codigoReferencia;
+	}
+
+	public void setCodigoReferencia(String codigoReferencia) {
+		this.codigoReferencia = codigoReferencia;
+	}
+
+	public String getIdDonacion() {
 		return idDonacion;
 	}
 
-	public void setIdDonacion(int idDonacion) {
+	public void setIdDonacion(String idDonacion) {
 		this.idDonacion = idDonacion;
 	}
 
-	public String getCedulaDonante() {
+	public String getDocumentIdDonante() {
 		return documentIdDonante;
 	}
 
-	public void setCedulaDonante(String cedulaDonante) {
-		this.documentIdDonante = cedulaDonante;
+	public void setDocumentIdDonante(String documentIdDonante) {
+		this.documentIdDonante = documentIdDonante;
 	}
 
-	public String getCedulaReceptor() {
-		return documentIdReceptor;
-	}
-
-	public void setCedulaReceptor(String cedulaReceptor) {
-		this.documentIdReceptor = cedulaReceptor;
-	}
-
-	public String getCedulaPersonal() {
+	public String getDocumentIdPersonal() {
 		return documentIdPersonal;
 	}
 
-	public void setCedulaPersonal(String cedulaPersonal) {
-		this.documentIdPersonal = cedulaPersonal;
+	public void setDocumentIdPersonal(String documentIdPersonal) {
+		this.documentIdPersonal = documentIdPersonal;
 	}
 
 	public String getRnc() {
@@ -80,6 +86,22 @@ public class Donacion {
 
 	public void setFechaExtracion(LocalDateTime fechaExtracion) {
 		this.fechaExtracion = fechaExtracion;
+	}
+
+	public TipoDonancion getTipoDonacionObj() {
+		return tipoDonacionObj;
+	}
+
+	public void setTipoDonacionObj(TipoDonancion tipoDonacionObj) {
+		this.tipoDonacionObj = tipoDonacionObj;
+	}
+
+	public TipoComponente getTipoComponenteObj() {
+		return tipoComponenteObj;
+	}
+
+	public void setTipoComponenteObj(TipoComponente tipoComponenteObj) {
+		this.tipoComponenteObj = tipoComponenteObj;
 	}
 
 	public float getCantidadPinta() {

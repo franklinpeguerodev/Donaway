@@ -24,15 +24,15 @@ public class DonanteImpl implements IDonanteDao {
 			PreparedStatement ps = conn.prepareStatement(sql)){
 			ps.setString(1, donante.getDocumentoId());
 			ps.setString(2, donante.getNombre());
-			ps.setString(3, donante.getSexo());
+			ps.setString(3, donante.getSexo().name());
 			ps.setObject(4, donante.getFechaNacimiento());
 			ps.setString(5, donante.getTelefono());
 			ps.setString(6, donante.getEmail());
 			ps.setObject(7, donante.getFechaRegistro());
-			ps.setString(8, donante.getTipoSangre());
-			ps.setString(9,	donante.getFactorRh());
+			ps.setString(8, donante.getTipoSangre().name());
+			ps.setString(9,	donante.getFactorRh().name());
 			ps.setObject(10,donante.getUltimaDonacion());
-			ps.setString(11,donante.getEstadoDisponibilidad());
+			ps.setString(11,donante.getEstadoDisponibilidad().name());
 			ps.setBoolean(12,donante.getAutorizacionContacto());;
 			ps.executeUpdate();
 			System.out.print("se inserto un nuevo Donante");

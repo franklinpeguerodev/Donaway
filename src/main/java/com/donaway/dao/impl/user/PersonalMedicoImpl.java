@@ -15,7 +15,7 @@ import java.sql.PreparedStatement;
 			PreparedStatement ps = conn.prepareStatement(sql)){
 			ps.setString(1, personalMedico.getDocumentoId());
 			ps.setString(2, personalMedico.getNombre());
-			ps.setString(3,	personalMedico.getSexo());
+			ps.setString(3,	personalMedico.getSexo().name());
 			ps.setObject(4,	personalMedico.getFechaNacimiento());
 			ps.setString(5, personalMedico.getTelefono());
 			ps.setString(6,	personalMedico.getEmail());

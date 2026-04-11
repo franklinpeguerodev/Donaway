@@ -1,8 +1,9 @@
 package com.donaway.utils.constants;
 
 public enum RolConstant {
- ADMIN,
+ ADMIN_INSTITUCIONAL,
+ ADIMIN_PERSONAL_MEDICO,
  BIOANALISTA,
- INVENTARIO,
+ GESTOR_DE_INVENTARIO,
  RECEPCIONISTA
 }
