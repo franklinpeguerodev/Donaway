@@ -25,9 +25,7 @@ public class InstitucionImpl implements IInstitucionDao{
             ps.setString(2, inst.getIdUbicacion()); // El UUID que viene de UbicacionImpl
             ps.setString(3, inst.getNombre());
             ps.setString(4, inst.getContactoEmergencia());
-            
-            // Convertimos LocalDate a Timestamp para MySQL
-            ps.setTimestamp(5, Timestamp.valueOf(inst.getFechaRegistro().atStartOfDay()));
+            ps.setTimestamp(5, Timestamp.valueOf(inst.getFechaRegistro().atStartOfDay())); // Convertimos LocalDate a Timestamp para MySQL
 
             ps.executeUpdate();
             System.out.println("Institución registrada: " + inst.getNombre());

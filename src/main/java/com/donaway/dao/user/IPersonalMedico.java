@@ -25,8 +25,9 @@ public interface IPersonalMedico {
     
     // Para el login y auditoría
     PersonalMedico obtenerPorCodigoCarnet(String codigo) throws SQLException;
+    PersonalMedico devolverPorCarnet(String carnet) throws SQLException;
 	
 	//validacion
-	boolean validarCredencuiales(String email, String password) throws SQLException;
+	boolean validarCredenciales(String email, String password) throws SQLException;
 
 }

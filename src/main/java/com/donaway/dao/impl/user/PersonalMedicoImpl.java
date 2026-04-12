@@ -1,82 +1,198 @@
 package com.donaway.dao.impl.user;
 
 import com.donaway.dao.user.IPersonalMedico;
+import com.donaway.utils.constants.Cargo;
 import com.donaway.utils.constants.Departamento;
+import com.donaway.utils.constants.EstadoPersonal;
 import com.donaway.utils.constants.Jornada;
+import com.donaway.utils.constants.Rol;
+import com.donaway.utils.constants.Sexo;
 import com.donaway.utils.db.ConexionDbDonaway; 
 import com.donaway.model.user.PersonalMedico;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 	
 public class PersonalMedicoImpl implements IPersonalMedico{
-		String sql = "INSERT INTO personal_medico (documento_id_personal,nombre,sexo,fecha_nacimiento,telefono,email"
-				+ "rnc_institucion,rol,credenciales_encriptadas,ultimoAcceso)"
-				+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
-		@Override
-		public void registrarPersonalMedico(PersonalMedico personalMedico) throws SQLException{
-		try (Connection conn= ConexionDbDonaway.getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql)){
-			ps.setString(1, personalMedico.getDocumentoId());
-			ps.setString(2, personalMedico.getNombre());
-			ps.setString(3,	personalMedico.getSexo().name());
-			ps.setObject(4,	personalMedico.getFechaNacimiento());
-			ps.setString(5, personalMedico.getTelefono());
-			ps.setString(6,	personalMedico.getEmail());
-			ps.setString(7, personalMedico.getRnc());
-			ps.setString(8,personalMedico.getRol().name());
-			ps.setString(9, personalMedico.getCredencialEncriptada());
-			ps.setObject(10, personalMedico.getUltimoAcceso());
-			
-			ps.executeUpdate();
-			System.out.println("Se inserto los datos");
-		}
-				
-	}
-		@Override
-		public void modificarPersonalMedico(PersonalMedico personalmedico) throws SQLException {
-			// TODO Auto-generated method stub
-			
-		}
-		@Override
-		public void actualizarUltimoAccesoPersonalMedico(String docuemntId) throws SQLException {
-			// TODO Auto-generated method stub
-			
-		}
-		@Override
-		public PersonalMedico obtenerPorId(String docuemntId) throws SQLException {
-			// TODO Auto-generated method stub
-			return null;
-		}
-		@Override
-		public List<PersonalMedico> obtenerInstitucion(String rnc) throws SQLException {
-			// TODO Auto-generated method stub
-			return null;
-		}
-		@Override
-		public boolean validarCredencuiales(String email, String password) throws SQLException {
-			// TODO Auto-generated method stub
-			return false;
-		}
-		@Override
-		public List<PersonalMedico> obtenerPorDepartamento(Departamento depto) throws SQLException {
-			// TODO Auto-generated method stub
-			return null;
-		}
-		@Override
-		public List<PersonalMedico> obtenerPorJornada(Jornada jornada) throws SQLException {
-			// TODO Auto-generated method stub
-			return null;
-		}
-		@Override
-		public List<PersonalMedico> obtenerActivos() throws SQLException {
-			// TODO Auto-generated method stub
-			return null;
-		}
-		@Override
-		public PersonalMedico obtenerPorCodigoCarnet(String codigo) throws SQLException {
-			// TODO Auto-generated method stub
-			return null;
-		}}
+	
+	@Override
+    public void registrarPersonalMedico(PersonalMedico pm) throws SQLException {
+        String sql = "INSERT INTO personal_medico (document_id_personal, rnc_institucion, nombre, fecha_nacimiento, "
+                   + "id_ubicacion, cargo, departamento, rol, codigo_carnet, jornada, telefono, email, "
+                   + "credencial_encriptada, fecha_registro, estado) "
+                   + "VALUES (?, ?, ?, ?, UUID_TO_BIN(?,1), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
+        try (Connection conn = ConexionDbDonaway.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            
+            ps.setString(1, pm.getDocumentoId());
+            ps.setString(2, pm.getRnc());
+            ps.setString(3, pm.getNombre());
+            ps.setDate(4, java.sql.Date.valueOf(pm.getFechaNacimiento()));
+            ps.setString(5, pm.getIdUbicacion());
+            ps.setString(6, pm.getCargo().name());
+            ps.setString(7, pm.getDepartamento().name());
+            ps.setString(8, pm.getRol().name());
+            ps.setString(9, pm.getCodigoCarnet());
+            ps.setString(10, pm.getJornada().name());
+            ps.setString(11, pm.getTelefono());
+            ps.setString(12, pm.getEmail());
+            ps.setString(13, pm.getCredencialEncriptada());
+            ps.setTimestamp(14, Timestamp.valueOf(pm.getFechaRegistro()));
+            ps.setString(15, pm.getEstado().name());
+
+            ps.executeUpdate();
+        }
+    }
+
+    @Override
+    public void modificarPersonalMedico(PersonalMedico pm) throws SQLException {
+        String sql = "UPDATE personal_medico SET nombre = ?, cargo = ?, departamento = ?, rol = ?, "
+                   + "jornada = ?, telefono = ?, email = ?, estado = ? WHERE document_id_personal = ?";
+
+        try (Connection conn = ConexionDbDonaway.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            
+            ps.setString(1, pm.getNombre());
+            ps.setString(2, pm.getCargo().name());
+            ps.setString(3, pm.getDepartamento().name());
+            ps.setString(4, pm.getRol().name());
+            ps.setString(5, pm.getJornada().name());
+            ps.setString(6, pm.getTelefono());
+            ps.setString(7, pm.getEmail());
+            ps.setString(8, pm.getEstado().name());
+            ps.setString(9, pm.getDocumentoId());
+
+            ps.executeUpdate();
+        }
+    }
+
+    @Override
+    public void actualizarUltimoAccesoPersonalMedico(String documentId) throws SQLException {
+        String sql = "UPDATE personal_medico SET ultimo_acceso = CURRENT_TIMESTAMP WHERE document_id_personal = ?";
+        try (Connection conn = ConexionDbDonaway.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, documentId);
+            ps.executeUpdate();
+        }
+    }
+
+    @Override
+    public PersonalMedico obtenerPorId(String documentId) throws SQLException {
+        String sql = "SELECT *, BIN_TO_UUID(id_ubicacion,1) AS id_ubi_uuid FROM personal_medico WHERE document_id_personal = ?";
+        try (Connection conn = ConexionDbDonaway.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, documentId);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) return mapearPersonal(rs);
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public PersonalMedico obtenerPorCodigoCarnet(String codigo) throws SQLException {
+        String sql = "SELECT *, BIN_TO_UUID(id_ubicacion,1) AS id_ubi_uuid FROM personal_medico WHERE codigo_carnet = ?";
+        try (Connection conn = ConexionDbDonaway.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, codigo);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) return mapearPersonal(rs);
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public List<PersonalMedico> obtenerInstitucion(String rnc) throws SQLException {
+        String sql = "SELECT *, BIN_TO_UUID(id_ubicacion,1) AS id_ubi_uuid FROM personal_medico WHERE rnc_institucion = ?";
+        return ejecutarConsultaLista(sql, rnc);
+    }
+
+    @Override
+    public List<PersonalMedico> obtenerPorDepartamento(Departamento depto) throws SQLException {
+        String sql = "SELECT *, BIN_TO_UUID(id_ubicacion,1) AS id_ubi_uuid FROM personal_medico WHERE departamento = ?";
+        return ejecutarConsultaLista(sql, depto.name());
+    }
+
+    @Override
+    public List<PersonalMedico> obtenerPorJornada(Jornada jornada) throws SQLException {
+        String sql = "SELECT *, BIN_TO_UUID(id_ubicacion,1) AS id_ubi_uuid FROM personal_medico WHERE jornada = ?";
+        return ejecutarConsultaLista(sql, jornada.name());
+    }
+
+    @Override
+    public List<PersonalMedico> obtenerActivos() throws SQLException {
+        String sql = "SELECT *, BIN_TO_UUID(id_ubicacion,1) AS id_ubi_uuid FROM personal_medico WHERE estado = 'ACTIVO'";
+        List<PersonalMedico> lista = new ArrayList<>();
+        try (Connection conn = ConexionDbDonaway.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) lista.add(mapearPersonal(rs));
+        }
+        return lista;
+    }
+
+    @Override
+    public boolean validarCredenciales(String email, String password) throws SQLException {
+        String sql = "SELECT COUNT(*) FROM personal_medico WHERE email = ? AND credencial_encriptada = ? AND estado = 'ACTIVO'";
+        try (Connection conn = ConexionDbDonaway.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, email);
+            ps.setString(2, password);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) return rs.getInt(1) > 0;
+            }
+        }
+        return false;
+    }
+
+    // --- MÉTODOS AUXILIARES PARA LIMPIEZA DE CÓDIGO ---
+
+    private List<PersonalMedico> ejecutarConsultaLista(String sql, String parametro) throws SQLException {
+        List<PersonalMedico> lista = new ArrayList<>();
+        try (Connection conn = ConexionDbDonaway.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, parametro);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) lista.add(mapearPersonal(rs));
+            }
+        }
+        return lista;
+    }
+
+    private PersonalMedico mapearPersonal(ResultSet rs) throws SQLException {
+        PersonalMedico pm = new PersonalMedico(
+            rs.getString("document_id_personal"),
+            rs.getString("nombre"),
+            Sexo.M, // Nota: Sexo no está en tu tabla personal_medico actual, se asume M o null
+            rs.getDate("fecha_nacimiento").toLocalDate(),
+            rs.getString("id_ubi_uuid"),
+            rs.getString("telefono"),
+            rs.getString("email"),
+            rs.getTimestamp("fecha_registro").toLocalDateTime(),
+            rs.getString("rnc_institucion"),
+            rs.getString("codigo_carnet"),
+            Cargo.valueOf(rs.getString("cargo")),
+            Departamento.valueOf(rs.getString("departamento")),
+            Rol.valueOf(rs.getString("rol")),
+            Jornada.valueOf(rs.getString("jornada")),
+            EstadoPersonal.valueOf(rs.getString("estado")),
+            rs.getString("credencial_encriptada"),
+            rs.getTimestamp("ultimo_acceso") != null ? rs.getTimestamp("ultimo_acceso").toLocalDateTime() : null
+        );
+        pm.setIdUbicacion(rs.getString("id_ubi_uuid"));
+        pm.setCodigoCarnet(rs.getString("codigo_carnet"));
+        return pm;
+    }
+
+    // Implementación del método heredado de IPersonalMedico (si es diferente al de carnet)
+    @Override
+    public PersonalMedico devolverPorCarnet(String carnet) throws SQLException {
+        return obtenerPorCodigoCarnet(carnet);
+    }
+}
