@@ -19,6 +19,6 @@ public interface IDonacionDao {
 	List<Donacion> obtenerHistorialDeDonante (String documentoId) throws SQLException;
 	List<Donacion> obtenerPorFecha(LocalDate fechaDonacion) throws SQLException;
 	
-	String obtenerDocumentIdDonantePorDonacion (String documentoId) throws SQLException;
+	String obtenerDocumentIdDonantePorDonacion (String idDonacion) throws SQLException;
 	
 }

@@ -18,4 +18,8 @@ public interface IDatosTriajeDao {
 	DatosTriaje obtenerPorCodigoReferencia (String codigoReferencia) throws SQLException;
 	DatosTriaje obtenerDonacion (String idDonacion) throws SQLException;
 	List<DatosTriaje> obtenerHistorialDeDonante (String documentoId) throws SQLException;
+	
+	
+	//metodo para no dejar realizar una donacion a alguien que no esta apto
+	boolean esAptoParaDonar(String idDonacion) throws SQLException;
 }

@@ -1,6 +1,8 @@
 package com.donaway.dao.impl.user;
 
 import com.donaway.dao.user.IPersonalMedico;
+import com.donaway.utils.constants.Departamento;
+import com.donaway.utils.constants.Jornada;
 import com.donaway.utils.db.ConexionDbDonaway; 
 import com.donaway.model.user.PersonalMedico;
 import java.sql.Connection;
@@ -56,5 +58,25 @@ public class PersonalMedicoImpl implements IPersonalMedico{
 		public boolean validarCredencuiales(String email, String password) throws SQLException {
 			// TODO Auto-generated method stub
 			return false;
+		}
+		@Override
+		public List<PersonalMedico> obtenerPorDepartamento(Departamento depto) throws SQLException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		@Override
+		public List<PersonalMedico> obtenerPorJornada(Jornada jornada) throws SQLException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		@Override
+		public List<PersonalMedico> obtenerActivos() throws SQLException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		@Override
+		public PersonalMedico obtenerPorCodigoCarnet(String codigo) throws SQLException {
+			// TODO Auto-generated method stub
+			return null;
 		}}
 

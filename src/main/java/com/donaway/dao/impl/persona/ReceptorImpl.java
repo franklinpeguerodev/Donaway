@@ -33,7 +33,6 @@ public class ReceptorImpl implements IReceptorDao {
 	
 	}
 
-
 	@Override
 	public void modificarReceptor(Receptor receptor) throws SQLException {
 		// TODO Auto-generated method stub
@@ -41,7 +40,7 @@ public class ReceptorImpl implements IReceptorDao {
 	}
 
 	@Override
-	public List<Donante> obtenerTodo() throws SQLException {
+	public List<Receptor> obtenerTodo() throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -57,4 +56,7 @@ public class ReceptorImpl implements IReceptorDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	
 }

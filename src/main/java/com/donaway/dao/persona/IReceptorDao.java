@@ -13,7 +13,7 @@ public interface IReceptorDao {
 	void modificarReceptor(Receptor receptor) throws SQLException;
 		
 	//Busque y filtrado
-	List<Donante> obtenerTodo() throws SQLException;
+	List<Receptor> obtenerTodo() throws SQLException;
 	List<Receptor> buscarPorNombre(String nombre) throws SQLException;
 	Receptor obtenerPorId(String documentId) throws SQLException; 
 

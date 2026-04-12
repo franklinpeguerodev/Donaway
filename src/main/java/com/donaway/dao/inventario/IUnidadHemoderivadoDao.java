@@ -19,5 +19,8 @@ public interface IUnidadHemoderivadoDao {
 	//busqueda y filtro
 	UnidadHemoderivados obtenerPorCodigoBarras(String codigoBarras) throws SQLException;
 	List<UnidadHemoderivados> buscarStock(TipoComponente tipo, TipoSangre sangre, FactorRh rh) throws SQLException;
-	
+	UnidadHemoderivados obtenerPorDonacion(String idDonacion) throws SQLException;
+    
+    // Control de caducidad
+    List<UnidadHemoderivados> obtenerUnidadesPorVencer(int dias) throws SQLException;
 }

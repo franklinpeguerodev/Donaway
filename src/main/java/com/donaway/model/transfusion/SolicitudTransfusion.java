@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 import com.donaway.utils.constants.EstadoSolicitud;
 import com.donaway.utils.constants.PrioridadSolicitud;
+import com.donaway.utils.constants.TipoComponente;
 
 public class SolicitudTransfusion {
 
@@ -14,13 +15,14 @@ public class SolicitudTransfusion {
 	private LocalDateTime fechaSolicitud;
 	private EstadoSolicitud estadoSolicitudObj;
 	private PrioridadSolicitud prioridadObj;
+	private TipoComponente componentes;
 	private LocalDateTime fechaEntrega;
 	
 
 	
 	//Contructores
 	public SolicitudTransfusion(String idSolicitud, String documentIdReceptor, String rnc, String codigoReferencia, LocalDateTime fechaSolicitud,
-		EstadoSolicitud estadoSolicitud, PrioridadSolicitud prioridad, LocalDateTime fechaEntrega) {
+		EstadoSolicitud estadoSolicitud, PrioridadSolicitud prioridad, TipoComponente componentes, LocalDateTime fechaEntrega) {
 		super();
 		this.idSolicitud = idSolicitud;
 		this.documentIdReceptor = documentIdReceptor;
@@ -29,6 +31,7 @@ public class SolicitudTransfusion {
 		this.fechaSolicitud = fechaSolicitud;
 		this.estadoSolicitudObj = estadoSolicitud;
 		this.prioridadObj = prioridad;
+		this.componentes = componentes;
 		this.fechaEntrega = fechaEntrega;
 	}
 
@@ -117,6 +120,36 @@ public class SolicitudTransfusion {
 
 	public void setPrioridad(PrioridadSolicitud prioridad) {
 		this.prioridadObj = prioridad;
+	}
+
+
+	public EstadoSolicitud getEstadoSolicitudObj() {
+		return estadoSolicitudObj;
+	}
+
+
+	public void setEstadoSolicitudObj(EstadoSolicitud estadoSolicitudObj) {
+		this.estadoSolicitudObj = estadoSolicitudObj;
+	}
+
+
+	public PrioridadSolicitud getPrioridadObj() {
+		return prioridadObj;
+	}
+
+
+	public void setPrioridadObj(PrioridadSolicitud prioridadObj) {
+		this.prioridadObj = prioridadObj;
+	}
+
+
+	public TipoComponente getComponentes() {
+		return componentes;
+	}
+
+
+	public void setComponentes(TipoComponente componentes) {
+		this.componentes = componentes;
 	}
 	
 	

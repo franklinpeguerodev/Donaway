@@ -12,7 +12,7 @@ public interface IInstitucionDao {
 	void modificarInstitucion(Institucion institucion) throws SQLException;
 	
 	//busqueda
-	Institucion optenerPorRnc(String rnc) throws SQLException;
-	List<Institucion> optnerInstituciones () throws SQLException;
+	Institucion obtenerPorRnc(String rnc) throws SQLException;
+	List<Institucion> obtenerInstituciones () throws SQLException;
 	
 }

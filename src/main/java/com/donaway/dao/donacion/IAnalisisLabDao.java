@@ -7,7 +7,7 @@ import com.donaway.model.donacion.AnalisisLaboratorio;
 
 public interface IAnalisisLabDao {
 
-	//escritura
+		//escritura
 		void registrar(AnalisisLaboratorio analisi) throws SQLException;
 		
 		
@@ -18,4 +18,6 @@ public interface IAnalisisLabDao {
 		AnalisisLaboratorio obtenerDonacion (String idDonacion) throws SQLException;
 		List<AnalisisLaboratorio> obtenerHistorialDeDonante (String documentoId) throws SQLException;
 	
+		//metodo de exclusion
+		boolean esReactivo (String idDonacion) throws SQLException;
 }
