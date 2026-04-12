@@ -16,7 +16,7 @@
          <children>
             <ImageView fitHeight="180.0" fitWidth="399.0" layoutX="86.0" layoutY="-33.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../img/Logo.png" />
+                  <Image url="@../../../img/img_generales/Logo.png" />
                </image>
             </ImageView>
             <Label layoutX="392.0" layoutY="110.0" prefHeight="53.0" prefWidth="349.0" styleClass="header-subtitulo" text="Gestión de Donaciones y Reservas Sanguíneas" />
@@ -66,6 +66,14 @@
             </ImageView>
          </graphic>
       </Label>
-      <Button fx:id="btn" layoutX="584.0" layoutY="615.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="76.0" text="Verificar" />
+      <Button layoutX="519.0" layoutY="598.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="137.0" styleClass="botones" stylesheets="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Verificar" textFill="#483737">
+         <graphic>
+            <ImageView fx:id="btn" fitHeight="51.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/img_registros_login/verificado.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
