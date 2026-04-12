@@ -1,0 +1,86 @@
+.titulo_registro{
+-fx-font-family: "Shelten";
+    -fx-text-fill: rgb(145, 97, 97) !important;
+    -fx-background-color:#975d5da2;
+    -fx-font-size: 27px ;
+     -fx-border-color:  rgba(105, 58, 58, 0.848);
+    -fx-border-width: 3;
+     -fx-border-radius: 25; 
+    -fx-background-radius: 25;
+    -fx-font-weight: bold;
+      -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 25, 0, 0, 20);
+    -fx-padding:10 20 0 20
+    
+}
+
+.fondo{
+  -fx-background-color:#24050dd4;
+}
+.border_registro{
+       -fx-background-color:#4f20129c;    
+     -fx-border-color: #dcdcdc ;
+    -fx-border-width: 1;
+     -fx-border-radius: 25; 
+    -fx-background-radius: 25;
+      -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 25, 0, 0, 20);
+}
+
+.texto_form{
+    -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: rgb(54, 28, 28) !important;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 25, 0, 0, 20);
+    -fx-font-size: 15px ;
+    -fx-font-style: italic;
+    -fx-background-color: #b365659f;
+     -fx-border-radius: 25; 
+    -fx-background-radius: 25;
+}
+.text_busqueda {
+     -fx-background-color: #b365659f;
+    -fx-background-radius: 5;
+    -fx-border-color: #460606ca;
+    -fx-border-radius: 5;
+    -fx-font-family: "Shelten";
+}
+
+.text_busqueda:focused {
+    -fx-background-color: #fff0f0;
+    -fx-border-color: #8E1B1B;
+    -fx-border-width: 2;
+}
+.date-picker {
+    -fx-font-size: 14px;
+    -fx-background-color: #fff0f0;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #430f0f;
+}
+
+/* Campo de texto interno */
+.date-picker .text-field {
+    -fx-text-fill: rgb(145, 97, 97);
+    -fx-font-family: "Shelten";
+    -fx-background-color: transparent;
+}
+
+/* 🔥 Prompt text */
+.date-picker .text-field {
+    -fx-prompt-text-fill: rgba(145, 97, 97, 0.7);
+}
+
+/* Botón del calendario */
+.date-picker .arrow-button {
+  -fx-background-color: #b365659f;
+    -fx-background-radius: 6;
+}
+
+/* Icono (flecha/calendario) */
+.date-picker .arrow {
+    -fx-background-color: #f5f5f5;
+}
+
+/* Focus */
+.date-picker:focused {
+    -fx-border-color: #470817;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 1, 1);
+}

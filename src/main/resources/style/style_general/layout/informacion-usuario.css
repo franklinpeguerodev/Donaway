@@ -16,7 +16,8 @@
 
 .detalles{
     -fx-font-family: "Shelten";
-    -fx-text-fill: rgb(143, 134, 134) !important;
+    -fx-text-fill: rgb(197, 176, 176) !important;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 25, 0, 0, 20);
     -fx-font-size: 16px ;
     -fx-font-weight: bold;
     
@@ -24,7 +25,17 @@
 
 .detalles-respuestas{
     -fx-font-family: "Segoe UI Black";
-    -fx-text-fill: rgb(143, 134, 134) !important;
+    -fx-text-fill: rgba(200, 170, 170, 0.81) !important;
+    -fx-effect: dropshadow(three-pass-box, rgba(245, 106, 106, 0.3), 25, 0, 0, 20);
+    -fx-font-size: 14px ;
+    -fx-font-style: italic;
+    -fx-padding:0 0 10 0;
+    
+}
+.detalles-respuestas-acceso{
+    -fx-font-family: "Segoe UI Black";
+    -fx-text-fill:#2e2323dc;
+    -fx-effect: dropshadow(three-pass-box, rgba(245, 106, 106, 0.3), 25, 0, 0, 20);
     -fx-font-size: 14px ;
     -fx-font-style: italic;
     -fx-padding:0 0 10 0;

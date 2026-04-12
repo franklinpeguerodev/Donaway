@@ -1,0 +1,161 @@
+.titulo_registro{
+-fx-font-family: "Shelten";
+    -fx-text-fill: rgb(82, 17, 17) !important;
+    -fx-font-size: 27px ;
+     -fx-border-color:  rgba(105, 58, 58, 0.848);
+      -fx-background-color:#583333b7; 
+    -fx-border-width: 3;
+     -fx-border-radius: 25; 
+    -fx-background-radius: 25;
+    -fx-font-weight: bold;
+    -fx-padding:10 20 0 20
+}
+
+.fondo{
+  -fx-background-color:#f0b47bd4;
+}
+.border_registro{
+       -fx-background-color:#583333b7;    
+     -fx-border-color: #dcdcdc ;
+    -fx-border-width: 1;
+     -fx-border-radius: 25; 
+    -fx-background-radius: 25;
+      -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 25, 0, 0, 20);
+}
+
+.texto_form{
+    -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: rgb(54, 28, 28) !important;
+    -fx-font-size: 15px ;
+    -fx-font-style: italic;
+    -fx-padding:0 0 10 0;
+}
+.text_busqueda {
+    -fx-background-color: #4606069f;
+    -fx-background-radius: 5;
+    -fx-border-color: #460606ca;
+    -fx-border-radius: 5;
+    -fx-font-family: "Shelten";
+}
+
+.text_busqueda:focused {
+    -fx-background-color: #fff0f0;
+    -fx-border-color: #8E1B1B;
+    -fx-border-width: 2;
+}
+.radio-button_genero {
+    -fx-font-size: 12px;
+    -fx-text-fill: #321313;
+    -fx-font-family: "Shelten";
+}
+
+.radio-button_genero:focused {
+    -fx-text-fill: #771d1d;;
+    -fx-background-color: transparent;
+}
+
+.radio-button_genero .radio-button-body {
+    -fx-background-radius: 50;
+    -fx-padding: 0;
+}
+
+.radio-button_genero:selected {
+    -fx-text-fill: #501c1c;
+}
+.combo-box .text-field {
+    -fx-prompt-text-fill: rgb(145, 97, 97);
+    -fx-font-family: "Shelten";
+}
+.combo-box {
+    -fx-font-size: 12px;
+    -fx-text-fill: #222;
+    -fx-background-color: #fff0f0;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #430f0f;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #660d1ee7;
+    -fx-background-radius: 6;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #f5f5f5;
+}
+
+.combo-box:focused {
+    -fx-border-color: #470817;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 1, 1);
+}
+.date-picker {
+    -fx-font-size: 14px;
+    -fx-background-color: #fff0f0;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #430f0f;
+}
+
+/* Campo de texto interno */
+.date-picker .text-field {
+    -fx-text-fill: rgb(145, 97, 97);
+    -fx-font-family: "Shelten";
+    -fx-background-color: transparent;
+}
+
+/* 🔥 Prompt text */
+.date-picker .text-field {
+    -fx-prompt-text-fill: rgba(145, 97, 97, 0.7);
+}
+
+/* Botón del calendario */
+.date-picker .arrow-button {
+    -fx-background-color: #660d1ee7;
+    -fx-background-radius: 6;
+}
+
+/* Icono (flecha/calendario) */
+.date-picker .arrow {
+    -fx-background-color: #f5f5f5;
+}
+
+/* Focus */
+.date-picker:focused {
+    -fx-border-color: #470817;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 1, 1);
+}
+
+.border-ultimos-movimientos{  
+     -fx-border-color: #583333b7 ;
+    -fx-border-width: 4;
+     -fx-border-radius: 25; 
+    -fx-background-radius: 25;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 25, 0, 0, 20);
+}
+
+.label-graficos{
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(117, 64, 64) !important;
+    -fx-font-size: 12px ;
+    -fx-font-weight: bold;
+}
+.titulo_movimientos_hoy{
+-fx-font-family: "Shelten";
+    -fx-text-fill: rgb(157, 6, 61) !important;
+    -fx-font-size: 17px ;
+    -fx-font-weight: bold;
+}
+.titulo_movimientos_ayer{
+-fx-font-family: "Shelten";
+    -fx-text-fill: rgb(147, 28, 28) !important;
+    -fx-font-size: 17px ;
+    -fx-font-weight: bold;
+}
+
+.labeles-movimientos{
+     -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: rgb(143, 134, 134) !important;
+    -fx-font-size: 12px ;
+    -fx-font-style: italic;
+   
+}

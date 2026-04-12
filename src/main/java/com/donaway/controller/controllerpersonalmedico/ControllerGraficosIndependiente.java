@@ -23,13 +23,13 @@ public void setPrincipalController(ControllerPrincipal controller) {
 	    @FXML
 	    public void initialize() {
 	        btn_analisisEsperaCentral.setOnAction(e -> 
-	            cargarGraficaIndependiente("/vistas_personal_medico/graficaCentral_AnalisisEspera.fxml", "ANALISIS"));
+	            cargarGraficaIndependiente("/views/vistas_genericas/graficaCentral_AnalisisEspera.fxml", "ANALISIS"));
 
 	        btn_pacientesRecibidosCentral.setOnAction(e -> 
-	            cargarGraficaIndependiente("/vistas_personal_medico/graficaCentral_PacientesRecibidos.fxml", "PACIENTES"));
+	            cargarGraficaIndependiente("/views/vistas_genericas/graficaCentral_PacientesRecibidos.fxml", "PACIENTES"));
 
 	        btn_sangreReservadaCentral.setOnAction(e -> 
-	            cargarGraficaIndependiente("/vistas_personal_medico/graficaCentral_SangreReservada.fxml", "SANGRE"));
+	            cargarGraficaIndependiente("/views/vistas_genericas/graficaCentral_SangreReservada.fxml", "SANGRE"));
 	    }
 	    
 

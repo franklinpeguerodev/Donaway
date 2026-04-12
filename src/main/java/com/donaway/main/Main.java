@@ -18,10 +18,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        try {
+    	try {
         	Parent root = FXMLLoader.load(
-        		    getClass().getResource("/vistas_personal_medico/plantillaInicio_PersonalMedico.fxml")
+        		    getClass().getResource("/views/vistas_genericas/Plantilla_personal_medico.fxml")
         		);Scene scene = new Scene(root);
+    	
 
             stage.setScene(scene);
             stage.setTitle("DonaWay RD");

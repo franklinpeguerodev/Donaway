@@ -10,12 +10,16 @@
     -fx-padding:10 20 0 20
 }
 
+.fondo{
+  -fx-background-color:#f0b47bd4;
+}
 .border_registro{
        -fx-background-color:#583333b7;    
      -fx-border-color: #dcdcdc ;
     -fx-border-width: 1;
      -fx-border-radius: 25; 
     -fx-background-radius: 25;
+      -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 25, 0, 0, 20);
 }
 
 .texto_form{
@@ -125,6 +129,7 @@
     -fx-border-width: 4;
      -fx-border-radius: 25; 
     -fx-background-radius: 25;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 25, 0, 0, 20);
 }
 
 .label-graficos{
@@ -152,4 +157,24 @@
     -fx-font-size: 12px ;
     -fx-font-style: italic;
    
+}
+
+.botones{
+    -fx-background-radius: 50;           /* Esquinas totalmente rectas */
+    -fx-background-color:  rgb(117, 64, 64);     /* El color rojo oscuro de tu fuente */
+    -fx-text-fill: white;
+    -fx-font-family: "Shelten"
+}
+
+.botones:hover {
+    -fx-background-color: rgba(84, 10, 10, 0.7); 
+     -fx-scale-x: 1.1; /* Se agranda un 10% horizontalmente */
+    -fx-scale-y: 1.1; /* Se agranda un 10% verticalmente */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 25, 0, 0, 20);
+}
+
+.botones:armed {
+    -fx-background-color: rgba(84, 10, 10, 0.9);
+    -fx-background-radius: 40;  
 }

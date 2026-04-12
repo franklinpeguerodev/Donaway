@@ -1,11 +1,12 @@
 .titulo-detalles{
     -fx-font-family: "Shelten";
-    -fx-text-fill: rgb(145, 97, 97) !important;
+    -fx-text-fill: rgb(209, 160, 160) !important;
     -fx-font-size: 27px ;
     -fx-font-weight: bold;
-     -fx-border-color: #2e2323dc;
+     -fx-background-color: #2e2323dc;
     -fx-border-width: 3;
      -fx-border-radius: 25; 
+       -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 25, 0, 0, 20);
     -fx-background-radius: 25;
     -fx-padding:10 20 0 20
     

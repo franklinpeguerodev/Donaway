@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="rootNotificaciones" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.controllerpersonalmedico.ControladorCentroNotificaciones">
+
+   <left>
+      <ScrollPane prefHeight="358.0" prefWidth="192.0" styleClass="contenedor-detalle-blanco" stylesheets="@/style_personal_medico/layout/notificaciones.css" BorderPane.alignment="CENTER">
+
+         <content>
+            <VBox fx:id="listaCompleta" prefHeight="397.0" prefWidth="186.0" spacing="13.0" style="-fx-background-color: #f0b47bd4;" styleClass="lista-maestra-detalle" stylesheets="@/style_personal_medico/componentes_inicio/botones.css" />
+         </content>
+
+      </ScrollPane>
+   </left>
+
+</BorderPane>

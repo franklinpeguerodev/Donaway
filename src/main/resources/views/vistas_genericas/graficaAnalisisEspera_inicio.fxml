@@ -4,7 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="311.0" prefWidth="380.0" stylesheets="@/style_personal_medico/layout/graficos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.controllerpersonalmedico.GraficasController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="311.0" prefWidth="380.0" stylesheets="@../../style/style_general/layout/graficos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.controllerpersonalmedico.GraficasController">
    <children>
       <PieChart fx:id="grafica_AnalisisEspera" layoutX="13.0" layoutY="64.0" prefHeight="261.0" prefWidth="353.0" />
       <Label layoutX="48.0" layoutY="22.0" styleClass="titulo_grafica" text="Analisis En Espera" />

@@ -11,34 +11,30 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="720.0" prefWidth="904.0"
-            xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.donaway.controller.controllerpersonalmedico.ControllerGraficosIndependiente">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.controllerpersonalmedico.ControllerGraficosIndependiente">
 
    <children>
 
       <VBox layoutX="70.0" layoutY="14.0" prefHeight="394.0" prefWidth="368.0" styleClass="borders_detalle-usuario">
          <children>
-            <Label styleClass="titulo-detalles" text="Detalles del usuario"/>
+            <Label styleClass="titulo-detalles" text="Detalles del usuario" />
             <VBox>
                <children>
-                  <Label styleClass="detalles" text="Nombre:"/>
-                  <Label fx:id="lbl_nombre_usuario" styleClass="detalles-respuestas" text="Label"/>
-                  <Label styleClass="detalles" text="Cargo:"/>
-                  <Label fx:id="lbl_cargo_usuario" styleClass="detalles-respuestas" text="Label"/>
-                  <Label styleClass="detalles" text="ID:"/>
-                  <Label fx:id="lbl_id_usuario" styleClass="detalles-respuestas" text="Label"/>
-                  <Label styleClass="detalles" text="Departamento:"/>
-                  <Label fx:id="lbl_departamento_usuario" styleClass="detalles-respuestas" text="Label"/>
-                  <Label styleClass="detalles" text="Region:"/>
-                  <Label fx:id="lbl_region_usuario" styleClass="detalles-respuestas" text="Label"/>
+                  <Label styleClass="detalles" text="Nombre:" />
+                  <Label fx:id="lbl_nombre_usuario" styleClass="detalles-respuestas" text="Label" />
+                  <Label styleClass="detalles" text="Cargo:" />
+                  <Label fx:id="lbl_cargo_usuario" styleClass="detalles-respuestas" text="Label" />
+                  <Label styleClass="detalles" text="ID:" />
+                  <Label fx:id="lbl_id_usuario" styleClass="detalles-respuestas" text="Label" />
+                  <Label styleClass="detalles" text="Departamento:" />
+                  <Label fx:id="lbl_departamento_usuario" styleClass="detalles-respuestas" text="Label" />
+                  <Label styleClass="detalles" text="Region:" />
+                  <Label fx:id="lbl_region_usuario" styleClass="detalles-respuestas" text="Label" />
                </children>
             </VBox>
          </children>
          <padding>
-            <Insets left="10.0"/>
+            <Insets left="10.0" />
          </padding>
       </VBox>
 
@@ -48,7 +44,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="32.0" preserveRatio="true">
                      <image>
-                        <Image url="@/img_personal_medico/img_notificaciones/control-de-acceso.png"/>
+                        <Image url="@../../img/img_personal_medico/img_informacion_usuario/control-de-acceso.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -56,16 +52,16 @@
 
             <VBox>
                <children>
-                  <Label styleClass="detalles-respuestas" text="◆ Primer acceso:"/>
-                  <Label fx:id="lbl_primer_acesso" styleClass="detalles-acceso" text="Label"/>
+                  <Label styleClass="detalles-respuestas-acceso" text="◆ Primer acceso:" />
+                  <Label fx:id="lbl_primer_acesso" styleClass="detalles-acceso" text="Label" />
                </children>
-               <padding><Insets bottom="15.0"/></padding>
+               <padding><Insets bottom="15.0" /></padding>
             </VBox>
 
             <VBox>
                <children>
-                  <Label styleClass="detalles-respuestas" text="◆ Último acceso:"/>
-                  <Label fx:id="lbl_ultimo_acesso" styleClass="detalles-acceso" text="Label"/>
+                  <Label styleClass="detalles-respuestas-acceso" text="◆ Último acceso:" />
+                  <Label fx:id="lbl_ultimo_acesso" styleClass="detalles-acceso" text="Label" />
                </children>
             </VBox>
          </children>
@@ -77,7 +73,7 @@
                <graphic>
                   <ImageView fitHeight="69.0" fitWidth="101.0" preserveRatio="true">
                      <image>
-                        <Image url="@/img_personal_medico/img_notificaciones/grafico.png"/>
+                        <Image url="@../../img/img_personal_medico/img_informacion_usuario/grafico.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -85,19 +81,19 @@
 
             <Button fx:id="btn_analisisEsperaCentral" styleClass="botones_general" text="Analisis en espera">
                <graphic>
-                  <Circle fill="#b71e1e91" radius="4.0"/>
+                  <Circle fill="#b71e1e91" radius="4.0" />
                </graphic>
             </Button>
 
             <Button fx:id="btn_pacientesRecibidosCentral" styleClass="botones_general" text="Pacientes Recibidos">
                <graphic>
-                  <Circle fill="#b1981bf2" radius="4.0"/>
+                  <Circle fill="#b1981bf2" radius="4.0" />
                </graphic>
             </Button>
 
             <Button fx:id="btn_sangreReservadaCentral" styleClass="botones_general" text="Sangre Reservada">
                <graphic>
-                  <Circle fill="#1f93ffc0" radius="4.0"/>
+                  <Circle fill="#1f93ffc0" radius="4.0" />
                </graphic>
             </Button>
          </children>
@@ -109,7 +105,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="96.0" preserveRatio="true">
                      <image>
-                        <Image url="@/img_personal_medico/img_notificaciones/cerrar-con-llave.png"/>
+                        <Image url="@../../img/img_personal_medico/img_informacion_usuario/cerrar-con-llave.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -118,10 +114,9 @@
       </HBox>
 
    </children>
-
    <stylesheets>
-      <URL value="@/style_personal_medico/layout/informacion-usuario.css"/>
-      <URL value="@/style_personal_medico/componentes_inicio/botones.css"/>
+      <URL value="@../../style/style_general/layout/informacion-usuario.css" />
+      <URL value="@../../style/style_general/componentes_inicio/botones.css" />
    </stylesheets>
 
 </AnchorPane>

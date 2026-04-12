@@ -7,13 +7,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="858.0" prefWidth="732.0" stylesheets="@/style_personal_medico/layout/graficos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.controllerpersonalmedico.GraficasController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="858.0" prefWidth="732.0" stylesheets="@../../style/style_general/layout/graficos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.controllerpersonalmedico.GraficasController">
    <children>
       <Label layoutX="124.0" layoutY="27.0" prefHeight="93.0" prefWidth="527.0" styleClass="label-graficos" text="Analisis en espera de procesamiento">
          <graphic>
             <ImageView fitHeight="62.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@/img_personal_medico/img_graficas/examen_enEspera.png" />
+                  <Image url="@../../img/img_personal_medico/img_graficas/examen_enEspera.png" />
                </image>
             </ImageView>
          </graphic>

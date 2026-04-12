@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1509.0" prefWidth="846.0" styleClass="fondo" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1509.0" prefWidth="1001.0" styleClass="fondo" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="86.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="               Registro De Nuevo Donante">
+      <Label layoutX="152.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="               Registro De Nuevo Donante">
          <graphic>
             <ImageView fitHeight="51.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -26,7 +26,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <VBox layoutX="66.0" layoutY="123.0" prefHeight="540.0" prefWidth="301.0" spacing="20.0" styleClass="border_registro">
+      <VBox layoutX="140.0" layoutY="123.0" prefHeight="540.0" prefWidth="301.0" spacing="20.0" styleClass="border_registro">
          <children>
             <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
                <children>
@@ -118,7 +118,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" prefHeight="71.0" prefWidth="52.0" styleClass="botones_general">
+                  <Button fx:id="btn_abrirMapa" mnemonicParsing="false" prefHeight="47.0" prefWidth="82.0" styleClass="botones_general">
                      <graphic>
                         <ImageView fitHeight="44.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" styleClass="botones_general">
                            <image>
@@ -137,7 +137,7 @@
             </HBox>
          </children>
       </VBox>
-      <VBox layoutX="453.0" layoutY="119.0" prefHeight="540.0" prefWidth="301.0" spacing="20.0" styleClass="border_registro">
+      <VBox layoutX="584.0" layoutY="119.0" prefHeight="540.0" prefWidth="301.0" spacing="20.0" styleClass="border_registro">
          <children>
             <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
                <children>
@@ -219,7 +219,7 @@
             </HBox>
          </children>
       </VBox>
-      <Label layoutX="22.0" layoutY="714.0" prefHeight="52.0" prefWidth="389.0" styleClass="titulo_registro" text="  últimos movimientos">
+      <Label layoutX="22.0" layoutY="860.0" prefHeight="52.0" prefWidth="389.0" styleClass="titulo_registro" text="  últimos movimientos">
          <graphic>
             <ImageView fitHeight="51.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -228,7 +228,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <AnchorPane layoutX="18.0" layoutY="805.0" prefHeight="345.0" prefWidth="374.0" styleClass="border-ultimos-movimientos">
+      <AnchorPane layoutX="18.0" layoutY="935.0" prefHeight="345.0" prefWidth="374.0" styleClass="border-ultimos-movimientos">
          <children>
             <Label layoutX="14.0" layoutY="48.0" prefHeight="23.0" prefWidth="352.0" styleClass="labeles-movimientos" text="Label" />
             <Label layoutX="135.0" layoutY="20.0" styleClass="titulo_movimientos_hoy" text="Movimientos de hoy" />
@@ -242,7 +242,7 @@
             <Label layoutX="13.0" layoutY="118.0" styleClass="labeles-movimientos" text="Label" />
             <Label layoutX="14.0" layoutY="238.0" styleClass="labeles-movimientos" text="Label" />
          </children></AnchorPane>
-      <AnchorPane layoutX="423.0" layoutY="813.0" prefHeight="597.0" prefWidth="408.0" styleClass="border-ultimos-movimientos">
+      <AnchorPane layoutX="518.0" layoutY="904.0" prefHeight="597.0" prefWidth="408.0" styleClass="border-ultimos-movimientos">
          <children>
             <VBox layoutX="26.0" layoutY="24.0" prefHeight="107.0" prefWidth="322.0" spacing="5.0" styleClass="border_registro">
                <children>
@@ -262,7 +262,7 @@
             </VBox>
          </children>
       </AnchorPane>
-      <Label layoutX="423.0" layoutY="714.0" prefHeight="52.0" prefWidth="389.0" styleClass="titulo_registro" text="Graficos">
+      <Label layoutX="527.0" layoutY="826.0" prefHeight="52.0" prefWidth="389.0" styleClass="titulo_registro" text="Graficos">
          <graphic>
             <ImageView fitHeight="51.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -271,6 +271,24 @@
             </ImageView>
          </graphic>
       </Label>
+      <Button layoutX="136.0" layoutY="717.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="137.0" styleClass="botones" stylesheets="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Enviar" textFill="#483737">
+         <graphic>
+            <ImageView fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/img_generales/enviar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="580.0" layoutY="717.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="142.0" styleClass="botones" stylesheets="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Cancelar" textFill="#483737">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/img_generales/error.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
    <stylesheets>
       <URL value="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" />

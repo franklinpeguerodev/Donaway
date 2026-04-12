@@ -42,7 +42,7 @@
     -fx-translate-y: 17px;  
 }
 .lista-notificaciones {
-    -fx-background-color: white;
+    -fx-background-color: #f0b47bd4;
     -fx-border-color: #d1d1d1;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .lista-maestra-detalle {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #f0b47bd4;
     -fx-border-color: #D1D1D1;
     -fx-border-width: 0 1 0 0; /* Borde sutil a la derecha para separar del detalle */
 }
@@ -81,7 +81,7 @@
 }
 
 .lista-maestra-detalle .button:hover  {
-    -fx-background-color: #F5F5F5; 
+    -fx-background-color: #f0b47bd4; 
     -fx-text-fill: #610A0A; 
     -fx-cursor: hand;
 }

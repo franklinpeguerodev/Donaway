@@ -17,6 +17,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
@@ -28,6 +29,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -36,6 +38,8 @@ import org.controlsfx.control.PopOver;
 public class ControllerPrincipal implements Initializable {
 
 	@FXML private ScrollPane contenedorPrincipal;
+	@FXML private VBox contenedor_menu;
+	@FXML private VBox menu;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -44,28 +48,93 @@ public class ControllerPrincipal implements Initializable {
     public ScrollPane getContenedorPrincipal() {
         return contenedorPrincipal;
     }
-    private void ejecutarCargaModuloInicial() {
+    private final VistasEmergentes ubicacion = new VistasEmergentes();
+
+    @FXML private Button btn_abrirMapa; 
+
+    @FXML
+    private void irAInicio() {
+        ejecutarCargaModuloInicial();
+    }
+
+    @FXML
+    private void irAnalisis() {
+        cargarModulo("/views/vistas_formularios/vistas_personal_medico/vistas_bioanalista/form_datos_transfusion.fxml");
+    }
+
+    @FXML
+    private void irALaboratorio() {
+        cargarModulo("/views/vistas_formularios/vistas_personal_medico/vistas_bioanalista/registro_extraccion.fxml");
+    }
+
+    @FXML
+    private void irABuscarDonante() {
+        cargarModulo("/views/vistas_formularios/vistas_personal_medico/vistas_bioanalista/registro_datos_triaje.fxml");
+    }
+
+    @FXML
+    public void manejarColapso() {
+        boolean yaEstaColapsado = menu.getStyleClass().contains("menu-colapsado");
+        double anchoFinal = yaEstaColapsado ? 182 : 80;
+
+        if (yaEstaColapsado) {
+            menu.getStyleClass().remove("menu-colapsado");
+        }
+
+        Timeline timeline = new Timeline();
+        KeyValue ancho = new KeyValue(menu.prefWidthProperty(), anchoFinal);
+        KeyFrame duracion = new KeyFrame(Duration.millis(300), ancho);
+        timeline.getKeyFrames().add(duracion);
+
+        timeline.setOnFinished(e -> {
+            if (anchoFinal == 80) {
+                menu.getStyleClass().add("menu-colapsado");
+            }
+        });
+        timeline.play();
+    }
+    
+    public void cargarModulo(String rutaFXML) {
         try {
-            FXMLLoader loaderFormulario = new FXMLLoader(getClass().getResource("/vistas_personal_medico/panelRegistroDonante.fxml"));
+            Node vista = FXMLLoader.load(getClass().getResource(rutaFXML));
+            
+            if (vista instanceof Region) {
+                ((Region) vista).prefWidthProperty().bind(contenedorPrincipal.widthProperty());
+            }
+            
+            contenedorPrincipal.setContent(vista);
+        } catch (IOException e) {
+            System.err.println("Error al cargar módulo en: " + rutaFXML);
+            e.printStackTrace();
+        }
+    }
+    
+    public void ejecutarCargaModuloInicial() {
+        try {
+            FXMLLoader loaderFormulario = new FXMLLoader(getClass().getResource("/views/vistas_formularios/vistas_personal_medico/panelRegistroDonante.fxml"));
             Parent formulario = loaderFormulario.load();
 
             Button btnSangre = (Button) formulario.lookup("#btn_sangreReservada_inicio");
             Button btnPacientes = (Button) formulario.lookup("#btn_pacientesRecibidos_inicio");
             Button btnAnalisis = (Button) formulario.lookup("#btn_analisisEspera_inicio");
-            
+            Button btnMapa = (Button) formulario.lookup("#btn_abrirMapa");
+            if (btnMapa != null) {
+                // Le asignamos la acción directamente aquí
+                btnMapa.setOnAction(e -> ubicacion.mostrarPopOverUbicacion(btnMapa));
+            }
             
             Pane panelGrafica = (Pane) formulario.lookup("#graficas_inicio");
 
            
             if (panelGrafica != null) {
                 if (btnSangre != null) {
-                    btnSangre.setOnAction(e -> procesarVisualizacionGrafica("/vistas_personal_medico/graficaSangreReservada_inicio.fxml", "SANGRE", panelGrafica));
+                    btnSangre.setOnAction(e -> procesarVisualizacionGrafica("/views/vistas_genericas/graficaSangreReservada_inicio.fxml", "SANGRE", panelGrafica));
                 }
                 if (btnPacientes != null) {
-                    btnPacientes.setOnAction(e -> procesarVisualizacionGrafica("/vistas_personal_medico/graficaPacientesRecibidos_inicio.fxml", "PACIENTES", panelGrafica));
+                    btnPacientes.setOnAction(e -> procesarVisualizacionGrafica("/views/vistas_genericas/graficaPacientesRecibidos_inicio.fxml", "PACIENTES", panelGrafica));
                 }
                 if (btnAnalisis != null) {
-                    btnAnalisis.setOnAction(e -> procesarVisualizacionGrafica("/vistas_personal_medico/graficaAnalisisEspera.fxml", "ANALISIS", panelGrafica));
+                    btnAnalisis.setOnAction(e -> procesarVisualizacionGrafica("/views/vistas_genericas/graficaAnalisisEspera_inicio.fxml", "ANALISIS", panelGrafica));
                 }
             }
 
@@ -117,35 +186,6 @@ public class ControllerPrincipal implements Initializable {
     }
     
 
-    
-    
-    
-    @FXML 
-    private VBox menu; 
-
-    @FXML 
-    public void manejarColapso() {
-        boolean yaEstaColapsado = menu.getStyleClass().contains("menu-colapsado");
-        double anchoFinal = yaEstaColapsado ? 169 : 80;
-
-        if (yaEstaColapsado) {
-            menu.getStyleClass().remove("menu-colapsado");
-        }
-
-        Timeline timeline = new Timeline();
-        KeyValue ancho = new KeyValue(menu.prefWidthProperty(), anchoFinal);
-        KeyFrame duracion = new KeyFrame(Duration.millis(300), ancho);
-        timeline.getKeyFrames().add(duracion);
-
-        timeline.setOnFinished(e -> {
-            if (anchoFinal == 80) {
-                menu.getStyleClass().add("menu-colapsado");
-            }
-        });
-
-        timeline.play();
-    }
-    
     @FXML
     private Button flecha_columna;
     @FXML
@@ -273,7 +313,7 @@ public class ControllerPrincipal implements Initializable {
     
     private void cargarCentroNotifi(NotificacionObjeto actual, List<NotificacionObjeto> todas) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas_personal_medico/centroNotificaciones.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/vistas_genericas/centroNotificaciones.fxml"));
             Parent vistaDetalle = loader.load(); 
 
             ControladorCentroNotificaciones hijo = loader.getController();
@@ -314,7 +354,7 @@ public class ControllerPrincipal implements Initializable {
         Circle clip = new Circle(40, 40, 40); 
         
         try {
-            Image imagen_usuario = new Image(getClass().getResourceAsStream("@/img_personal_medico/usuario.png"));
+            Image imagen_usuario = new Image(getClass().getResourceAsStream("/img/img_generales/usuario.png"));
             fotoPerfil.setImage(imagen_usuario);
         } catch (Exception e) {
             System.err.println("No se pudo cargar la imagen desde los recursos.");
@@ -363,7 +403,7 @@ public class ControllerPrincipal implements Initializable {
    
     private void cargarPanelCentralPerfil() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas_personal_medico/panelDetallesPerfil.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/vistas_genericas/panelDetallesPerfil.fxml"));
             Parent vista=loader.load();
             ControllerGraficosIndependiente userController = loader.getController();
             userController.setPrincipalController(this);
@@ -398,7 +438,7 @@ public class ControllerPrincipal implements Initializable {
         ScrollPane scrollLateral = new ScrollPane(listaBotonesNotificativas);
         scrollLateral.setFitToWidth(true);
         scrollLateral.setPrefWidth(210);
-        scrollLateral.setStyle("-fx-background-color: transparent; -fx-border-color: #DCDCDC; -fx-border-width: 0 1 0 0;");
+        scrollLateral.setStyle("-fx-background-color: #f0b47bd4; -fx-border-color: #f0b47bd4; -fx-border-width: 0 1 0 0;");
 
         
         if (vistaDetalle instanceof BorderPane) {

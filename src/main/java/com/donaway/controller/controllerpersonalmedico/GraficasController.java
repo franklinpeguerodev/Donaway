@@ -75,9 +75,9 @@ public class GraficasController {
             btn.setOnAction(e -> {
                 // Determinamos qué archivo FXML corresponde
             	String fxmlDestino = switch (rep.getTipo()) {
-                case "SANGRE" -> "/vistas_personal_medico/graficaCentral_SangreReservada.fxml";
-                case "PACIENTES" -> "/vistas_personal_medico/graficaCentral_PacientesRecibidos.fxml";
-                case "ANALISIS" -> "/vistas_personal_medico/graficaCentral_AnalisisEspera.fxml";
+                case "SANGRE" -> "/views/vistas_genericas/graficaCentral_SangreReservada.fxml";
+                case "PACIENTES" -> "/views/vistas_genericas/graficaCentral_PacientesRecibidos.fxml";
+                case "ANALISIS" -> "/views/vistas_genericas/graficaCentral_AnalisisEspera.fxml";
                 default -> null;
             };
 

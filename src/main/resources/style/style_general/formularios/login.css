@@ -1,0 +1,78 @@
+.panel-logo{
+-fx-background-repeat: no-repeat;
+    -fx-background-size: 60px;
+    -fx-background-position: center center;
+}
+.fondo{
+
+     -fx-font-size: 14px;
+    -fx-background-color: #d3b1bdef;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: #848383;
+}
+.fondo-total{
+
+     -fx-font-size: 14px;
+      -fx-background-color: #39081af8;
+    -fx-border-color: #848383;
+}
+
+.header{
+     -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(93, 6, 32) !important;
+    -fx-font-size: 40px ;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 102, 102, 0.491), 5, 0, 0, 1) !important;  
+    
+}
+.header-subtitulo{
+     -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(67, 4, 28) !important;
+    -fx-font-size: 20px ;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(255, 172, 172, 0.491), 5, 0, 0, 1) !important;  
+    
+}
+.titulo_login{
+-fx-font-family: "Shelten";
+    -fx-text-fill: rgb(206, 146, 146) !important;
+    -fx-font-size: 27px ;
+    -fx-font-weight: bold;
+    -fx-padding:10 20 0 20
+}
+.subtitulo_login{
+    -fx-font-family: "Segoe UI Black";
+    -fx-font-style: italic;
+    -fx-text-fill: rgb(206, 146, 146) !important;
+    -fx-font-size: 15px ;
+    -fx-font-style:italic;
+    -fx-padding:10 20 0 20
+}
+.text_busqueda {
+    -fx-background-color: #ae58909f;
+    -fx-background-radius: 5;
+    -fx-border-color: #8d3d3dca;
+    -fx-border-radius: 5;
+    -fx-font-family: "Shelten";
+}
+
+.campo{
+      -fx-border-color:  rgba(186, 131, 131, 0.988);
+    -fx-border-width: 7;
+     -fx-border-radius: 25; 
+    -fx-background-radius: 25;
+    -fx-padding:15 20 15 20
+}
+
+.text_busqueda:focused {
+    -fx-background-color: #fff0f0;
+    -fx-border-color: #8E1B1B;
+    -fx-border-width: 2;
+}
+.texto_login{
+    -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: #d3b1bdef;
+    -fx-font-size: 15px ;
+    -fx-font-style: italic;
+}
