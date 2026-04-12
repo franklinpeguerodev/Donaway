@@ -1,8 +1,6 @@
 package com.donaway.service;
-import com.donaway.dao.donacion.IDonanteDao;
-import com.donaway.dao.impl.donacion.DonanteImpl;
-
-
+import com.donaway.dao.impl.persona.DonanteImpl;
+import com.donaway.dao.persona.IDonanteDao;
 import com.donaway.exception.ValidacionException;
 
 import com.donaway.utils.mensaje.Mensaje;

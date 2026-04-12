@@ -6,6 +6,7 @@ import com.donaway.utils.db.ConexionDbDonaway;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 public class InstitucionImpl implements IInstitucionDao{
 	@Override
 	public void registrarInstitucion(Institucion institucion) throws SQLException{
@@ -17,5 +18,23 @@ public class InstitucionImpl implements IInstitucionDao{
 			ps.setString(3, institucion.getContactoEmergencia());
 			ps.setObject(4, institucion.getFechaRegistro());
 		}
+	}
+
+	@Override
+	public void modificarInstitucion(Institucion institucion) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Institucion optenerPorRnc(String rnc) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Institucion> optnerInstituciones() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -1,11 +1,14 @@
 package com.donaway.dao.impl.user;
+
 import com.donaway.dao.user.IPersonalMedico;
 import com.donaway.utils.db.ConexionDbDonaway; 
 import com.donaway.model.user.PersonalMedico;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 import java.sql.PreparedStatement;
-	public class PersonalMedicoImpl implements IPersonalMedico{
+	
+public class PersonalMedicoImpl implements IPersonalMedico{
 		String sql = "INSERT INTO personal_medico (documento_id_personal,nombre,sexo,fecha_nacimiento,telefono,email"
 				+ "rnc_institucion,rol,credenciales_encriptadas,ultimoAcceso)"
 				+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
@@ -28,5 +31,30 @@ import java.sql.PreparedStatement;
 			System.out.println("Se inserto los datos");
 		}
 				
-	}}
+	}
+		@Override
+		public void modificarPersonalMedico(PersonalMedico personalmedico) throws SQLException {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public void actualizarUltimoAccesoPersonalMedico(String docuemntId) throws SQLException {
+			// TODO Auto-generated method stub
+			
+		}
+		@Override
+		public PersonalMedico obtenerPorId(String docuemntId) throws SQLException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		@Override
+		public List<PersonalMedico> obtenerInstitucion(String rnc) throws SQLException {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		@Override
+		public boolean validarCredencuiales(String email, String password) throws SQLException {
+			// TODO Auto-generated method stub
+			return false;
+		}}
 
