@@ -15,6 +15,7 @@ public class PersonalMedico extends Persona{
 
 	private String rnc;
 	private String codigoCarnet;
+	private String idUbicacion;
 	private Cargo cargo;
 	private Departamento departamento;
 	private Rol rol;
@@ -24,7 +25,7 @@ public class PersonalMedico extends Persona{
 	private LocalDateTime ultimoAcceso;
 
 	
-	public PersonalMedico(String documentId, String nombre, Sexo sexo, LocalDate fechaNacimiento, String telefono,
+	public PersonalMedico(String documentId, String nombre, Sexo sexo, LocalDate fechaNacimiento, String idUbicacion, String telefono,
 			String email, LocalDateTime fechaRegistro, String rnc, String codigoCarnet, Cargo cargo, Departamento departamento, Rol rol,
 			Jornada jornada, EstadoPersonal estado, String credencialEncriptada, LocalDateTime ultimoAcceso) {
 		super(documentId, nombre, sexo, fechaNacimiento, telefono, email, fechaRegistro);
@@ -109,6 +110,14 @@ public class PersonalMedico extends Persona{
 
 	public void setCodigoCarnet(String codigoCarnet) {
 		this.codigoCarnet = codigoCarnet;
+	}
+
+	public String getIdUbicacion() {
+		return idUbicacion;
+	}
+
+	public void setIdUbicacion(String idUbicacion) {
+		this.idUbicacion = idUbicacion;
 	}
 
 }

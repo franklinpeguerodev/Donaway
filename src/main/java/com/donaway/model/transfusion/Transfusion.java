@@ -11,11 +11,12 @@ public class Transfusion {
 	private String rnc;
 	private String codigoBarras;
 	private TipoTransfusion tipoTransfusionObj;
+	private double cantidadAdministrada;
 	private LocalDateTime fechaTransfusion;
 	
 	//constructores
 	public Transfusion(String idTransfusion, String idSolicitud, String rnc, String codigoBarras,
-			LocalDateTime fechaTransfusion, TipoTransfusion tipoTransfusionObj) {
+			LocalDateTime fechaTransfusion, TipoTransfusion tipoTransfusionObj, double cantidadAdministrada) {
 		super();
 		this.idTransfusion = idTransfusion;
 		this.idSolicitud = idSolicitud;
@@ -23,6 +24,7 @@ public class Transfusion {
 		this.codigoBarras = codigoBarras;
 		this.fechaTransfusion = fechaTransfusion;
 		this.tipoTransfusionObj = tipoTransfusionObj;
+		this.cantidadAdministrada = cantidadAdministrada;
 	}
 
 	public Transfusion() {
@@ -77,6 +79,14 @@ public class Transfusion {
 
 	public void setTipoTransfusionObj(TipoTransfusion tipoTransfusionObj) {
 		this.tipoTransfusionObj = tipoTransfusionObj;
+	}
+
+	public double getCantidadAdministrada() {
+		return cantidadAdministrada;
+	}
+
+	public void setCantidadAdministrada(double cantidadAdministrada) {
+		this.cantidadAdministrada = cantidadAdministrada;
 	}
 	
 	

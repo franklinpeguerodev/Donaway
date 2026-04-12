@@ -12,6 +12,7 @@ public class SolicitudTransfusion {
 	private String documentIdReceptor;
 	private String rnc;
 	private String codigoReferencia;
+	private double cantidadSolicitada;
 	private LocalDateTime fechaSolicitud;
 	private EstadoSolicitud estadoSolicitudObj;
 	private PrioridadSolicitud prioridadObj;
@@ -21,13 +22,14 @@ public class SolicitudTransfusion {
 
 	
 	//Contructores
-	public SolicitudTransfusion(String idSolicitud, String documentIdReceptor, String rnc, String codigoReferencia, LocalDateTime fechaSolicitud,
+	public SolicitudTransfusion(String idSolicitud, String documentIdReceptor, String rnc, String codigoReferencia, double cantidadSolicitada, LocalDateTime fechaSolicitud,
 		EstadoSolicitud estadoSolicitud, PrioridadSolicitud prioridad, TipoComponente componentes, LocalDateTime fechaEntrega) {
 		super();
 		this.idSolicitud = idSolicitud;
 		this.documentIdReceptor = documentIdReceptor;
 		this.rnc = rnc;
 		this.codigoReferencia = codigoReferencia;
+		this.cantidadSolicitada = cantidadSolicitada;
 		this.fechaSolicitud = fechaSolicitud;
 		this.estadoSolicitudObj = estadoSolicitud;
 		this.prioridadObj = prioridad;
@@ -150,6 +152,16 @@ public class SolicitudTransfusion {
 
 	public void setComponentes(TipoComponente componentes) {
 		this.componentes = componentes;
+	}
+
+
+	public double getCantidadSolicitada() {
+		return cantidadSolicitada;
+	}
+
+
+	public void setCantidadSolicitada(double cantidadSolicitada) {
+		this.cantidadSolicitada = cantidadSolicitada;
 	}
 	
 	
