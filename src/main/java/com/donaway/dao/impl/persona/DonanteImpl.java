@@ -1,7 +1,10 @@
-package com.donaway.dao.impl.donacion;
+package com.donaway.dao.impl.persona;
 
-import com.donaway.dao.donacion.IDonanteDao;
+import com.donaway.dao.persona.IDonanteDao;
 import com.donaway.model.persona.Donante;
+import com.donaway.utils.constants.EstadoDisponibilidad;
+import com.donaway.utils.constants.FactorRh;
+import com.donaway.utils.constants.TipoSangre;
 import com.donaway.utils.db.ConexionDbDonaway;
 import java.sql.Connection;
 
@@ -50,6 +53,26 @@ public class DonanteImpl implements IDonanteDao {
 
 	@Override	
 	public List<Donante> obtenerTodo(){
+		return null;
+	}
+	@Override
+	public void actualizarEstado(String documentoId, EstadoDisponibilidad nuevoEstado) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public Donante obtenerPorId(String documentId) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<Donante> obtenerPorSangre(TipoSangre tipo, FactorRh factor) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public List<Donante> obtenerPorEstado(EstadoDisponibilidad estado) throws SQLException {
+		// TODO Auto-generated method stub
 		return null;
 	}
 	

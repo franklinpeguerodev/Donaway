@@ -1,4 +1,5 @@
 package com.donaway.model.persona;
+
 import com.donaway.model.user.Persona;
 import com.donaway.utils.constants.EstadoDisponibilidad;
 import com.donaway.utils.constants.FactorRh;
@@ -7,6 +8,7 @@ import com.donaway.utils.constants.TipoSangre;
 
 import java.time.LocalDateTime;
 import java.time.LocalDate;
+
 public class Donante extends Persona{
 
 	private TipoSangre tipoSangre;

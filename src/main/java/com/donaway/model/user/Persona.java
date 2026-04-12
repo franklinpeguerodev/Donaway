@@ -7,8 +7,8 @@ import com.donaway.utils.constants.Sexo;
 public abstract class Persona {
 	protected String documentId;
 	protected String nombre;
-	protected Sexo sexo;
 	protected LocalDate fechaNacimiento;
+	protected Sexo sexo;
 	protected String telefono ;
 	protected String email;
 	protected LocalDateTime fechaRegistro;

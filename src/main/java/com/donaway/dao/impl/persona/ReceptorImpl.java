@@ -1,15 +1,17 @@
-package com.donaway.dao.impl.donacion;
+package com.donaway.dao.impl.persona;
 
-import com.donaway.dao.donacion.IReceptorDao;
+import com.donaway.dao.persona.IReceptorDao;
+import com.donaway.model.persona.Donante;
 import com.donaway.model.persona.Receptor;
 import com.donaway.utils.db.ConexionDbDonaway;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 public class ReceptorImpl implements IReceptorDao {
 	
 	@Override
-	public void registrarReceptorDonante(Receptor receptor) throws SQLException{
+	public void registrarReceptor(Receptor receptor) throws SQLException{
 		String sql="INSERT INTO receptor (document_id_receptor,nombre,sexo,fecha_nacimiento,telefono,email,fechaRegistro"
 				+ "peso,tipo_sangre,factor_rh) VALUES (?,?,?,?,?,?,?,?,?,?)";
 		try(Connection conn = ConexionDbDonaway.getConnection();
@@ -29,5 +31,30 @@ public class ReceptorImpl implements IReceptorDao {
 		}
 	
 	
+	}
+
+
+	@Override
+	public void modificarReceptor(Receptor receptor) throws SQLException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Donante> obtenerTodo() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Receptor> buscarPorNombre(String nombre) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Receptor obtenerPorId(String documentId) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -379,6 +379,7 @@ public class ControllerPrincipal implements Initializable {
         añadirFilaGrid(grid, "ID:", "DW-2026-0404", 3);
         añadirFilaGrid(grid, "Horario:", "08:00 AM - 04:00 PM", 4);
         añadirFilaGrid(grid, "Estado:", "Activo", 5);
+        
 
         // --- BOTÓN DE ACCIÓN ---
         Button btnVerPerfil = new Button("Ver Perfil Completo");
