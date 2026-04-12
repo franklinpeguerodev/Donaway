@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="752.0" prefWidth="767.0" styleClass="fondo-total" stylesheets="@../../../style/style_general/formularios/login.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="752.0" prefWidth="767.0" styleClass="fondo-total" stylesheets="@../../../style/style_general/formularios/login.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.user.UserLoginController">
    <children>
       <AnchorPane layoutY="-5.0" prefHeight="183.0" prefWidth="767.0" styleClass="fondo">
          <children>
@@ -66,9 +66,9 @@
             </ImageView>
          </graphic>
       </Label>
-      <Button layoutX="519.0" layoutY="598.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="137.0" styleClass="botones" stylesheets="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Verificar" textFill="#483737">
+      <Button fx:id="btn" layoutX="519.0" layoutY="598.0" mnemonicParsing="false" onAction="#verificarUsuario" prefHeight="17.0" prefWidth="137.0" styleClass="botones" stylesheets="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Verificar" textFill="#483737">
          <graphic>
-            <ImageView fx:id="btn" fitHeight="51.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="51.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../img/img_registros_login/verificado.png" />
                </image>

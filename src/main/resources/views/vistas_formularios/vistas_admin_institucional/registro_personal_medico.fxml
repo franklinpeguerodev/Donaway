@@ -121,7 +121,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" styleClass="botones_general" stylesheets="@../../style/style_personal_medico/componentes_inicio/botones.css">
+                  <Button fx:id="btnabrirMapa" mnemonicParsing="false" styleClass="botones_general" stylesheets="@../../style/style_personal_medico/componentes_inicio/botones.css">
                      <graphic>
                         <ImageView fx:id="btn_ubicacion" fitHeight="47.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
                            <image>

@@ -32,6 +32,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import com.donaway.dto.login.SessionManager;
+import com.donaway.dto.login.UserSessionDto;
+import com.mysql.cj.Session;
 
 import org.controlsfx.control.PopOver;
 
@@ -336,7 +339,8 @@ public class ControllerPrincipal implements Initializable {
     private PopOver popupPerfil;
    @FXML
     private void mostrarPopOverPerfil() {
-        if (popupNotificaciones != null && popupNotificaciones.isShowing()) {
+	   UserSessionDto usuario = SessionManager.getInstance().getUsuarioActual()
+;        if (popupNotificaciones != null && popupNotificaciones.isShowing()) {
             popupNotificaciones.hide();
             return;
         }
@@ -373,12 +377,12 @@ public class ControllerPrincipal implements Initializable {
         grid.setStyle("-fx-padding: 15; -fx-background-color: #F9F9F9; -fx-background-radius: 10; -fx-border-color: #DCDCDC; -fx-border-radius: 10;");
 
         
-        añadirFilaGrid(grid, "Nombre:", "Alexa Greilenny Bello Guzmán", 0);
-        añadirFilaGrid(grid, "Cargo:", "Bioanalista Principal", 1);
-        añadirFilaGrid(grid, "Depto:", "Unidad de Extracción", 2);
-        añadirFilaGrid(grid, "ID:", "DW-2026-0404", 3);
-        añadirFilaGrid(grid, "Horario:", "08:00 AM - 04:00 PM", 4);
-        añadirFilaGrid(grid, "Estado:", "Activo", 5);
+        añadirFilaGrid(grid, "Nombre:",usuario.nombre(), 0);
+        añadirFilaGrid(grid, "Cargo:", usuario.cargo().toString(), 1);
+        añadirFilaGrid(grid, "Depto:", usuario.cargo().toString(), 2);
+        añadirFilaGrid(grid, "ID:", usuario.carnet(), 3);
+        añadirFilaGrid(grid, "Horario:", usuario.jornada().toString(), 4);
+        añadirFilaGrid(grid, "Estado:", usuario.estado().toString(), 5);
         
 
         // --- BOTÓN DE ACCIÓN ---

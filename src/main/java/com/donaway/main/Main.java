@@ -20,7 +20,7 @@ public class Main extends Application {
     public void start(Stage stage) {
     	try {
         	Parent root = FXMLLoader.load(
-        		    getClass().getResource("/views/vistas_genericas/Plantilla_personal_medico.fxml")
+        		    getClass().getResource("/views/vistas_formularios/vistas_generales/login.fxml")
         		);Scene scene = new Scene(root);
     	
 
