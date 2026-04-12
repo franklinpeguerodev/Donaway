@@ -12,6 +12,7 @@ import com.donaway.utils.constants.Sexo;
 
 public class PersonalMedico extends Persona{
 
+
 	private String rnc;
 	private Cargo cargo;
 	private Departamento departamento;
@@ -20,6 +21,20 @@ public class PersonalMedico extends Persona{
 	private EstadoPersonal estado;
 	private String credencialEncriptada;
 	private LocalDateTime ultimoAcceso;
+
+
+	public PersonalMedico (String documentId, String nombre, Sexo sexo, LocalDate fechaNacimiento,String telefono,
+		String email,LocalDateTime fechaRegistro,String rnc,Cargo cargo, Departamento departamento, Rol rol, Jornada jornada, String credencialEncriptada, LocalDateTime ultimoAcceso) {
+		super(documentId,nombre,sexo,fechaNacimiento,telefono,email,fechaRegistro);
+		this.rnc=rnc;
+		this.cargo = cargo;
+		this.departamento = departamento;
+		this.rol=rol;
+		this.jornada = jornada;
+		this.credencialEncriptada=credencialEncriptada;
+		this.ultimoAcceso=ultimoAcceso;
+		}
+
 	
 	public PersonalMedico(String documentId, String nombre, Sexo sexo, LocalDate fechaNacimiento, String telefono,
 			String email, LocalDateTime fechaRegistro, String rnc, Cargo cargo, Departamento departamento, Rol rol,
@@ -98,5 +113,6 @@ public class PersonalMedico extends Persona{
 	public void setEstado(EstadoPersonal estado) {
 		this.estado = estado;
 	}
+
 }
 
