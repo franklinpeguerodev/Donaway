@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 
 import com.donaway.controller.controllerpersonal_inventario.ControllerInventario;
+import com.donaway.controller.controllersecretaria.ControllerSecretaria;
 
 
 public class ControllerGraficosIndependiente {
@@ -20,6 +21,12 @@ public class ControllerGraficosIndependiente {
 	 
 	    private ControllerPrincipal principalController;
 	    private ControllerInventario inventarioController;
+	    private ControllerSecretaria controllerSecretaria;
+	    
+		public void setsecretarioController(ControllerSecretaria controllerSecretaria) {
+			 this.controllerSecretaria = controllerSecretaria;
+			
+		}
 	   
 public void setPrincipalController(ControllerPrincipal controller) {
 	 this.principalController = controller;
@@ -89,6 +96,8 @@ public void setInventarioController(ControllerInventario inventarioController) {
 	    	        e.printStackTrace();
 	    	    }
 	    	}
+
+		
 
 		
 

@@ -288,11 +288,11 @@
       <URL value="@../../style/style_general/componentes_inicio/borders.css" />
       <URL value="@../../style/style_general/componentes_inicio/botones.css" />
       <URL value="@../../style/style_general/componentes_inicio/header.css" />
+      <URL value="@../../style/style_general/layout/detalles.css" />
       <URL value="@../../style/style_general/layout/graficos.css" />
       <URL value="@../../style/style_general/layout/informacion-usuario.css" />
-      <URL value="@../../style/style_general/layout/graficos.css" />
-      <URL value="@../../style/style_general/layout/panel_left_inicio.css" />
       <URL value="@../../style/style_general/layout/menu.css" />
       <URL value="@../../style/style_general/layout/notificaciones.css" />
+      <URL value="@../../style/style_general/layout/panel_left_inicio.css" />
    </stylesheets>
 </BorderPane>

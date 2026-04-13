@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="785.0" prefWidth="350.0" styleClass="fondo-total_ubicacion" stylesheets="@../../../style/style_general/formularios/form_ubicacion.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="717.0" prefWidth="350.0" styleClass="fondo-total_ubicacion" stylesheets="@../../../style/style_general/formularios/form_ubicacion.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="27.0" layoutY="14.0" prefHeight="39.0" prefWidth="299.0" styleClass="titulo_registro" text="Ubicación">
          <graphic>
@@ -22,7 +22,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <VBox layoutX="24.0" layoutY="82.0" prefHeight="580.0" prefWidth="301.0" spacing="20.0" styleClass="border_registro">
+      <VBox layoutX="24.0" layoutY="82.0" prefHeight="529.0" prefWidth="284.0" spacing="20.0" styleClass="border_registro">
          <children>
             <HBox prefHeight="60.0" prefWidth="308.0" spacing="8.0">
                <children>
@@ -130,7 +130,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="126.0" layoutY="696.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="114.0" styleClass="botones" stylesheets="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Enviar" textFill="#483737">
+      <Button layoutX="117.0" layoutY="669.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="114.0" styleClass="botones" stylesheets="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Enviar" textFill="#483737">
          <graphic>
             <ImageView fitHeight="33.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                <image>

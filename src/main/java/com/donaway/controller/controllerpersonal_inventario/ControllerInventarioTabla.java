@@ -21,10 +21,10 @@ public class ControllerInventarioTabla implements Initializable {
     @FXML private GridPane gridInventario;
     @FXML private PieChart grafica_sangre_inventario;
     
-    // Inyección de gráficas adicionales (Asegúrate de que estos ID existan en tu FXML)
+  
     @FXML private AreaChart<String, Number> grafica_volumenSangre;
     @FXML private BarChart<String, Number> grafica_donaciones;
-    @FXML private VBox vBoxDetalles; // Contenedor para los textos descriptivos
+    @FXML private VBox vBoxDetalles; 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
