@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1327.0" prefWidth="900.0" styleClass="fondo" stylesheets="@../../../../style/style_personal_medico/style_bioanalista/formulario_triaje.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="86.0" layoutY="34.0" prefHeight="60.0" prefWidth="691.0" styleClass="titulo_registro" text="             Registro de Solicitud De Sangre">
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/img_generales/solicitud_modulo.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <VBox layoutX="34.0" layoutY="156.0" prefHeight="929.0" prefWidth="693.0" spacing="40.0" styleClass="border_registro">
+         <children>
+            <HBox layoutX="11.0" layoutY="11.0" prefHeight="60.0" prefWidth="308.0" spacing="155.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="189.0" styleClass="texto_form" text="✧ Código De Referencia">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label prefHeight="34.0" prefWidth="161.0" styleClass="text_busqueda" text="Label" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="230.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="114.0" styleClass="texto_form" text="✧ ID Receptor">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField prefHeight="31.0" prefWidth="140.0" promptText="12344232323" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="175.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="167.0" styleClass="texto_form" text="✧ RNC Institucional">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label prefHeight="34.0" prefWidth="161.0" styleClass="text_busqueda" text="Label" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="160.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="185.0" styleClass="texto_form" text="✧ Fecha De Solicitud">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="251.0" prefHeight="60.0" prefWidth="308.0" spacing="160.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="187.0" styleClass="texto_form" text="✧ Fecha De Entrega">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="491.0" prefHeight="60.0" prefWidth="308.0" spacing="160.0">
+               <children>
+                  <Label prefHeight="34.0" prefWidth="186.0" styleClass="texto_form" text="✧ Prioridad">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox prefHeight="30.0" prefWidth="150.0" styleClass="text_busqueda" />
+               </children>
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+            <HBox layoutX="11.0" layoutY="651.0" prefHeight="60.0" prefWidth="308.0" spacing="180.0">
+               <padding>
+                  <Insets left="10.0" top="15.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="86.0" layoutY="1175.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="137.0" styleClass="botones_general" stylesheets="@../../../../style/style_general/componentes_inicio/botones.css" text="Enviar" textFill="#483737">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/img_generales/enviar.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="520.0" layoutY="1175.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="137.0" styleClass="botones_general" stylesheets="@../../../../style/style_general/componentes_inicio/botones.css" text="Enviar" textFill="#483737">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/img_generales/error.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.sql.SQLException;
@@ -25,6 +26,7 @@ public class Main extends Application {
 
             stage.setScene(scene);
             stage.setTitle("DonaWay RD");
+            stage.getIcons().add(new Image("/img/img_generales/Logo.png"));
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

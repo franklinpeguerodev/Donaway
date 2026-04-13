@@ -2,7 +2,7 @@
 -fx-font-family: "Shelten";
     -fx-text-fill: rgb(145, 97, 97) !important;
     -fx-background-color:#975d5da2;
-    -fx-font-size: 27px ;
+    -fx-font-size: 30px ;
      -fx-border-color:  rgba(105, 58, 58, 0.848);
     -fx-border-width: 3;
      -fx-border-radius: 25; 
@@ -40,6 +40,7 @@
     -fx-background-radius: 5;
     -fx-border-color: #460606ca;
     -fx-border-radius: 5;
+     -fx-font-size: 15px ;
     -fx-font-family: "Shelten";
 }
 

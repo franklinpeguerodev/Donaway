@@ -21,3 +21,8 @@
     -fx-border-color: transparent;
     -fx-background-insets: 0; /* Esto elimina el "filo" blanco */
 }
+.scroll-pane .scroll-bar {
+    -fx-opacity: 0;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}

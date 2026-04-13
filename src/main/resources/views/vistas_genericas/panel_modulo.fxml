@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1400.0" prefWidth="1094.0" stylesheets="@../../style/style_general/layout/centroModulos.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.controllerpersonalmedico.ControladorCentroNotificaciones">
+   <left>
+      <VBox fx:id="contenedor_listaModulo" prefHeight="1293.0" prefWidth="166.0" styleClass="border" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <Label fx:id="lblTituloModulo" prefHeight="107.0" prefWidth="1093.0" styleClass="titulo-notifi" BorderPane.alignment="CENTER">
+         <graphic>
+            <ImageView fx:id="imgIconoModulo" fitHeight="85.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <Pane fx:id="contenedor_formularios" prefHeight="1327.0" prefWidth="1147.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

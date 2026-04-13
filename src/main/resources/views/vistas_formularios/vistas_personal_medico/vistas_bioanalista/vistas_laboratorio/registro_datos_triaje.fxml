@@ -11,13 +11,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1214.0" prefWidth="767.0" styleClass="fondo" stylesheets="@../../../../style/style_personal_medico/style_bioanalista/formulario_triaje.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1327.0" prefWidth="900.0" styleClass="fondo" stylesheets="@../../../../../style/style_personal_medico/style_bioanalista/formulario_triaje.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="86.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="          Resultados de análisis de laboratorio">
+      <Label layoutX="86.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="          Datos de Triaje">
          <graphic>
             <ImageView fitHeight="44.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../img/img_personal_medico/img_registros/categorias.png" />
+                  <Image url="@../../../../../img/img_personal_medico/img_registros/categorias.png" />
                </image>
             </ImageView>
          </graphic>
@@ -143,20 +143,20 @@
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="587.0" layoutY="1080.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="142.0" styleClass="botones" stylesheets="@../../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Cancelar" textFill="#483737">
+      <Button layoutX="587.0" layoutY="1080.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="131.0" styleClass="botones" stylesheets="@../../../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Cancelar" textFill="#483737">
          <graphic>
-            <ImageView fitHeight="42.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="33.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../img/img_generales/error.png" />
+                  <Image url="@../../../../../img/img_generales/error.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="103.0" layoutY="1079.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="137.0" styleClass="botones" stylesheets="@../../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Enviar" textFill="#483737">
+      <Button layoutX="103.0" layoutY="1079.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="114.0" styleClass="botones" stylesheets="@../../../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Enviar" textFill="#483737">
          <graphic>
-            <ImageView fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="41.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../img/img_generales/enviar.png" />
+                  <Image url="@../../../../../img/img_generales/enviar.png" />
                </image>
             </ImageView>
          </graphic>

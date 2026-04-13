@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="861.0" prefWidth="820.0" styleClass="fondo" stylesheets="@../../../../style/style_personal_medico/style_bioanalista/formulario_extraccion.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1327.0" prefWidth="900.0" styleClass="fondo" stylesheets="@../../../../../style/style_personal_medico/style_bioanalista/formulario_extraccion.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="86.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="           Registro de Extracción Hemática">
          <graphic>
             <ImageView fitHeight="51.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../img/img_personal_medico/img_registros/extraccion-de-sangre.png" />
+                  <Image url="@../../../../../img/img_personal_medico/img_registros/extraccion-de-sangre.png" />
                </image>
             </ImageView>
          </graphic>
@@ -38,27 +38,27 @@
                   <Insets left="10.0" top="15.0" />
                </padding>
             </HBox>
-            <HBox prefHeight="60.0" prefWidth="308.0" spacing="200.0">
+            <HBox prefHeight="60.0" prefWidth="308.0" spacing="160.0">
                <children>
-                  <Label prefHeight="31.0" prefWidth="162.0" styleClass="texto_form" text="➥ Cédula Personal">
+                  <Label prefHeight="31.0" prefWidth="201.0" styleClass="texto_form" text="➥ Documento ID Personal">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="txt_cedula" prefHeight="34.0" prefWidth="155.0" promptText="Cédula..." styleClass="text_busqueda" />
+                  <TextField fx:id="txt_cedula" prefHeight="34.0" prefWidth="155.0" promptText="12345678" styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
                </padding>
             </HBox>
-            <HBox layoutX="11.0" layoutY="91.0" prefHeight="60.0" prefWidth="308.0" spacing="200.0">
+            <HBox layoutX="11.0" layoutY="91.0" prefHeight="60.0" prefWidth="308.0" spacing="160.0">
                <children>
-                  <Label prefHeight="31.0" prefWidth="160.0" styleClass="texto_form" text="➥ Cédula Donante">
+                  <Label prefHeight="31.0" prefWidth="201.0" styleClass="texto_form" text="➥ Documento ID Donante">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="txt_cedula1" prefHeight="34.0" prefWidth="155.0" promptText="Cédula..." styleClass="text_busqueda" />
+                  <TextField fx:id="txt_cedula1" prefHeight="34.0" prefWidth="155.0" promptText="123455678" styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -118,20 +118,20 @@
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="66.0" layoutY="741.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="137.0" styleClass="botones" stylesheets="@../../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Enviar" textFill="#483737">
+      <Button layoutX="79.0" layoutY="741.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="124.0" styleClass="botones" text="Enviar" textFill="#483737">
          <graphic>
-            <ImageView fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../img/img_generales/enviar.png" />
+                  <Image url="@../../../../../img/img_generales/enviar.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="596.0" layoutY="744.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="142.0" styleClass="botones" stylesheets="@../../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Cancelar" textFill="#483737">
+      <Button layoutX="596.0" layoutY="744.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="114.0" styleClass="botones" stylesheets="@../../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Cancelar" textFill="#483737">
          <graphic>
-            <ImageView fitHeight="42.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="34.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../img/img_generales/error.png" />
+                  <Image url="@../../../../../img/img_generales/error.png" />
                </image>
             </ImageView>
          </graphic>

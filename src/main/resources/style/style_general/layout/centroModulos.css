@@ -1,0 +1,53 @@
+.titulo-detalles{
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(209, 160, 160) !important;
+    -fx-font-size: 27px ;
+    -fx-font-weight: bold;
+     -fx-background-color: #2e2323dc;
+    -fx-border-width: 3;
+     -fx-border-radius: 25; 
+       -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 25, 0, 0, 20);
+    -fx-background-radius: 25;
+    -fx-padding:10 20 0 20
+    
+}
+
+.border{
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+     -fx-border-radius: 0 25 0 25;
+    -fx-background-color:#583333b7; 
+    -fx-background-radius: 0 25 0 25;
+
+}
+.titulo-notifi{
+     -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(250, 221, 221) !important;
+    -fx-font-size: 45px ;
+    -fx-font-weight: bold;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+     -fx-border-radius: 0;
+    -fx-background-color:#583333b7; 
+    -fx-background-radius: 0;
+    -fx-padding:10 20 0 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 102, 102, 0.491), 2, 0, 0, 1);  
+}
+.fecha-noti {
+    -fx-font-family: "Shelten";
+    -fx-text-fill: gray;
+    -fx-font-size: 12px;
+    -fx-font-style: italic; 
+    -fx-alignment: right;
+    -fx-padding: 0 0 0 20;
+}
+.detalles_text{
+ -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(104, 53, 53);
+    -fx-font-size: 16px;
+     -fx-font-weight: bold;
+    -fx-alignment: right;
+    -fx-padding: 0 0 0 20;
+}
