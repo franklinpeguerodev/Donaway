@@ -6,6 +6,7 @@ public class Institucion{
 	private String idUbicacion;
 	private String contactoEmergencia;
 	private LocalDate fechaRegistro;
+	private String dirreccionCompleta;
 
 	public Institucion (String rnc,String nombre, String idUbicacion, String contactoEmergencia,LocalDate fechaRegistro){
 		this.rnc=rnc;
@@ -51,5 +52,13 @@ public LocalDate getFechaRegistro (){
 }
 public void setFechaRegistro (LocalDate fechaRegistro){
   this.fechaRegistro =fechaRegistro;
+}
+
+public String getDirreccionCompleta() {
+	return dirreccionCompleta;
+}
+
+public void setDirreccionCompleta(String dirreccionCompleta) {
+	this.dirreccionCompleta = dirreccionCompleta;
 }
 }

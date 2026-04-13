@@ -386,7 +386,7 @@ public class UbicacionImpl implements IUbicacionDao {
 			if (ubicacion.getIdSubBarrio() > 0) {
 				ps.setInt(8, ubicacion.getIdSubBarrio());
 			} else {
-				ps.setNull(8,  java.sql.Types.INTEGER);
+				ps.setNull(8,java.sql.Types.INTEGER);
 			}
 			
 			ps.setString(9, ubicacion.getDireccion());

@@ -17,6 +17,7 @@ public class Donante extends Persona{
 	private LocalDateTime ultimaDonacion;
 	private EstadoDisponibilidad estadoDisponibilidad;
 	private Boolean autorizacionContacto;
+	private String dirreccionCompleta;
 	
 	public Donante (String documentId,String nombre,Sexo sexo,LocalDate fechaNacimiento,String telefono,
 			String email,LocalDateTime fechaRegistro,TipoSangre tipoSangre,FactorRh factorRh,String idUbicacion, LocalDateTime ultimaDonacion,
@@ -83,5 +84,13 @@ public class Donante extends Persona{
 	}
 	public void setAutorizacionContacto(Boolean autorizacionContacto) {
 		this.autorizacionContacto=autorizacionContacto;
+	}
+
+	public String getDirreccionCompleta() {
+		return dirreccionCompleta;
+	}
+
+	public void setDirreccionCompleta(String dirreccionCompleta) {
+		this.dirreccionCompleta = dirreccionCompleta;
 	}
 }
