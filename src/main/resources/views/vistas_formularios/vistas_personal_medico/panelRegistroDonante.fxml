@@ -16,9 +16,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1509.0" prefWidth="1001.0" styleClass="fondo" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1509.0" prefWidth="1001.0" styleClass="fondo" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.persona.DonanteController">
    <children>
-      <Label layoutX="152.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="               Registro De Nuevo Donante">
+      <Label layoutX="152.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="Registro De Nuevo Donante">
          <graphic>
             <ImageView fitHeight="51.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -150,7 +150,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox fx:id="comboTipoSangre" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+                  <ComboBox fx:id="comboTipoSangre" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -163,7 +163,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox fx:id="comboFactorRh" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+                  <ComboBox fx:id="comboFactorRh" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -176,7 +176,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <DatePicker fx:id="dateRegistro" prefHeight="39.0" prefWidth="149.0" styleClass="text_busqueda" />
+                  <DatePicker fx:id="dateRegistro" editable="true" prefHeight="39.0" prefWidth="149.0" styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -189,7 +189,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <DatePicker prefHeight="35.0" prefWidth="149.0" styleClass="text_busqueda" />
+                  <DatePicker editable="true" prefHeight="35.0" prefWidth="149.0" styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -202,7 +202,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox fx:id="comboEstado" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+                  <ComboBox fx:id="comboEstado" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -215,7 +215,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox fx:id="ComboAutorizacionContacto" editable="true" prefHeight="34.0" prefWidth="116.0" styleClass="text-field" />
+                  <ComboBox fx:id="ComboAutorizacionContacto" prefHeight="34.0" prefWidth="116.0" styleClass="text-field" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -275,7 +275,7 @@
             </ImageView>
          </graphic>
       </Label>
-      <Button fx:id="btnEnviar" layoutX="136.0" layoutY="717.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="137.0" styleClass="botones" stylesheets="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Enviar" textFill="#483737">
+      <Button fx:id="btnEnviar" layoutX="136.0" layoutY="717.0" mnemonicParsing="false" onAction="#registrarDonante" prefHeight="17.0" prefWidth="137.0" styleClass="botones" stylesheets="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Enviar" textFill="#483737">
          <graphic>
             <ImageView fx:id="registrarDonante" fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                <image>

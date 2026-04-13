@@ -18,7 +18,7 @@ import com.donaway.dto.login.UserSessionDto;
 import com.donaway.dto.login.SessionManager; // Tu manager global
 import com.donaway.dao.user.IUserDao;
 import com.donaway.dao.impl.user.UserImpl;
-
+import com.donaway.exception.Alerta;
 public class UserLoginController {
 
     @FXML private TextField inpuntUser;
@@ -33,7 +33,7 @@ public class UserLoginController {
         String password = inputPassword.getText().trim();
 
         if (user.isBlank() || password.isBlank()) {
-            mostrarAlerta("Campos Vacíos", "Por favor ingrese usuario y contraseña.");
+            Alerta.mostrarAlerta("Campos Vacíos", "Por favor ingrese usuario y contraseña.");
             return;
         }
 
@@ -56,15 +56,16 @@ public class UserLoginController {
                     ventanaActual.close();
                     
                 } else {
-                    mostrarAlerta("Acceso Denegado", "El usuario está inactivo.");
+                    Alerta.mostrarAlerta("Acceso Denegado", "El usuario está inactivo.");
                 }
             } else {
-                mostrarAlerta("Error", "Credenciales incorrectas.");
+                Alerta.mostrarAlerta("Error", "Credenciales incorrectas.");
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
-            mostrarAlerta("Error de Conexión", "Fallo al conectar con la base de datos.");
+            
+            Alerta.mostrarAlerta("Error de Conexión", "Fallo al conectar con la base de datos.");
         }
     }
 
@@ -93,15 +94,9 @@ public class UserLoginController {
 
         } catch (IOException e) {
             e.printStackTrace();
-            mostrarAlerta("Error de Vista", "No se pudo cargar la pantalla: " + rutaFxml);
+            Alerta.mostrarAlerta("Error de Vista", "No se pudo cargar la pantalla: " + rutaFxml);
         }
     }
 
-    private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(titulo);
-        alert.setHeaderText(null);
-        alert.setContentText(mensaje);
-        alert.showAndWait();
-    }
+
 }

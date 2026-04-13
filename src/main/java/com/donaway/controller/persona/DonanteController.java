@@ -46,9 +46,9 @@ public class DonanteController {
 		comboEstado.getItems().setAll(EstadoDisponibilidad.values());
 	}
 	@FXML
-	public void registrarDonante (ActionEvent event) {
-		String nombre = inputNombre.getText();
-		String documentoId = inputDocumentoid.getText();
+	public void registrarDonante(ActionEvent event) {
+		String nombre = inputNombre.getText().trim();
+		String documentoId = inputDocumentoid.getText().trim();
 		
 		if (grupoGenero.getSelectedToggle() ==null ) {
 			return;
