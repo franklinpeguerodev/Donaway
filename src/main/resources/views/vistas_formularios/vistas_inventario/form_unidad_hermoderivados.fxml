@@ -31,7 +31,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="Nombre...." styleClass="text_busqueda" />
+                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="123456789" styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -44,7 +44,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="Cédula..." styleClass="text_busqueda" />
+                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="123456778" styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
