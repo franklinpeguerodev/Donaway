@@ -8,6 +8,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,7 +16,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1509.0" prefWidth="1001.0" styleClass="fondo" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1509.0" prefWidth="1001.0" styleClass="fondo" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="">
    <children>
       <Label layoutX="152.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="               Registro De Nuevo Donante">
          <graphic>
@@ -35,7 +36,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="Nombre...." styleClass="text_busqueda" />
+                  <TextField fx:id="inputNombre" prefHeight="34.0" prefWidth="155.0" promptText="Nombre...." styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -48,7 +49,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="Cédula..." styleClass="text_busqueda" />
+                  <TextField fx:id="inputDocumentoid" prefHeight="34.0" prefWidth="155.0" promptText="Cédula..." styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -63,8 +64,11 @@
                   </Label>
                   <VBox prefHeight="43.0" prefWidth="97.0" spacing="5.0" styleClass="radio-button_genero">
                      <children>
-                        <RadioButton mnemonicParsing="false" prefHeight="16.0" prefWidth="87.0" styleClass="radio-button_genero" text="Femenino" />
-                        <RadioButton mnemonicParsing="false" styleClass="radio-button_genero" text="Masculino" />
+                        <RadioButton mnemonicParsing="false" prefHeight="16.0" prefWidth="87.0" styleClass="radio-button_genero" text="Femenino">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="grupoGenero" />
+                           </toggleGroup></RadioButton>
+                        <RadioButton mnemonicParsing="false" styleClass="radio-button_genero" text="Masculino" toggleGroup="$grupoGenero" />
                      </children>
                   </VBox>
                </children>
@@ -79,7 +83,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="123456789" styleClass="text_busqueda" />
+                  <TextField fx:id="inputTelefono" prefHeight="34.0" prefWidth="155.0" promptText="123456789" styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -92,7 +96,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <DatePicker prefHeight="39.0" prefWidth="137.0" styleClass="text_busqueda" />
+                  <DatePicker fx:id="dateNaciemiento" prefHeight="39.0" prefWidth="137.0" styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -105,7 +109,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField prefHeight="34.0" prefWidth="155.0" promptText="Su_nombre@gmail.com" styleClass="text_busqueda" />
+                  <TextField fx:id="inputEmail" prefHeight="34.0" prefWidth="155.0" promptText="Su_nombre@gmail.com" styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -146,7 +150,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+                  <ComboBox fx:id="comboTipoSangre" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -159,7 +163,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+                  <ComboBox fx:id="comboFactorRh" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -172,7 +176,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <DatePicker prefHeight="39.0" prefWidth="149.0" styleClass="text_busqueda" />
+                  <DatePicker fx:id="dateRegistro" prefHeight="39.0" prefWidth="149.0" styleClass="text_busqueda" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -198,7 +202,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
+                  <ComboBox fx:id="comboEstado" editable="true" prefHeight="34.0" prefWidth="155.0" styleClass="text-field" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -211,7 +215,7 @@
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox editable="true" prefHeight="34.0" prefWidth="116.0" styleClass="text-field" />
+                  <ComboBox fx:id="ComboAutorizacionContacto" editable="true" prefHeight="34.0" prefWidth="116.0" styleClass="text-field" />
                </children>
                <padding>
                   <Insets left="10.0" top="15.0" />
@@ -271,9 +275,9 @@
             </ImageView>
          </graphic>
       </Label>
-      <Button layoutX="136.0" layoutY="717.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="137.0" styleClass="botones" stylesheets="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Enviar" textFill="#483737">
+      <Button fx:id="btnEnviar" layoutX="136.0" layoutY="717.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="137.0" styleClass="botones" stylesheets="@../../../style/style_personal_medico/formulario_nuevoRegistro.css" text="Enviar" textFill="#483737">
          <graphic>
-            <ImageView fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="registrarDonante" fitHeight="45.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../img/img_generales/enviar.png" />
                </image>

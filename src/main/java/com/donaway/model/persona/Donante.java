@@ -30,7 +30,7 @@ public class Donante extends Persona{
 		this.autorizacionContacto=autorizacionContacto;
 	}	
 
-	//constructor temporal para que eñ controller no de error
+	//constructor temporal para que el controller no de error
 	public Donante(String documentId, String nombre, String sexo, LocalDate fechaNacimiento, String telefono,
 			String email, LocalDateTime fechaRegistro, String tipoSangre2, String factorRh2,
 			LocalDateTime ultimaDonacion2, String estadoDisponibilidad2, boolean autorizacionContacto2) {

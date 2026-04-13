@@ -12,7 +12,7 @@ import com.donaway.utils.db.ConexionDbDonaway;
 public class DonanteDaoImpl implements IDonanteDao {
 
     @Override
-    public void registrarDonante(Donante d) throws SQLException {
+    public void registrarDonante(Donante donante) throws SQLException {
         String sql = "INSERT INTO donante (document_id_donante, nombre, sexo, fecha_nacimiento, telefono, email, "
                    + "fecha_registro, tipo_sangre, factor_rh, id_ubicacion, ultima_donacion, estado_disponibilidad, "
                    + "autorizacion_contacto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, UUID_TO_BIN(?,1), ?, ?, ?)";
@@ -20,19 +20,19 @@ public class DonanteDaoImpl implements IDonanteDao {
         try (Connection conn = ConexionDbDonaway.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             
-            ps.setString(1, d.getDocumentoId());
-            ps.setString(2, d.getNombre());
-            ps.setString(3, d.getSexo().name());
-            ps.setDate(4, Date.valueOf(d.getFechaNacimiento()));
-            ps.setString(5, d.getTelefono());
-            ps.setString(6, d.getEmail());
-            ps.setTimestamp(7, Timestamp.valueOf(d.getFechaRegistro()));
-            ps.setString(8, d.getTipoSangre().name());
-            ps.setString(9, d.getFactorRh().name());
-            ps.setString(10, d.getIdUbicacion());
-            ps.setTimestamp(11, d.getUltimaDonacion() != null ? Timestamp.valueOf(d.getUltimaDonacion()) : null);
-            ps.setString(12, d.getEstadoDisponibilidad().name());
-            ps.setBoolean(13, d.getAutorizacionContacto());
+            ps.setString(1, donante.getDocumentoId());
+            ps.setString(2, donante.getNombre());
+            ps.setString(3, donante.getSexo().name());
+            ps.setDate(4, Date.valueOf(donante.getFechaNacimiento()));
+            ps.setString(5, donante.getTelefono());
+            ps.setString(6, donante.getEmail());
+            ps.setTimestamp(7, Timestamp.valueOf(donante.getFechaRegistro()));
+            ps.setString(8, donante.getTipoSangre().name());
+            ps.setString(9, donante.getFactorRh().name());
+            ps.setString(10, donante.getIdUbicacion());
+            ps.setTimestamp(11, donante.getUltimaDonacion() != null ? Timestamp.valueOf(donante.getUltimaDonacion()) : null);
+            ps.setString(12, donante.getEstadoDisponibilidad().name());
+            ps.setBoolean(13, donante.getAutorizacionContacto());
 
             ps.executeUpdate();
         }
