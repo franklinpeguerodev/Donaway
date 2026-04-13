@@ -8,16 +8,25 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import java.io.IOException;
 
+import com.donaway.controller.controllerpersonal_inventario.ControllerInventario;
+
+
 public class ControllerGraficosIndependiente {
 	 @FXML private Button btn_analisisEsperaCentral;
 	    @FXML private Button btn_pacientesRecibidosCentral;
 	    @FXML private Button btn_sangreReservadaCentral;
+	    @FXML private Button btn_stock, btn_historial,btn_almacenamiento;
 
 	 
 	    private ControllerPrincipal principalController;
+	    private ControllerInventario inventarioController;
 	   
 public void setPrincipalController(ControllerPrincipal controller) {
 	 this.principalController = controller;
+}
+
+public void setInventarioController(ControllerInventario inventarioController) {
+	this.inventarioController=inventarioController;
 }
 
 	    @FXML
@@ -30,6 +39,8 @@ public void setPrincipalController(ControllerPrincipal controller) {
 
 	        btn_sangreReservadaCentral.setOnAction(e -> 
 	            cargarGraficaIndependiente("/views/vistas_genericas/graficaCentral_SangreReservada.fxml", "SANGRE"));
+	    
+	    
 	    }
 	    
 
@@ -78,5 +89,7 @@ public void setPrincipalController(ControllerPrincipal controller) {
 	    	        e.printStackTrace();
 	    	    }
 	    	}
+
+		
 
 }

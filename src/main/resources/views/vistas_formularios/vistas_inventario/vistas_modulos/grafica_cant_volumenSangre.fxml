@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1376.0" prefWidth="900.0" styleClass="fondo" stylesheets="@../../../../style/style_inventario/formulario_unidad_hermoderivados.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.donaway.controller.controllerpersonal_inventario.ControllerInventarioTabla">
+   <children>
+      <Label layoutX="86.0" layoutY="34.0" prefHeight="67.0" prefWidth="659.0" styleClass="titulo_registro" text="               Volumen de Unidades Almancenadas">
+         <graphic>
+            <ImageView fitHeight="63.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../img/img_inventario/iconos_graficos/volumen_sangre.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <VBox layoutX="25.0" layoutY="179.0" prefHeight="644.0" prefWidth="827.0" spacing="20.0" styleClass="border_registro">
+         <children>
+            <AreaChart fx:id="grafica_volumenSangre" prefHeight="611.0" prefWidth="825.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </AreaChart>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

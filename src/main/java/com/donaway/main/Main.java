@@ -13,7 +13,13 @@ import com.donaway.model.persona.Donante;
 import com.donaway.service.DonanteServices;
 // Servidor web de la BD para comodidad para el desorrollo  
 
-
+/*
+ * try {
+        	Parent root = FXMLLoader.load(
+        		    getClass().getResource("/views/vistas_genericas/Plantilla_personal_medico.fxml")
+        		);Scene scene = new Scene(root);
+    	
+ */
 
 public class Main extends Application {
 
@@ -21,7 +27,7 @@ public class Main extends Application {
     public void start(Stage stage) {
     	try {
         	Parent root = FXMLLoader.load(
-        		    getClass().getResource("/views/vistas_genericas/Plantilla_personal_medico.fxml")
+        		    getClass().getResource("/views/vistas_formularios/vistas_inventario/Plantilla_personal_inventario.fxml")
         		);Scene scene = new Scene(root);
     	
 

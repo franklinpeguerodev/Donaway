@@ -93,17 +93,6 @@ public class GraficasController {
             
     
 
-    private void cambiarContenidoGrafica(String tipo) {
-        // Limpiamos datos previos para evitar superposición
-        if(grafica_sangreReservada != null) grafica_sangreReservada.getData().clear();
-        if(grafica_pacientesRecibidos != null) grafica_pacientesRecibidos.getData().clear();
-        
-        switch (tipo) {
-            case "SANGRE"   -> prepararGraficaSangre();
-            case "PACIENTES" -> prepararGraficaPacientes();
-            case "ANALISIS"  -> prepararGraficaAnalisis();
-        }
-    }
 
     public void prepararGraficaSangre() {
         if (grafica_sangreReservada != null) {

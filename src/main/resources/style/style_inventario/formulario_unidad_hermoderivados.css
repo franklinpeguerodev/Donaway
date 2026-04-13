@@ -37,93 +37,6 @@
     -fx-font-family: "Shelten";
 }
 
-.text_busqueda:focused {
-    -fx-background-color: #fff0f0;
-    -fx-border-color: #8E1B1B;
-    -fx-border-width: 2;
-}
-.radio-button_genero {
-    -fx-font-size: 12px;
-    -fx-text-fill: #321313;
-    -fx-font-family: "Shelten";
-}
-
-.radio-button_genero:focused {
-    -fx-text-fill: #771d1d;;
-    -fx-background-color: transparent;
-}
-
-.radio-button_genero .radio-button-body {
-    -fx-background-radius: 50;
-    -fx-padding: 0;
-}
-
-.radio-button_genero:selected {
-    -fx-text-fill: #501c1c;
-}
-.combo-box .text-field {
-    -fx-prompt-text-fill: rgb(145, 97, 97);
-    -fx-font-family: "Shelten";
-}
-.combo-box {
-    -fx-font-size: 12px;
-    -fx-text-fill: #222;
-    -fx-background-color: #fff0f0;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
-    -fx-border-color: #430f0f;
-}
-
-.combo-box .arrow-button {
-    -fx-background-color: #660d1ee7;
-    -fx-background-radius: 6;
-}
-
-.combo-box .arrow {
-    -fx-background-color: #f5f5f5;
-}
-
-.combo-box:focused {
-    -fx-border-color: #470817;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 1, 1);
-}
-.date-picker {
-    -fx-font-size: 14px;
-    -fx-background-color: #fff0f0;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
-    -fx-border-color: #430f0f;
-}
-
-/* Campo de texto interno */
-.date-picker .text-field {
-    -fx-text-fill: rgb(145, 97, 97);
-    -fx-font-family: "Shelten";
-    -fx-background-color: transparent;
-}
-
-/* 🔥 Prompt text */
-.date-picker .text-field {
-    -fx-prompt-text-fill: rgba(145, 97, 97, 0.7);
-}
-
-/* Botón del calendario */
-.date-picker .arrow-button {
-    -fx-background-color: #660d1ee7;
-    -fx-background-radius: 6;
-}
-
-/* Icono (flecha/calendario) */
-.date-picker .arrow {
-    -fx-background-color: #f5f5f5;
-}
-
-/* Focus */
-.date-picker:focused {
-    -fx-border-color: #470817;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 1, 1);
-}
-
 .border-ultimos-movimientos{  
      -fx-border-color: #583333b7 ;
     -fx-border-width: 4;
@@ -157,4 +70,29 @@
     -fx-font-size: 12px ;
     -fx-font-style: italic;
    
+}
+
+
+.celda-tabla {
+    -fx-border-width: 0 1 1 0; /* Solo derecha y abajo */
+    -fx-padding: 10;
+    -fx-alignment: center-left;
+     -fx-background-color: rgba(107, 59, 59, 0.82);
+    -fx-border-color: #633131;
+}
+
+
+
+.texto-encabezado {
+    -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(147, 28, 28);
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.texto-datos {
+    -fx-font-family: "Segoe UI Black";
+    -fx-text-fill: rgb(54, 28, 28);
+    -fx-font-size: 16px;
+    -fx-font-style: italic;
 }
