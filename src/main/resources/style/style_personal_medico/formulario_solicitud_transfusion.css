@@ -1,6 +1,6 @@
 .titulo_registro{
 -fx-font-family: "Shelten";
-    -fx-text-fill: rgb(93, 10, 32) !important;
+    -fx-text-fill: rgba(60, 15, 27, 0.729) !important;
     -fx-font-size: 27px ;
     -fx-background-color:#583333b7;
      -fx-border-color:  rgba(105, 58, 58, 0.848);
@@ -13,7 +13,7 @@
 }
 
 .fondo{
-  -fx-background-color:#d97c6ed4;
+  -fx-background-color:#974d41d4;
     -fx-border-radius: 25; 
     -fx-background-radius: 25;
 }
@@ -29,7 +29,7 @@
 .texto_form{
     -fx-font-family: "Segoe UI Black";
     -fx-text-fill: rgb(235, 181, 181) !important;
-    -fx-font-size: 12px ;
+    -fx-font-size: 15px ;
     -fx-font-style: italic;
     -fx-padding:0 0 10 0;
     -fx-background-color: #4606069f;
@@ -43,6 +43,7 @@
     -fx-border-color: #460606ca;
     -fx-border-radius: 5;
     -fx-font-family: "Shelten";
+    -fx-text-fill: rgb(247, 222, 222)
 }
 
 .text_busqueda:focused {

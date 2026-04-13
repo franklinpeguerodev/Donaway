@@ -56,22 +56,105 @@ public class ControllerPrincipal implements Initializable {
     private void irAInicio() {
         ejecutarCargaModuloInicial();
     }
-
     @FXML
     private void irAnalisis() {
-        cargarModulo("/views/vistas_formularios/vistas_personal_medico/vistas_bioanalista/form_datos_transfusion.fxml");
+    	abrirGestionFormularios_analisis();
     }
 
     @FXML
     private void irALaboratorio() {
-        cargarModulo("/views/vistas_formularios/vistas_personal_medico/vistas_bioanalista/registro_extraccion.fxml");
+    	abrirGestionFormularios_laboratorio();
     }
-
     @FXML
-    private void irABuscarDonante() {
-        cargarModulo("/views/vistas_formularios/vistas_personal_medico/vistas_bioanalista/registro_datos_triaje.fxml");
+    private void irABusquedas() {
+    	abrirGestionFormularios_busquedas();    }
+    @FXML
+    private void irASolicitud() {
+    	abrirGestionFormularios_solicitudes();
     }
+    
+    public void abrirGestionFormularios_busquedas() {
+        List<ModuloFormularios> misModulos = List.of(
+            new ModuloFormularios("Historial De Solicitudes", "/views/vistas_formularios/vistas_personal_medico/vistas_solicitud/form_buscar_solicitud.fxml"),
+            new ModuloFormularios("Buscar Donante", "/views/vistas_formularios/vistas_personal_medico/vistas_solicitud/form_busqueda_donante.fxml"),
+            new ModuloFormularios("Buscar Donación", "/views/vistas_formularios/vistas_personal_medico/vistas_solicitud/form_busqueda_donacion.fxml")
+        );
 
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/vistas_genericas/panel_modulo.fxml"));
+            Parent root = loader.load();
+
+            ControladorCentroNotificaciones controller = loader.getController();
+            controller.inicializarNavegacion(misModulos);
+            controller.configurarEncabezado("Módulo de Búsqueda E Historial", "/img/img_generales/historial-medico.png");
+
+            contenedorPrincipal.setContent(root); 
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void abrirGestionFormularios_solicitudes() {
+        List<ModuloFormularios> misModulos = List.of(
+            new ModuloFormularios("Registro De Solicitud", "/views/vistas_formularios/vistas_personal_medico/vistas_solicitud/form_solicitud.fxml")
+        );
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/vistas_genericas/panel_modulo.fxml"));
+            Parent root = loader.load();
+
+            ControladorCentroNotificaciones controller = loader.getController();
+            controller.inicializarNavegacion(misModulos);
+            controller.configurarEncabezado("Módulo de Solicitudes", "/img/img_generales/icono_solicitud.png");
+
+            contenedorPrincipal.setContent(root); 
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+     
+    public void abrirGestionFormularios_analisis() {
+        List<ModuloFormularios> misModulos = List.of(
+            new ModuloFormularios("Registro De Extraccion", "/views/vistas_formularios/vistas_personal_medico/vistas_bioanalista/vistas_analisis/registro_extraccion.fxml"),
+            new ModuloFormularios("Registro De Resultados", "/views/vistas_formularios/vistas_personal_medico/vistas_bioanalista/vistas_analisis/registro_resultado_lab.fxml")
+        );
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/vistas_genericas/panel_modulo.fxml"));
+            Parent root = loader.load();
+
+            ControladorCentroNotificaciones controller = loader.getController();
+            controller.inicializarNavegacion(misModulos);
+            controller.configurarEncabezado("Módulo de Análisis", "/img/img_personal_medico/img_registros/analisis-de-sangre.png");
+
+            contenedorPrincipal.setContent(root); 
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void abrirGestionFormularios_laboratorio() {
+    	 List<ModuloFormularios> misModulos = List.of(
+    	            new ModuloFormularios("Registro De Transfusion", "/views/vistas_formularios/vistas_personal_medico/vistas_bioanalista/vistas_laboratorio/form_datos_transfusion.fxml"),
+    	            new ModuloFormularios("Registro De Triaje", "/views/vistas_formularios/vistas_personal_medico/vistas_bioanalista/vistas_laboratorio/registro_datos_triaje.fxml")
+    	        );
+
+    	        try {
+    	            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/vistas_genericas/panel_modulo.fxml"));
+    	            Parent root = loader.load();
+
+    	            ControladorCentroNotificaciones controller = loader.getController();
+    	            controller.inicializarNavegacion(misModulos);
+
+    	            controller.configurarEncabezado("Módulo Resultados De Laboratorio", "/img/img_personal_medico/img_registros/resultado.png");
+    	            contenedorPrincipal.setContent(root); 
+
+    	        } catch (IOException e) {
+    	            e.printStackTrace();
+    	        }
+    }
     @FXML
     public void manejarColapso() {
         boolean yaEstaColapsado = menu.getStyleClass().contains("menu-colapsado");

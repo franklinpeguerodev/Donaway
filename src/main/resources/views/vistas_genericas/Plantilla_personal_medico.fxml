@@ -85,7 +85,7 @@
                   <Insets left="7.0" right="7.0" />
                </padding>
             </Label>
-            <Button mnemonicParsing="false" onAction="#irABuscarDonante" text="Buscar Donante">
+            <Button mnemonicParsing="false" onAction="#irABusquedas" text="Búsquedas ">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -116,6 +116,19 @@
                   <ImageView fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../img/img_personal_medico/img_menu/investigar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="botones_general" />
+                  <String fx:value="botones_menu" />
+               </styleClass>
+            </Button>
+            <Button layoutX="45.0" layoutY="193.0" mnemonicParsing="false" onAction="#irASolicitud" text="Solicitudes">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../img/img_personal_medico/img_menu/solicitud.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -167,6 +180,10 @@
    <ScrollPane fx:id="contenedorPrincipal" fitToWidth="true" prefHeight="200.0" prefWidth="639.0" BorderPane.alignment="CENTER">
       <content>
          </content>
+         <styleClass>
+            <String fx:value="scroll-pane" />
+            <String fx:value="scroll-bar" />
+         </styleClass>
    </ScrollPane>
 </center>
    <left>

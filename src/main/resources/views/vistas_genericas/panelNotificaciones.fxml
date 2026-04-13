@@ -10,7 +10,7 @@
       <ScrollPane prefHeight="358.0" prefWidth="192.0" styleClass="contenedor-detalle-blanco" stylesheets="@/style_personal_medico/layout/notificaciones.css" BorderPane.alignment="CENTER">
 
          <content>
-            <VBox fx:id="listaCompleta" prefHeight="397.0" prefWidth="186.0" spacing="13.0" style="-fx-background-color: #f0b47bd4;" styleClass="lista-maestra-detalle" stylesheets="@/style_personal_medico/componentes_inicio/botones.css" />
+            <VBox fx:id="listaCompleta" prefHeight="397.0" prefWidth="186.0" spacing="13.0" style="-fx-background-color: #f0b47bd4;" styleClass="lista-maestra-detalle" />
          </content>
 
       </ScrollPane>

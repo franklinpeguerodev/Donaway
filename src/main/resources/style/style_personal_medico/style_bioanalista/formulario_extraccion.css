@@ -124,38 +124,22 @@
     -fx-border-color: #470817;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 1, 1);
 }
-
-.border-ultimos-movimientos{  
-     -fx-border-color: #583333b7 ;
-    -fx-border-width: 4;
-     -fx-border-radius: 25; 
-    -fx-background-radius: 25;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 25, 0, 0, 20);
+.botones{
+    -fx-background-radius: 40;           /* Esquinas totalmente rectas */
+    -fx-background-color:  rgba(67, 5, 14, 0.807);     /* El color rojo oscuro de tu fuente */
+    -fx-text-fill: rgb(0, 0, 0);
+    -fx-font-family: "Shelten"
 }
 
-.label-graficos{
-    -fx-font-family: "Shelten";
-    -fx-text-fill: rgb(117, 64, 64) !important;
-    -fx-font-size: 12px ;
-    -fx-font-weight: bold;
-}
-.titulo_movimientos_hoy{
--fx-font-family: "Shelten";
-    -fx-text-fill: rgb(157, 6, 61) !important;
-    -fx-font-size: 17px ;
-    -fx-font-weight: bold;
-}
-.titulo_movimientos_ayer{
--fx-font-family: "Shelten";
-    -fx-text-fill: rgb(147, 28, 28) !important;
-    -fx-font-size: 17px ;
-    -fx-font-weight: bold;
+.botones:hover {
+    -fx-background-color: rgba(84, 10, 10, 0.7); 
+     -fx-scale-x: 1.1; /* Se agranda un 10% horizontalmente */
+    -fx-scale-y: 1.1; /* Se agranda un 10% verticalmente */
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 25, 0, 0, 20);
 }
 
-.labeles-movimientos{
-     -fx-font-family: "Segoe UI Black";
-    -fx-text-fill: rgb(143, 134, 134) !important;
-    -fx-font-size: 12px ;
-    -fx-font-style: italic;
-   
+.botones:armed {
+    -fx-background-color: rgba(84, 10, 10, 0.9);
+    -fx-background-radius: 40;  
 }

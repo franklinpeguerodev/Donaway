@@ -1,8 +1,15 @@
 package com.donaway.controller.controllerpersonalmedico;
+import java.io.IOException;
 import java.util.List;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -61,6 +68,58 @@ public class ControladorCentroNotificaciones {
 	        desc.getStyleClass().add("detalles_text");
 	        texto_notificaciones.getChildren().add(desc);
 	    }
+	    @FXML
+	    private Pane contenedor_formularios; 
+	     @FXML
+	     private VBox contenedor_listaModulo;
+
+	    public void inicializarNavegacion(List<ModuloFormularios> modulos) {
+	        contenedor_listaModulo.getChildren().clear();
+
+	        for (ModuloFormularios modulo : modulos) {
+	            
+	            Button btnModulo = new Button(modulo.getNombreFormulario());
+	            btnModulo.setMaxWidth(Double.MAX_VALUE);
+	            btnModulo.getStyleClass().add("botones_general"); 
+
+	            
+	            btnModulo.setOnAction(e -> cargarFormularioEnCentro(modulo.getRutaFXML()));
+
+	            contenedor_listaModulo.getChildren().add(btnModulo);
+	        }
+
+	        if (!modulos.isEmpty()) {
+	            cargarFormularioEnCentro(modulos.get(0).getRutaFXML());
+	        }
+	    }
+
+	    private void cargarFormularioEnCentro(String rutaFXML) {
+	        try {
+	            FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFXML));
+	            Parent vista = loader.load();
+	           
+	            contenedor_formularios.getChildren().setAll(vista);
+	            
+	        } catch (IOException e) {
+	            System.err.println("Error Institucional: No se pudo cargar el formulario en " + rutaFXML);
+	            e.printStackTrace();
+	        }
+	    }
+	    @FXML
+	    private Label lblTituloModulo;
+	    @FXML
+	    private ImageView imgIconoModulo;
+
+	    public void configurarEncabezado(String titulo, String rutaImagen) {
+	        lblTituloModulo.setText("                " + titulo);
+	        try {
+	            Image icono = new Image(getClass().getResourceAsStream(rutaImagen));
+	            imgIconoModulo.setImage(icono);
+	        } catch (Exception e) {
+	            System.err.println("Error Institucional: No se pudo cargar el icono: " + rutaImagen);
+	        }
+	    }
 	}
+	
 
 
