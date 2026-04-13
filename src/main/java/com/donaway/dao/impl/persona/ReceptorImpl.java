@@ -12,7 +12,7 @@ public class ReceptorImpl implements IReceptorDao {
 	
 	@Override
 	public void registrarReceptor(Receptor receptor) throws SQLException{
-		String sql="INSERT INTO receptor (document_id_receptor,nombre,sexo,fecha_nacimiento,telefono,email,fechaRegistro"
+		String sql="INSERT INTO receptor (document_id_receptor,nombre,sexo,fecha_nacimiento,telefono,email,fechaRegistro,"
 				+ "peso,tipo_sangre,factor_rh) VALUES (?,?,?,?,?,?,?,?,?,?)";
 		try(Connection conn = ConexionDbDonaway.getConnection();
 			PreparedStatement ps = conn.prepareStatement(sql)){

@@ -3,7 +3,7 @@ package com.donaway.utils.constants;
 public enum Cargo{
 	ADMIN_INSTITUCIONAL("Admin Institucional"),
 	ADMIN_PERSONAL_MEDICO("Admin Personal Medico"),
-	BIONALISTA_PRINCIPAL("Bionalista Principal"),
+	BIOANALISTA_PRINCIPAL("Bionalista Principal"),
 	ASISTENTE_BIONALISTA("Asistente Bionalista"),
 	RECEPSIONISTA("Recepsionista"),
 	GESTOR_INVENTARIO("Gestionador De Inventario");

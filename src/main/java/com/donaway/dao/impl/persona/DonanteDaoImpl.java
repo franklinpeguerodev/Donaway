@@ -11,8 +11,9 @@ import com.donaway.utils.db.ConexionDbDonaway;
 
 public class DonanteDaoImpl implements IDonanteDao {
 
+	
     @Override
-    public void registrarDonante(Donante d) throws SQLException {
+    public void registrarDonante(Donante donante) throws SQLException {
         String sql = "INSERT INTO donante (document_id_donante, nombre, sexo, fecha_nacimiento, telefono, email, "
                    + "fecha_registro, tipo_sangre, factor_rh, id_ubicacion, ultima_donacion, estado_disponibilidad, "
                    + "autorizacion_contacto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, UUID_TO_BIN(?,1), ?, ?, ?)";
@@ -20,24 +21,26 @@ public class DonanteDaoImpl implements IDonanteDao {
         try (Connection conn = ConexionDbDonaway.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             
-            ps.setString(1, d.getDocumentoId());
-            ps.setString(2, d.getNombre());
-            ps.setString(3, d.getSexo().name());
-            ps.setDate(4, Date.valueOf(d.getFechaNacimiento()));
-            ps.setString(5, d.getTelefono());
-            ps.setString(6, d.getEmail());
-            ps.setTimestamp(7, Timestamp.valueOf(d.getFechaRegistro()));
-            ps.setString(8, d.getTipoSangre().name());
-            ps.setString(9, d.getFactorRh().name());
-            ps.setString(10, d.getIdUbicacion());
-            ps.setTimestamp(11, d.getUltimaDonacion() != null ? Timestamp.valueOf(d.getUltimaDonacion()) : null);
-            ps.setString(12, d.getEstadoDisponibilidad().name());
-            ps.setBoolean(13, d.getAutorizacionContacto());
+            ps.setString(1, donante.getDocumentoId());
+            ps.setString(2, donante.getNombre());
+            ps.setString(3, donante.getSexo().name());
+            ps.setDate(4, Date.valueOf(donante.getFechaNacimiento()));
+            ps.setString(5, donante.getTelefono());
+            ps.setString(6, donante.getEmail());
+            ps.setTimestamp(7, Timestamp.valueOf(donante.getFechaRegistro()));
+            ps.setString(8, donante.getTipoSangre().name());
+            ps.setString(9, donante.getFactorRh().name());
+            ps.setString(10, donante.getIdUbicacion());
+            ps.setTimestamp(11, donante.getUltimaDonacion() != null ? Timestamp.valueOf(donante.getUltimaDonacion()) : null);
+            ps.setString(12, donante.getEstadoDisponibilidad().name());
+            ps.setBoolean(13, donante.getAutorizacionContacto());
 
             ps.executeUpdate();
         }
     }
 
+    
+    
     @Override
     public void modificarDonante(Donante d) throws SQLException {
         String sql = "UPDATE donante SET nombre = ?, sexo = ?, fecha_nacimiento = ?, telefono = ?, email = ?, "
@@ -63,6 +66,8 @@ public class DonanteDaoImpl implements IDonanteDao {
         }
     }
 
+    
+    
     @Override
     public void eliminarDonante(String documentoId) throws SQLException {
         String sql = "DELETE FROM donante WHERE document_id_donante = ?";
@@ -73,6 +78,8 @@ public class DonanteDaoImpl implements IDonanteDao {
         }
     }
 
+    
+    
     @Override
     public void actualizarEstado(String documentoId, EstadoDisponibilidad nuevoEstado) throws SQLException {
         String sql = "UPDATE donante SET estado_disponibilidad = ? WHERE document_id_donante = ?";
@@ -84,60 +91,98 @@ public class DonanteDaoImpl implements IDonanteDao {
         }
     }
 
+    
     @Override
     public Donante obtenerPorId(String documentId) throws SQLException {
-        String sql = "SELECT *, BIN_TO_UUID(id_ubicacion,1) as id_ubi FROM donante WHERE document_id_donante = ?";
+        String sql = "SELECT d.*, BIN_TO_UUID(d.id_ubicacion, 1) as id_ubi, v.direccion_completa "
+                   + "FROM donante d "
+                   + "INNER JOIN v_ubicacion_completa v ON d.id_ubicacion = v.id_ubicacion "
+                   + "WHERE d.document_id_donante = ?";
+                   
         try (Connection conn = ConexionDbDonaway.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
+            
             ps.setString(1, documentId);
+            
             try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) return mapearDonante(rs);
+                if (rs.next()) {
+                    return mapearDonante(rs);
+                }
             }
         }
         return null;
     }
 
+    
+    
     @Override
     public List<Donante> obtenerTodo() throws SQLException {
-        String sql = "SELECT *, BIN_TO_UUID(id_ubicacion,1) as id_ubi FROM donante";
+        String sql = "SELECT d.*, BIN_TO_UUID(d.id_ubicacion, 1) as id_ubi, v.direccion_completa "
+                   + "FROM donante d "
+                   + "INNER JOIN v_ubicacion_completa v ON d.id_ubicacion = v.id_ubicacion";
+                   
         return ejecutarConsultaLista(sql, null, false);
     }
 
+    
+    
+  
     @Override
     public List<Donante> obtenerPorSangre(TipoSangre tipo, FactorRh factor) throws SQLException {
-        String sql = "SELECT *, BIN_TO_UUID(id_ubicacion,1) as id_ubi FROM donante WHERE tipo_sangre = ? AND factor_rh = ?";
+        String sql = "SELECT d.*, BIN_TO_UUID(d.id_ubicacion, 1) as id_ubi, v.direccion_completa "
+                   + "FROM donante d "
+                   + "INNER JOIN v_ubicacion_completa v ON d.id_ubicacion = v.id_ubicacion "
+                   + "WHERE d.tipo_sangre = ? AND d.factor_rh = ?";
+                   
         List<Donante> lista = new ArrayList<>();
         try (Connection conn = ConexionDbDonaway.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
+            
             ps.setString(1, tipo.name());
             ps.setString(2, factor.name());
+            
             try (ResultSet rs = ps.executeQuery()) {
-                while (rs.next()) lista.add(mapearDonante(rs));
+                while (rs.next()) {
+                    lista.add(mapearDonante(rs));
+                }
             }
         }
         return lista;
     }
+  
+    
 
     @Override
     public List<Donante> obtenerPorEstado(EstadoDisponibilidad estado) throws SQLException {
-        String sql = "SELECT *, BIN_TO_UUID(id_ubicacion,1) as id_ubi FROM donante WHERE estado_disponibilidad = ?";
+        String sql = "SELECT d.*, BIN_TO_UUID(d.id_ubicacion, 1) as id_ubi, v.direccion_completa "
+                   + "FROM donante d "
+                   + "INNER JOIN v_ubicacion_completa v ON d.id_ubicacion = v.id_ubicacion "
+                   + "WHERE d.estado_disponibilidad = ?";
+                   
         return ejecutarConsultaLista(sql, estado.name(), true);
     }
 
-    // --- MÉTODOS DE APOYO ---
+    
 
     private List<Donante> ejecutarConsultaLista(String sql, String parametro, boolean tieneParametro) throws SQLException {
+    	
         List<Donante> lista = new ArrayList<>();
+        
         try (Connection conn = ConexionDbDonaway.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
+        	
             if (tieneParametro) ps.setString(1, parametro);
+            
             try (ResultSet rs = ps.executeQuery()) {
+            	
                 while (rs.next()) lista.add(mapearDonante(rs));
             }
         }
         return lista;
     }
 
+    
+    
     private Donante mapearDonante(ResultSet rs) throws SQLException {
         Donante d = new Donante(
             rs.getString("document_id_donante"),
@@ -153,7 +198,11 @@ public class DonanteDaoImpl implements IDonanteDao {
             rs.getTimestamp("ultima_donacion") != null ? rs.getTimestamp("ultima_donacion").toLocalDateTime() : null,
             EstadoDisponibilidad.valueOf(rs.getString("estado_disponibilidad")),
             rs.getBoolean("autorizacion_contacto")
-        );
+        
+        		);
+        
+        d.setDirreccionCompleta(rs.getString("direccion_completa"));
+        
         return d;
     }
 }

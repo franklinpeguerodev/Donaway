@@ -17,12 +17,13 @@ public class UnidadHemoderivados {
     private TipoSangre tipoSangreObj; 
     private FactorRh factorRhObj;   
     private EstadoUnidad estadoUnidadObj;
+    private double cantidadTotalPintas;
     private LocalDate fechaCaducidad;
     
     // Constructor Completo
     public UnidadHemoderivados(String idHemoderivados, String codigoBarras, String idDonacion, String rnc, 
             String codigoReferencia, TipoComponente tipoComponenteObj, TipoSangre tipoSangreObj, 
-            FactorRh factorRhObj, EstadoUnidad estadoUnidadObj, LocalDate fechaCaducidad) {
+            FactorRh factorRhObj, EstadoUnidad estadoUnidadObj, double cantidadTotalPintas, LocalDate fechaCaducidad) {
         this.idHemoderivados = idHemoderivados;
         this.codigoBarras = codigoBarras;
         this.idDonacion = idDonacion;
@@ -32,6 +33,7 @@ public class UnidadHemoderivados {
         this.tipoSangreObj = tipoSangreObj;
         this.factorRhObj = factorRhObj;
         this.estadoUnidadObj = estadoUnidadObj;
+        this.cantidadTotalPintas = cantidadTotalPintas;
         this.fechaCaducidad = fechaCaducidad;
     }
 
@@ -68,4 +70,12 @@ public class UnidadHemoderivados {
 
     public LocalDate getFechaCaducidad() { return fechaCaducidad; }
     public void setFechaCaducidad(LocalDate fechaCaducidad) { this.fechaCaducidad = fechaCaducidad; }
+
+	public double getCantidadTotalPintas() {
+		return cantidadTotalPintas;
+	}
+
+	public void setCantidadTotalPintas(double cantidadTotalPintas) {
+		this.cantidadTotalPintas = cantidadTotalPintas;
+	}
 }

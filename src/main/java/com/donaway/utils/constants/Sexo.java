@@ -11,5 +11,18 @@ F ("Femenino");
 	@Override
 	public String toString() {
 		return descripcionFront;}
-
-	}
+	
+	
+    public static Sexo desdeTextoFront(String textoPantalla) {
+        for (Sexo opcion : Sexo.values()) {
+            if (opcion.descripcionFront.equalsIgnoreCase(textoPantalla.trim())) {
+                return opcion;
+            }
+        }
+        return null; 
+    }
+}
+	
+	
+	
+	

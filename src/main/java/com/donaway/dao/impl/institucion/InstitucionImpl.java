@@ -22,7 +22,7 @@ public class InstitucionImpl implements IInstitucionDao{
              PreparedStatement ps = conn.prepareStatement(sql)) {
             
             ps.setString(1, inst.getRnc());
-            ps.setString(2, inst.getIdUbicacion()); // El UUID que viene de UbicacionImpl
+            ps.setString(2, inst.getIdUbicacion());
             ps.setString(3, inst.getNombre());
             ps.setString(4, inst.getContactoEmergencia());
             ps.setTimestamp(5, Timestamp.valueOf(inst.getFechaRegistro().atStartOfDay())); // Convertimos LocalDate a Timestamp para MySQL
@@ -34,8 +34,11 @@ public class InstitucionImpl implements IInstitucionDao{
 
     @Override
     public Institucion obtenerPorRnc(String rnc) throws SQLException {
-        String sql = "SELECT rnc_institucion, BIN_TO_UUID(id_ubicacion,1) as id_ubi, nombre, contacto_emergencia, fecha_registro "
-                   + "FROM institucion_medica WHERE rnc_institucion = ?";
+        String sql = "SELECT inst.rnc_institucion, inst.nombre, inst.contacto_emergencia, inst.fecha_registro, "
+        		   + "BIN_TO_UUID(inst.id_ubicacion,1) as id_ubi, " 
+        		   + "view.direccion_completa "
+                   + "FROM institucion_medica inst INNER JOIN v_ubicacion_completa view " 
+        		   + "ON inst.id_ubicacion = view.id_ubicacion WHERE inst.rnc_institucion = ?";
         
         Institucion inst = null;
 
@@ -53,6 +56,7 @@ public class InstitucionImpl implements IInstitucionDao{
                         rs.getString("contacto_emergencia"),
                         rs.getTimestamp("fecha_registro").toLocalDateTime().toLocalDate()
                     );
+                    inst.setDirreccionCompleta(rs.getString("direccion_completa"));
                 }
             }
         }
@@ -62,20 +66,27 @@ public class InstitucionImpl implements IInstitucionDao{
     @Override
     public List<Institucion> obtenerInstituciones() throws SQLException {
         List<Institucion> lista = new ArrayList<>();
-        String sql = "SELECT rnc_institucion, BIN_TO_UUID(id_ubicacion,1) as id_ubi, nombre, contacto_emergencia, fecha_registro FROM institucion_medica";
-
+        String sql = "SELECT inst.rnc_institucion, inst.nombre, inst.contacto_emergencia, inst.fecha_registro, "
+     		   + "BIN_TO_UUID(inst.id_ubicacion,1) as id_ubi, " 
+     		   + "view.direccion_completa "
+                + "FROM institucion_medica inst INNER JOIN v_ubicacion_completa view " 
+     		   + "ON inst.id_ubicacion = view.id_ubicacion";
+        
         try (Connection conn = ConexionDbDonaway.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-                lista.add(new Institucion(
+            	Institucion inst = new Institucion(
                     rs.getString("rnc_institucion"),
                     rs.getString("nombre"),
                     rs.getString("id_ubi"),
                     rs.getString("contacto_emergencia"),
-                    rs.getTimestamp("fecha_registro").toLocalDateTime().toLocalDate()
-                ));
+                    rs.getTimestamp("fecha_registro").toLocalDateTime().toLocalDate() 
+                );
+            	inst.setDirreccionCompleta(rs.getString("direccion_completa"));
+            	
+            	lista.add(inst);
             }
         }
         return lista;

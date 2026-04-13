@@ -23,6 +23,7 @@ public class PersonalMedico extends Persona{
 	private EstadoPersonal estado;
 	private String credencialEncriptada;
 	private LocalDateTime ultimoAcceso;
+	private String dirreccionCompleta;
 
 	
 	public PersonalMedico(String documentId, String nombre, Sexo sexo, LocalDate fechaNacimiento, String idUbicacion, String telefono,
@@ -118,6 +119,14 @@ public class PersonalMedico extends Persona{
 
 	public void setIdUbicacion(String idUbicacion) {
 		this.idUbicacion = idUbicacion;
+	}
+
+	public String getDirreccionCompleta() {
+		return dirreccionCompleta;
+	}
+
+	public void setDirreccionCompleta(String dirreccionCompleta) {
+		this.dirreccionCompleta = dirreccionCompleta;
 	}
 
 }
