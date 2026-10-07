@@ -21,8 +21,8 @@
                   <Image url="@../../../img/Logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="244.0" layoutY="77.0" prefHeight="52.0" prefWidth="323.0" styleClass="header-subtitulo" text="Gestión de Donaciones y Reservas Sanguíneas" />
-            <Label layoutX="159.0" layoutY="43.0" styleClass="header" text="onaWay RD" />
+            <Label layoutX="244.0" layoutY="77.0" prefHeight="52.0" prefWidth="399.0" styleClass="header-subtitulo" text="Gestión de Donaciones y Reservas Sanguíneas" />
+            <Label layoutX="159.0" layoutY="43.0" styleClass="header" text="DonaWay RD" />
          </children>
       </AnchorPane>
       <Label layoutX="158.0" layoutY="194.0" prefHeight="67.0" prefWidth="479.0" styleClass="titulo_registro-institucion" text="        Registro de institución">

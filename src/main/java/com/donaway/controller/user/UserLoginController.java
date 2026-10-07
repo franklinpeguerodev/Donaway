@@ -73,7 +73,7 @@ public class UserLoginController {
     private void cargarVistaSegunRol(String cargo) {
         String rutaFxml = "";
 
-        // Usamos el cargo exacto que viene de tu base de datos
+        
         switch (cargo) { 
             case "ADMIN_INSTITUCIONAL" -> rutaFxml = "";
             case "BIOANALISTA_PRINCIPAL" -> rutaFxml = "/views/vistas_genericas/plantilla_personal_medico.fxml";

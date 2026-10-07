@@ -6,22 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import java.net.URL;
-import java.sql.SQLException;
-import com.donaway.utils.db.ConexionDbDonaway;
-import com.donaway.model.persona.Donante;
-import com.donaway.service.DonanteServices; 
 
-/*
- * try {
-        	Parent root = FXMLLoader.load(
-        		    getClass().getResource("/views/vistas_genericas/Plantilla_personal_medico.fxml")
-        		);Scene scene = new Scene(root);
-        		
-        		   getClass().getResource("/views/vistas_formularios/vistas_inventario/Plantilla_personal_inventario.fxml")
-        		);Scene scene = new Scene(root);
-    	
- */
+
 
 public class Main extends Application {
 
@@ -30,7 +16,7 @@ public class Main extends Application {
     	try {
         	Parent root = FXMLLoader.load(
 
-        		    getClass().getResource("/views/vistas_genericas/Plantilla_personal_medico.fxml")
+        		    getClass().getResource("/views/vistas_formularios/vistas_generales/login.fxml")
         		);Scene scene = new Scene(root);
 
             stage.setScene(scene);

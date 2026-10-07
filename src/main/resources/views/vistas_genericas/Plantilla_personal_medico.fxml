@@ -204,7 +204,7 @@
             <HBox prefHeight="43.0" prefWidth="348.0" spacing="5.0" styleClass="fondo_label">
                <children>
                   <Label prefHeight="32.0" prefWidth="65.0" styleClass="labeles-informativo" text="HOY: " />
-                  <Label fx:id="lbl_diaHoy" styleClass="labeles-informativo" text="Martes,10, Abril" />
+                  <Label fx:id="lb_dia_hoy" styleClass="labeles-informativo" text="Dia de hoy" />
                </children>
             </HBox>
             <HBox prefHeight="43.0" prefWidth="348.0" styleClass="fondo_label">
@@ -218,7 +218,7 @@
                         <Image url="@../../img/img_generales/Logo.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="lbl_nombre_hospital" prefHeight="35.0" prefWidth="187.0" styleClass="labeles-informativo" text="Nombre del hospital y logo" />
+                  <Label fx:id="lb_nombre_hospital" prefHeight="35.0" prefWidth="187.0" styleClass="labeles-informativo" text="Nombre del hospital" />
                </children>
             </HBox>
             <HBox prefHeight="43.0" prefWidth="348.0" styleClass="fondo_label">
@@ -233,7 +233,7 @@
                     
                   </ImageView>
                   <Label styleClass="labeles-informativo" text="Citas :" />
-                  <Label fx:id="lbl_cantidad_citas" prefHeight="32.0" prefWidth="55.0" styleClass="labeles-informativo" text="23" />
+                  <Label fx:id="lb_cantidad_citas" prefHeight="32.0" prefWidth="55.0" styleClass="labeles-informativo" text="0" />
                </children>
             </HBox>
             <HBox prefHeight="43.0" prefWidth="348.0" styleClass="fondo_label">
@@ -248,7 +248,7 @@
                     
                   </ImageView>
                   <Label prefHeight="32.0" prefWidth="119.0" styleClass="labeles-informativo" text="Analisis realizados:" />
-                  <Label fx:id="lbl_cantidad_analisis" prefHeight="32.0" prefWidth="54.0" styleClass="labeles-informativo" text="23" />
+                  <Label fx:id="lb_cantidad_analisis" prefHeight="32.0" prefWidth="54.0" styleClass="labeles-informativo" text="0" />
                </children>
             </HBox>
             <HBox prefHeight="43.0" prefWidth="348.0" styleClass="fondo_label">
@@ -263,7 +263,7 @@
                      </image>
                   </ImageView>
                   <Label prefHeight="32.0" prefWidth="125.0" styleClass="labeles-informativo" text="Pacientes en espera : " />
-                  <Label fx:id="lbl_cantidad_pacientes" prefHeight="32.0" prefWidth="49.0" styleClass="labeles-informativo" text="23" />
+                  <Label fx:id="lb_cantidad_pacientes" prefHeight="32.0" prefWidth="49.0" styleClass="labeles-informativo" text="0" />
                </children>
             </HBox>
             <Button id="flecha_columna" fx:id="flecha_columna" mnemonicParsing="false" onAction="#manejarColapsoColumna" styleClass="botones_general">

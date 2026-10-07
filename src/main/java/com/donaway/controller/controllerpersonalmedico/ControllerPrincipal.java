@@ -29,13 +29,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.control.Label;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import com.donaway.dto.login.SessionManager;
 import com.donaway.dto.login.UserSessionDto;
-import com.mysql.cj.Session;
 
+import com.donaway.utils.time.Time;
 import org.controlsfx.control.PopOver;
 
 public class ControllerPrincipal implements Initializable {
@@ -43,10 +42,19 @@ public class ControllerPrincipal implements Initializable {
 	@FXML private ScrollPane contenedorPrincipal;
 	@FXML private VBox contenedor_menu;
 	@FXML private VBox menu;
+	@FXML private Label lb_dia_hoy;
+	@FXML private Label lb_nombre_hospital;
+	@FXML private Label lb_cantidad_citas;
+	@FXML private Label lb_cantidad_analisis;
+	@FXML private Label lb_cantidad_pacientes;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         ejecutarCargaModuloInicial();
+        
+        lb_dia_hoy.setText(Time.dateNow());
+        
+        
     }
     public ScrollPane getContenedorPrincipal() {
         return contenedorPrincipal;
@@ -58,6 +66,7 @@ public class ControllerPrincipal implements Initializable {
     @FXML
     private void irAInicio() {
         ejecutarCargaModuloInicial();
+        
     }
     @FXML
     private void irAnalisis() {
@@ -70,7 +79,8 @@ public class ControllerPrincipal implements Initializable {
     }
     @FXML
     private void irABusquedas() {
-    	abrirGestionFormularios_busquedas();    }
+    	abrirGestionFormularios_busquedas();    
+    }
     @FXML
     private void irASolicitud() {
     	abrirGestionFormularios_solicitudes();
@@ -460,10 +470,10 @@ public class ControllerPrincipal implements Initializable {
         grid.setStyle("-fx-padding: 15; -fx-background-color: #F9F9F9; -fx-background-radius: 10; -fx-border-color: #DCDCDC; -fx-border-radius: 10;");
 
         
-        añadirFilaGrid(grid, "Nombre:",usuario.nombre(), 0);
+        añadirFilaGrid(grid, "Nombre:",usuario.nombre().toString(), 0);
         añadirFilaGrid(grid, "Cargo:", usuario.cargo().toString(), 1);
         añadirFilaGrid(grid, "Depto:", usuario.cargo().toString(), 2);
-        añadirFilaGrid(grid, "ID:", usuario.carnet(), 3);
+        añadirFilaGrid(grid, "ID:", usuario.carnet().toString(), 3);
         añadirFilaGrid(grid, "Horario:", usuario.jornada().toString(), 4);
         añadirFilaGrid(grid, "Estado:", usuario.estado().toString(), 5);
         
