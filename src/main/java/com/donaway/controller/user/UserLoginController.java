@@ -76,7 +76,7 @@ public class UserLoginController {
         
         switch (cargo) { 
             case "ADMIN_INSTITUCIONAL" -> rutaFxml = "";
-            case "BIOANALISTA_PRINCIPAL" -> rutaFxml = "/views/vistas_genericas/plantilla_personal_medico.fxml";
+            case "BIOANALISTA_PRINCIPAL" -> rutaFxml = "/views/vistas_genericas/Plantilla_personal_medico.fxml";
             case "GESTOR_HEMODERIVADOS" -> rutaFxml = "/";
             case "RECEPCIONISTA" -> rutaFxml = "/";
             default -> rutaFxml = "";
